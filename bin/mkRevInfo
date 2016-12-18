@@ -29,7 +29,7 @@ GetOptions(
    'help'       => sub { die "usage: mkRevInfo [-book] [-commit] [-date] [-repo]\n" ; },
 ) ;
 
-die "$myName: required parameter --base is missing" unless ( defined $basever ) ;
+die "Required parameter --base is missing" unless ( defined $basever ) ;
 
 my $r = `git rev-list --count $basever` ; chomp $r ;
 
