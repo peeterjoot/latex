@@ -14,9 +14,11 @@ my $newline = 1 ;
 my $headerName = '' ;
 my $lastCommit ;
 my $commitDate ;
+my $basever ;
 
 GetOptions( 
    'book!'      => \$book,
+   'base=s'     => \$basever,
    'mytime!'    => \$mytime,
    'commit!'    => \$onlycommit,
    'date!'      => \$onlycommitdate,
@@ -27,8 +29,9 @@ GetOptions(
    'help'       => sub { die "usage: mkRevInfo [-book] [-commit] [-date] [-repo]\n" ; },
 ) ;
 
-# count version from when I made my macbook clone:
-my $r = `git rev-list --count fb9dccc` ; chomp $r ;
+die "$myName: required parameter --base is missing" unless ( defined $basever ) ;
+
+my $r = `git rev-list --count $basever` ; chomp $r ;
 
 open my $fh, "git log -1 |" or die ;
 while (<$fh>)

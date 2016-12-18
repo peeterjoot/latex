@@ -42,29 +42,29 @@ all :: .revinfo/gitRepo.tex
 all :: $(MAIN_TARGETS)
 
 # FIXME: am guessing that depending on COMMIT_EDITMSG will not work for freshly cloned repo:
-.revinfo/lastCommit.tex : ../../.git/COMMIT_EDITMSG
+.revinfo/lastCommit.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo > $@
+	mkRevInfo --base $(BASEVER) > $@
 
-.revinfo/gitCommitDateAsMyTime.tex : ../../.git/COMMIT_EDITMSG
+.revinfo/gitCommitDateAsMyTime.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo -mytime > $@
+	mkRevInfo --base $(BASEVER) -mytime > $@
 
-.revinfo/lastCommitBook.tex : ../../.git/COMMIT_EDITMSG
+.revinfo/lastCommitBook.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo -book > $@
+	mkRevInfo --base $(BASEVER) -book > $@
 
-.revinfo/gitCommitDate.tex : ../../.git/COMMIT_EDITMSG
+.revinfo/gitCommitDate.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo -date > $@
+	mkRevInfo --base $(BASEVER) -date > $@
 
-.revinfo/gitCommitString.tex : ../../.git/COMMIT_EDITMSG
+.revinfo/gitCommitString.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo -commit --no-newline > $@
+	mkRevInfo --base $(BASEVER) -commit --no-newline > $@
 
-.revinfo/gitRepo.tex : ../../.git/COMMIT_EDITMSG
+.revinfo/gitRepo.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo -repo > .revinfo/gitRepo.tex
+	mkRevInfo --base $(BASEVER) -repo > .revinfo/gitRepo.tex
 
 opt/%.pdf : %.pdf
 	mkdir -p opt
