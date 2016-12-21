@@ -86,13 +86,13 @@ clean ::
 $(THISBOOK).tex : ../latex/classicthesis_mine/ClassicThesis.tex
 	cp $< $@
 
-mathematica.tex : ../METADATA ../../mathematica/METADATA
+mathematica.tex : ../METADATA $(HOME)/physicsplay/mathematica/METADATA
 	(cd .. ; ./METADATA -mathematica -latex -$(THISBOOK) $(REDACTED) > $(THISDIR)/mathematica.tex)
 
-matlab.tex : ../METADATA ../../matlab/METADATA
+matlab.tex : ../METADATA $(HOME)/physicsplay/matlab/METADATA
 	(cd .. ; ./METADATA -matlab -latex -$(THISBOOK) $(REDACTED) > $(THISDIR)/matlab.tex)
 
-julia.tex : ../METADATA ../../julia/METADATA
+julia.tex : ../METADATA $(HOME)/physicsplay/julia/METADATA
 	(cd .. ; ./METADATA -julia -latex -$(THISBOOK) $(REDACTED) > $(THISDIR)/julia.tex)
 
 # plainnat.bib (as used by classicthesis) doesn't like @webpage:
