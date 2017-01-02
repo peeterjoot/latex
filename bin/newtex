@@ -1,0 +1,13 @@
+
+# usage:
+# newproblem foo.tex
+
+file=${1?}
+test -e $file && (echo "file $file already exists" ; exit 1)
+
+head -4 ../latex/template.tex > $file
+
+#shift
+#lt -f ${file} --problem $* >> $file
+git add $file
+mkrenumber $file >/dev/null
