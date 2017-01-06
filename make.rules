@@ -41,30 +41,32 @@ all :: .revinfo/gitCommitString.tex
 all :: .revinfo/gitRepo.tex
 all :: $(MAIN_TARGETS)
 
-# FIXME: am guessing that depending on COMMIT_EDITMSG will not work for freshly cloned repo:
+# Not really phony, but made to to avoid error with depending on COMMIT_EDITMSG after fresh clone of a repo.
+.PHONY: $(COMMIT_EDITMSG)
+
 .revinfo/lastCommit.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo --base $(BASEVER) > $@
+	mkRevInfo --base $(BASEVER) --outfile $@
 
 .revinfo/gitCommitDateAsMyTime.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo --base $(BASEVER) -mytime > $@
+	mkRevInfo --base $(BASEVER) -mytime --outfile $@
 
 .revinfo/lastCommitBook.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo --base $(BASEVER) -book > $@
+	mkRevInfo --base $(BASEVER) -book --outfile $@
 
 .revinfo/gitCommitDate.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo --base $(BASEVER) -date > $@
+	mkRevInfo --base $(BASEVER) -date --outfile $@
 
 .revinfo/gitCommitString.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo --base $(BASEVER) -commit --no-newline > $@
+	mkRevInfo --base $(BASEVER) -commit --no-newline --outfile $@
 
 .revinfo/gitRepo.tex : $(COMMIT_EDITMSG)
 	mkdir -p .revinfo/
-	mkRevInfo --base $(BASEVER) -repo > .revinfo/gitRepo.tex
+	mkRevInfo --base $(BASEVER) -repo --outfile .revinfo/gitRepo.tex
 
 opt/%.pdf : %.pdf
 	mkdir -p opt
