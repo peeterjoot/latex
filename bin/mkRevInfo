@@ -15,8 +15,46 @@ my $headerName = '' ;
 my $lastCommit ;
 my $commitDate ;
 my $basever ;
+my $filename ;
+
+#all :: .revinfo/lastCommit.tex
+#all :: .revinfo/gitCommitDateAsMyTime.tex
+#all :: .revinfo/lastCommitBook.tex
+#all :: .revinfo/gitCommitDate.tex
+#all :: .revinfo/gitCommitString.tex
+#all :: .revinfo/gitRepo.tex
+
+###gitCommitDate.tex
+###
+###   Jan/6/2017
+###
+###gitCommitDateAsMyTime.tex
+###   \newcommand{\myTime}{January 2017}
+###
+###gitCommitString.tex
+###   75c03f16c696840cb3812560e88dca03ce7096e0
+###
+###gitRepo.tex
+###   https://github.com/peeterjoot/physicsplay
+###
+###lastCommit.tex
+###   Revision 0.1 https://github.com/peeterjoot/physicsplay commit 75c03f16c696840cb3812560e88dca03ce7096e0 Jan/6/2017
+###
+###lastCommitBook.tex
+###
+###   Version 0.1
+###
+###   Sources for this notes compilation can be found in the github repository
+###
+###   \href{https://github.com/peeterjoot/physicsplay}{https://github.com/peeterjoot/physicsplay}
+###
+###   The last commit (Jan/6/2017), associated with this pdf was
+###
+###   75c03f16c696840cb3812560e88dca03ce7096e0
+###
 
 GetOptions( 
+   'outfile=s'  => \$filename,
    'book!'      => \$book,
    'base=s'     => \$basever,
    'mytime!'    => \$mytime,
@@ -26,12 +64,21 @@ GetOptions(
    'newline!'   => \$newline,
    'define=s'   => \$define,
    'header=s'   => \$headerName,
-   'help'       => sub { die "usage: mkRevInfo [-book] [-commit] [-date] [-repo]\n" ; },
+   'help'       => sub { die "usage: mkRevInfo [-book] [-commit] [-date] [-repo] [--basever] --outfile filename\n" ; },
 ) ;
 
-die "Required parameter --base is missing" unless ( defined $basever ) ;
+die "Required parameter --outfile is missing" unless ( defined $filename ) ;
 
-my $r = `git rev-list --count $basever` ; chomp $r ;
+#my $r = 0 ;
+#
+#if ( defined $basever )
+#{
+#   $r = `git rev-list --count $basever` ; chomp $r ;
+#}
+
+my $r = `git rev-list --count HEAD` ; chomp $r;
+
+open my $ofh, ">$filename.$$" or die ;
 
 open my $fh, "git log -1 |" or die ;
 while (<$fh>)
@@ -66,7 +113,8 @@ while (<$fh>)
 }
 close $fh ;
 
-my $url = "https://github.com/peeterjoot/physicsplay" ;
+my $url = `git config --get remote.origin.url` ; chomp $url ;
+#"https://github.com/peeterjoot/physicsplay" ;
 #$url = "http://goo.gl/j2GYL" ;
 my $output = '' ;
 
@@ -131,22 +179,30 @@ if ( $define ne '' )
       $headerName =~ s,.*/,, ;
       $headerName =~ s/\./_/g ;
 
-      print 
+      print $ofh
          "#if !defined ${headerName}_is_included\n" .
          "#define ${headerName}_is_included\n" .
          "\n" ;
    }
 
-   print qq@#define $define "$output"\n@ ;
+   print $ofh qq@#define $define "$output"\n@ ;
 
    if ( $headerName ne '' )
    {
-      print "\n#endif\n" ;
+      print $ofh "\n#endif\n" ;
    }
 }
 else
 {
-   print $output ;
+   print $ofh $output ;
 
-   print "\n" if ( $newline ) ;
+   print $ofh "\n" if ( $newline ) ;
+}
+
+close $ofh ;
+
+system( "cmp -s $filename $filename.$$" ) ;
+if ( $? >> 8 )
+{
+   system( "mv $filename.$$ $filename" ) ;
 }
