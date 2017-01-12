@@ -1,0 +1,321 @@
+#! /usr/bin/perl
+
+# TODO for wp-mathjax:
+#
+# - \phat
+# - \BOne
+# - \txtL -> ..
+# - \Tr
+# - title and prologue
+# - \cancel{..} -> {..}
+# - \index removal.
+# - remove mathLabelBoxes -> underbrace
+# - \boxedEquation -> equation \boxed{}
+# - \cref removals.
+# - \makeexample, \maketheorem, \makedefinition
+# - \captionedTable
+# - '\ ' slash space removal.
+# - http://tex.stackexchange.com/questions/178576/how-to-manually-format-ointctrclockwise
+#   ... have that in ~/bin/tex2blog
+# - fixed newline issue in processBib (dos2unix).  sync that with ~/bin/tex2blog by moving that function into module (after 
+#   reconsiling other differences).
+#   Expand \PauliX,Y,Z
+#
+#------------------
+#- Add to blog mathjax table:
+#\eqntext
+#
+#could allow:
+#
+#\S -> section
+#------------------
+
+use strict ;
+use warnings ;
+use Getopt::Long;
+
+my $filename ;
+my $showUsage = 0 ;
+
+my $urlMessage ;
+$urlMessage = "Click here for a PDF of this post with nicer formatting" ;
+
+my $r1 = qr/
+     (                   # start of capture buffer 1
+     {                   # match an opening brace
+         (?:               
+             [^{}]++     # one or more non braces, non backtracking
+               |                  
+             (?1)        # found { or }, so recurse to capture buffer 1
+         )*                 
+     }                   # match a closing brace
+     )                   # end of capture buffer 1
+     /x;
+
+my $r2 = qr/
+     (                   # start of capture buffer 1
+     {                   # match an opening brace
+         (?:               
+             [^{}]++     # one or more non braces, non backtracking
+               |                  
+             (?1)        # found { or }, so recurse to capture buffer 1
+         )*                 
+     }                   # match a closing brace
+     )                   # end of capture buffer 1
+     (                   # start of capture buffer 2
+     {                   # match an opening brace
+         (?:               
+             [^{}]++     # one or more non braces, non backtracking
+               |                  
+             (?1)        # found { or }, so recurse to capture buffer 2
+         )*                 
+     }                   # match a closing brace
+     )                   # end of capture buffer 2
+     /x;
+
+my $r3 = qr/
+     (                   # start of capture buffer 1
+     {                   # match an opening brace
+         (?:               
+             [^{}]++     # one or more non braces, non backtracking
+               |                  
+             (?1)        # found { or }, so recurse to capture buffer 1
+         )*                 
+     }                   # match a closing brace
+     )                   # end of capture buffer 1
+     (                   # start of capture buffer 2
+     {                   # match an opening brace
+         (?:               
+             [^{}]++     # one or more non braces, non backtracking
+               |                  
+             (?1)        # found { or }, so recurse to capture buffer 2
+         )*                 
+     }                   # match a closing brace
+     )                   # end of capture buffer 2
+     (                   # start of capture buffer 3
+     {                   # match an opening brace
+         (?:               
+             [^{}]++     # one or more non braces, non backtracking
+               |                  
+             (?1)        # found { or }, so recurse to capture buffer 3
+         )*                 
+     }                   # match a closing brace
+     )                   # end of capture buffer 3
+     /x;
+
+
+GetOptions( 
+   'file=s'       => \$filename,
+   'help!'        => \$showUsage,
+) ;
+
+if ( $showUsage or !defined $filename )
+{
+   die "usage: ~/bin/tex2mathjax -f filename [-help]" ;
+}
+
+my $rLines = slurpLatex( $filename ) ;
+
+my %refnumbers ;
+
+my $bibString = processBib() ;
+
+foreach (@$rLines)
+{
+   chomp ;
+
+   my $urlbase = 'http://peeterjoot.com/archives/math2016/' ;
+   s,\\renewcommand{\\basename}{(.*?)},\\blogpage{$urlbase/$1.pdf}, ;
+   s,\\blogpage{(.*)},<a href="$1">[$urlMessage]</a>, ;
+   #s,\\blogpage{(.*)},<a href="$1">[$urlMessage]</a> or <a href="$urlbase/ece1236.pdf">[Click here for my notes compilation for this class]</a>, ;
+
+   # FIXME: these ones should be moved to the mathjax macros:
+   s/\\overbar${r1}/\\overline{$1}/g ;
+   s/\\textAndIndex{(.*?)}/$1/g ;
+   s/\\implies/\\Rightarrow/g ;
+   s/\\chaptext/ch./g ;
+   s/\\tabtext/tab./g ;
+   s/\\S/section/g ;
+   s/\\Proj\b/\\textrm{Proj}/g ;
+   s/\\trace\b/\\textrm{tr}/g ;
+
+   s/\\PauliI/\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\\\ \\end{bmatrix}/g;
+   s/\\PauliX/\\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\\\ \\end{bmatrix}/g;
+   s/\\PauliY/\\begin{bmatrix} 0 & -i \\\\ i & 0 \\\\ \\end{bmatrix}/g;
+   s/\\PauliZ/\\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\\\ \\end{bmatrix}/g;
+
+   s/^ *%.*// ;
+   s/^ *\\input.*// ;
+   s/\\Real\b/\\textrm{Re}/ ;
+   s/\\Imag\b/\\textrm{Im}/ ;
+   s/^ *\\renewcommand.*// ;
+   s/^ *\\begin{subequations}.*// ;
+   s/^ *\\end{subequations}.*// ;
+   s/^ *\\newcommand.*// ;
+   s/^ *\\usepackage.*// ;
+   s/^ *\\beginArtNoToc.*// ;
+   s/^ *\\EndArticle.*// ;
+   s/^ *\\EndNoBibArticle.*// ;
+   s/^ *\\generatetitle{(.*)}/$1/ ;
+   s/^ *\\label{chap:.*// ;
+
+   s/\\bc(.)/\\boldsymbol{\\mathcal{$1}}/g;
+
+#   if ( /\\citep{(.*?)}/ )
+#   {
+#      print "REF: $1\n" ;
+#      foreach ( keys %refnumbers )
+#      {
+#         print "R: $_\n" ;
+#      }
+#   }
+   s/\\citep{(.*?)}/[$refnumbers{$1}]/g;
+
+   s,{ *\\em\s+(.*?)},<em>$1</em>,g;
+
+#\cref{fig:lecture2:lecture2Fig1}
+   s/\\cref{(.*?)Fig(\d+)}/fig. $2/g ;
+
+#\imageFigure{../../figures/ece1254/lecture2Fig1}{Sample resistive circuit}{fig:lecture2:lecture2Fig1}{0.3}
+   s/^ *\\imageFigure{(.*?)Fig(\d+)}{(.*?)}.*/${1}Fig$2: fig. $2.  $3/ ;
+
+   s/\bcref{/ref{/g ;
+   s/\beqnref/ref{/g ;
+   s/\bEqnref/ref{/g ;
+
+   s,{dmath},{equation}, ;
+   s,\\section{(.*)},<h2>$1</h2>,;
+   s,\\sectionAndIndex{(.*)},<h2>$1</h2>,;
+   s,\\subsection{(.*)},<h3>$1</h3>,;
+   s,\\paragraph{(.*)},<h3>$1</h3>,;
+
+   # FIXME: convert to mathjax macros:
+   s,\\largestIntGreaterThan{(.*)},\\lfloor$1\\rfloor,;
+   s,\\largestIntLessThan{(.*)},\\lceil$1\\rceil,;
+
+   s,\\begin{itemize},<ul>, ;
+   s,\\end{itemize},</ul>, ;
+   s,\\begin{enumerate},<ol>, ;
+   s,\\end{enumerate},</ol>, ;
+   s,\\item,<li>, ;
+
+   s,\\makeoproblem{(.*?)}{(.*?)}{(.*?)},<h2>Question: $1 ($3)</h2>,;
+   s,\\makeproblem{(.*?)}{(.*?)},<h2>Question: $1</h2>,;
+   s,\\makesubproblem{(.*?)}{.*:(.*?)},<h2>($2)</h2>,;
+   s,\\makeanswer{.*?},<h2>Answer</h2>,;
+   s,\\makeexample{(.*?)},<h2>Example: $1</h2>,;
+   s,\\makeSubAnswer{(.*?)}{.*:(.*?)},<h2>($2)</h2>,;
+
+   print "$_\n" ;
+}
+
+print $bibString ;
+
+print "\n[mathjax]\n" ;
+
+exit 0 ;
+
+sub slurpFile
+{
+   my ($filename) = @_ ;
+   my $failedOpen = 0 ;
+   my @lines = () ;
+
+   open my $fh, "<$filename" or $failedOpen = 1 ;
+   if ( $failedOpen )
+   {
+      warn "could not open '$filename'\n" ;
+   }
+   else
+   {
+      while ( <$fh> )
+      {
+         push( @lines, $_ ) ;
+      }
+
+      close $fh ;
+   }
+
+   return \@lines ;
+}
+
+sub slurpLatex
+{
+   return slurpFile( $filename ) ;
+}
+
+# side effect: populates the %refnumbers hash.
+sub processBib
+{
+   my $bibOut = '' ;
+
+   my $filebase = $filename ;
+   $filebase =~ s/\.tex$// ;
+   my $rLines = slurpFile( "$filebase.bbl" ) ;
+
+   my $curNum = 1 ;
+
+   foreach ( @$rLines )
+   {
+      chomp ;
+
+      # dos2unix:
+      s/\r$// ;
+
+#print "bibdebug: '$_'\n" ;
+
+      s,\\begin{thebibliography}.*,<h1>References</h1>, ;
+
+# this doesn't always work.  Need multiline search, as biblines like:
+#
+#     \bibitem[Giannini and
+#       Leuzzi(2004)]{giannini2004NonlinearMicrowaveCircuitDesign}
+#
+# ... are possible.
+
+      s/\\bibitem.*]{/\\bibitem{/ ;
+      if ( s/\\bibitem{(.*?)}// )
+      {
+         $bibOut .= "\n\n" ;
+         $refnumbers{$1} = $curNum ;
+         $bibOut .= "[$curNum] " ;
+
+         $curNum++ ;
+      }
+      else
+      {
+         next if (/Available from:/ or
+                  /\\providecommand/ or
+                  /\\expandafter/ or
+                  0 ) ;
+
+         if ( /\\end{thebibliography}/ )
+         {
+            $bibOut =~ s,\\url{(.*?)},<a href="$1">$1</a>,;
+            $bibOut .= "\n" ;
+            last ;
+         }
+
+         s/~/ /g ;
+         s,{ *\\em\s+(.*?)},<em>$1</em>,g;
+         s,\\em *{(.*?)},<em>$1</em>,g ;
+         s,\\emph *{(.*?)},<em>$1</em>,g ;
+         s/\\newblock// ;
+         s/&/&amp;/g;
+
+         # \url can be split across lines, as in the following:
+         #  \url{http://en.wikipedia.org/w/index.php?title=Relativistic_Doppler_effect&o%
+         #ldid=298724264}.
+         #
+         #In case it isn't do a first check here before stripping out {}'s
+         #
+         s,\\url{(.*?)},<a href="$1">$1</a>,sg;
+         s/{(.*?)}/$1/g ;
+
+         #die "'$_'\n" if /\\url/ ;
+         $bibOut .= "$_" ;
+      }
+   }
+
+   return $bibOut ;
+}
