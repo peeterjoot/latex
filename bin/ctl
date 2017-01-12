@@ -1,9 +1,17 @@
-courseDesc=emt
-cdirname=ece1228
-CCCNNNN=ECE1228H
-CourseTitle="Electromagnetic Theory"
-ProfName="M. Mojahedi"
-courseText=balanis1989advanced
+
+#courseDesc=emt
+#cdirname=ece1228
+#CCCNNNN=ECE1228H
+#CourseTitle="Electromagnetic Theory"
+#ProfName="M. Mojahedi"
+#courseText=balanis1989advanced
+
+courseDesc=convex-optimization
+cdirname=ece1505
+CCCNNNN=ECE1505H
+CourseTitle="Convex Optimization"
+ProfName="Stark Draper"
+courseText=boyd2004convex
 
 ~/physicsplay/bin/ct ${courseDesc}Lecture${1:?} lectureN
 

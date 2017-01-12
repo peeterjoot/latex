@@ -215,6 +215,13 @@
   school={University of Toronto}
 }
 
+@book{boyd2004convex,
+  title={Convex optimization},
+  author={Boyd, Stephen and Vandenberghe, Lieven},
+  year={2004},
+  publisher={Cambridge university press}
+}
+
 @book{cheng1989field,
   title={Field and wave electromagnetics},
   author={Cheng, David Keun and others},
