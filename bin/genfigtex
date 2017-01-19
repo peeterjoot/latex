@@ -13,7 +13,8 @@ my $defaultPath ;
 #$defaultPath = "../../figures/phy1520" ;
 #$defaultPath = "../../figures/ece1236" ;
 #$defaultPath = "../../figures/gabook/" ;
-$defaultPath = "../../figures/ece1228-emt" ;
+#$defaultPath = "../../figures/ece1228-emt" ;
+$defaultPath = "../../figures/ece1505-convex-optimization" ;
 
 foreach (sort keys %all)
 {

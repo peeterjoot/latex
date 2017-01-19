@@ -6,14 +6,14 @@
 #ProfName="M. Mojahedi"
 #courseText=balanis1989advanced
 
-courseDesc=convex-optimization
+courseDesc=convexOptimization
 cdirname=ece1505
 CCCNNNN=ECE1505H
 CourseTitle="Convex Optimization"
 ProfName="Stark Draper"
 courseText=boyd2004convex
 
-~/physicsplay/bin/ct ${courseDesc}Lecture${1:?} lectureN
+../latex/bin/ct ${courseDesc}Lecture${1:?} lectureN
 
 perl -p -i \
 -e "s/{N}/$1/g;s/courseDesc/$courseDesc/g;s/cdirname/$cdirname/g;s/CCCNNNN/$CCCNNNN/g;s/CourseTitle/$CourseTitle/g;s/ProfName/$ProfName/g;s/courseText/$courseText/g;" \
