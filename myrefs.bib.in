@@ -215,6 +215,13 @@
   school={University of Toronto}
 }
 
+@book{damiano1988course,
+  title={A course in linear algebra},
+  author={Damiano, David B and Little, John B},
+  year={1988},
+  publisher={Courier Corporation}
+}
+
 @book{boyd2004convex,
   title={Convex optimization},
   author={Boyd, Stephen and Vandenberghe, Lieven},
@@ -1412,6 +1419,38 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
 %% Generate @misc{} entry with 'cite this page' on the sidebar.  Use the 'url =' form, not the alternate.
 %%
 %%
+
+@misc{triangleInequalityMathSE,
+    title = "How to prove triangle inequality for $p$-norm?",
+    author = "robjohn (http://math.stackexchange.com/users/13854/robjohn)",
+    howpublished = "Mathematics Stack Exchange",
+    note = "URL:http://math.stackexchange.com/q/447754 (version: 2013-07-20)",
+    url = "http://math.stackexchange.com/q/447754"
+}
+
+@misc{ wiki:abbe,
+   author = "Wikipedia",
+   title = "Ernst Abbe --- Wikipedia{,} The Free Encyclopedia",
+   year = "2016",
+   url = "https://en.wikipedia.org/w/index.php?title=Ernst_Abbe&oldid=739777846",
+   note = "[Online; accessed 16-September-2016]"
+ }
+
+@misc{tisdellMinkowski,
+    title = "Minkowski's inequality",
+    author = "Dr. Chris Tisdell",
+    howpublished = "Youtube",
+    url = "https://www.youtube.com/watch?v=ATCGNBdFTEc",
+    note = "[Online; accessed 22-January-2017]"
+}
+
+@misc{tisdellHolder,
+    title = "Holder's inequality",
+    author = "Dr. Chris Tisdell",
+    howpublished = "Youtube",
+    url = "https://www.youtube.com/watch?v=kxQiKaIuyOg",
+    note = "[Online; accessed 22-January-2017]"
+}
 
 @misc{ wiki:abbe,
    author = "Wikipedia",
