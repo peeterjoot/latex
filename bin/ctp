@@ -1,4 +1,4 @@
-n=1
+n=2
 
 #CCCNNNN=PHY2403H
 #courseDesc=qft
@@ -15,7 +15,7 @@ n=1
 #CourseTitle="Electromagnetic Theory"
 #cdirname=ece1228-electromagnetic-theory
 
-courseDesc=convex-optimization
+courseDesc=convexOptimization
 cdirname=ece1505-convex-optimization
 CCCNNNN=ECE1505H
 CourseTitle="Convex Optimization"
@@ -26,15 +26,17 @@ cdirpath=.
 
 y=`perl -e 'use POSIX qw/strftime/ ; my $y = strftime( "%Y", localtime ) ; print "$y\n";'`
 
-../latex/bin/ct ${courseDesc}ProblemSet$n problemSetN
+#base=${courseDesc}ProblemSet$n
+base=ProblemSet$n
+../latex/bin/ct $base problemSetN
 perl -p -i \
 -e "s/{N}/$n/g;s/CCCNNNN/$CCCNNNN/g;s/courseDesc/$courseDesc/g;s/CourseTitle/$CourseTitle/g;s/cdirname/$cdirname/g;s/CCYY/$y;/" \
-${courseDesc}ProblemSet$n.tex
+$base.tex
 
-for i in 1 2 3 4 5 6 7 8 ; do 
-   cp ../latex/problemSetNProblemM.tex $cdirpath/${courseDesc}problemSet${n}Problem$i.tex
+for i in 1 2 3 4 5 6 7 8 9 10 ; do 
+   cp ../latex/problemSetNProblemM.tex $cdirpath/${base}Problem$i.tex
    perl -p -i \
 -e "s/{N}/$n/g;s/{M}/$i/g;s/courseDesc/$courseDesc/g;s/CCYY/$y/;" \
-$cdirpath/${courseDesc}problemSet${n}Problem$i.tex
-   git add $cdirpath/${courseDesc}problemSet${n}Problem$i.tex
+$cdirpath/${base}Problem$i.tex
+   git add $cdirpath/${base}Problem$i.tex
 done
