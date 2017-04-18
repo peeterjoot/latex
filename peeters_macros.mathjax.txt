@@ -16,6 +16,24 @@ http://peeterjoot.com/wp-content/plugins/mathjax-latex/MathJax/MathJax.js
 
 and then the new macros still didn't work.  Finally after browser cache clear it did.  That may have been all that was required.
 
+
+Installation instructions for the plugin:
+
+   Unzip the downloaded .zip archive to the /wp-content/plugins/ directory
+   Activate the plugin through the ‘Plugins’ menu in WordPress.
+   This uses the mathjax CDN(http://www.mathjax.org/docs/1.1/start.html#mathjax-cdn). Alternatively:
+   Download the MathJax Javascript library (http://www.mathjax.org /download/)
+   Place the Javascript library in the mathjax-latex directory (/wp-content/plugins/mathjax-latex/MathJax)
+   You can configure the plugin to load MathJax from a different URL to the default. See the options page.
+
+my instructions from: http://peeterjoot.com/latex/:
+
+   cd /opt/bitnami/apps/wordpress/htdocs/wp-content/plugins/mathjax-latex
+   wget https://github.com/mathjax/MathJax/zipball/v2.6-latest
+   mv v2.6-latest mathjax-v2.6-latest.zip
+   unzip mathjax-v2.6-latest.zip
+   mv mathjax-MathJax-78ea6af MathJax
+
 #--------------------
 
 ifrac: ['{#1}/{#2}', 2],
@@ -121,6 +139,62 @@ Bcap: ['{\\hat{\\BB}}', 0],
 Fcap: ['{\\hat{\\BF}}', 0],
 Rcap: ['{\\hat{\\BR}}', 0],
 Gcap: ['{\\hat{\\BG}}', 0],
+txtA: ['{\\textrm{A}}', 0],
+txtB: ['{\\textrm{B}}', 0],
+txtC: ['{\\textrm{C}}', 0],
+txtD: ['{\\textrm{D}}', 0],
+txtE: ['{\\textrm{E}}', 0],
+txtF: ['{\\textrm{F}}', 0],
+txtG: ['{\\textrm{G}}', 0],
+txtH: ['{\\textrm{H}}', 0],
+txtI: ['{\\textrm{I}}', 0],
+txtJ: ['{\\textrm{J}}', 0],
+txtK: ['{\\textrm{K}}', 0],
+txtL: ['{\\textrm{L}}', 0],
+txtM: ['{\\textrm{M}}', 0],
+txtN: ['{\\textrm{N}}', 0],
+txtO: ['{\\textrm{O}}', 0],
+txtP: ['{\\textrm{P}}', 0],
+txtQ: ['{\\textrm{Q}}', 0],
+txtR: ['{\\textrm{R}}', 0],
+txtS: ['{\\textrm{S}}', 0],
+txtT: ['{\\textrm{T}}', 0],
+txtU: ['{\\textrm{U}}', 0],
+txtV: ['{\\textrm{V}}', 0],
+txtW: ['{\\textrm{W}}', 0],
+txtX: ['{\\textrm{X}}', 0],
+txtY: ['{\\textrm{Y}}', 0],
+txtZ: ['{\\textrm{Z}}', 0],
+txta: ['{\\textrm{a}}', 0],
+txtb: ['{\\textrm{b}}', 0],
+txtc: ['{\\textrm{c}}', 0],
+txtd: ['{\\textrm{d}}', 0],
+txte: ['{\\textrm{e}}', 0],
+txtf: ['{\\textrm{f}}', 0],
+txtg: ['{\\textrm{g}}', 0],
+txth: ['{\\textrm{h}}', 0],
+txti: ['{\\textrm{i}}', 0],
+txtj: ['{\\textrm{j}}', 0],
+txtk: ['{\\textrm{k}}', 0],
+txtl: ['{\\textrm{l}}', 0],
+txtm: ['{\\textrm{m}}', 0],
+txtn: ['{\\textrm{n}}', 0],
+txto: ['{\\textrm{o}}', 0],
+txtp: ['{\\textrm{p}}', 0],
+txtq: ['{\\textrm{q}}', 0],
+txtr: ['{\\textrm{r}}', 0],
+txts: ['{\\textrm{s}}', 0],
+txtt: ['{\\textrm{t}}', 0],
+txtu: ['{\\textrm{u}}', 0],
+txtv: ['{\\textrm{v}}', 0],
+txtw: ['{\\textrm{w}}', 0],
+txtx: ['{\\textrm{x}}', 0],
+txty: ['{\\textrm{y}}', 0],
+txtz: ['{\\textrm{z}}', 0],
+PauliI: ['{\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix}}', 0],
+PauliX: ['{\begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix}}', 0],
+PauliY: ['{\begin{bmatrix} 0 & -i \\ i & 0 \\ \end{bmatrix}}', 0],
+PauliZ: ['{\begin{bmatrix} 1 & 0 \\ 0 & -1 \\ \end{bmatrix}}', 0],
 inv: ['{\\frac{1}{#1}}', 1],
 cross: ['{\\times}', 0],
 abs: ['{\\lvert{#1}\\rvert}', 1],
