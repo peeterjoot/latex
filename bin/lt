@@ -12,6 +12,7 @@ lt - generate Latex environment Templates, (for use within vim).
 
 lt [--help] [--example='blah blah']
             [--equation]
+            [--eqstar]
             [--dmath]
             [--aligned]
             [--subequations]
@@ -33,9 +34,19 @@ Just a dmath env:
 
 =item --equation
 
-A equation env with an aligned in it
+A labeled equation env
 
-:,!lt -f % -eq -a
+:,!lt -f % -equ
+
+with an embedded aligned block
+
+:,!lt -f % -equ -a
+
+=item --equstar
+
+A non-labeled equation env
+
+:,!lt -f % -eqs
 
 =item --theorem
 
