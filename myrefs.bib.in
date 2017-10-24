@@ -215,6 +215,13 @@
   school={University of Toronto}
 }
 
+@book{van1943modern,
+  title={Modern algebra},
+  author={Van Der Waerden, Bartel Leendert and E.. Artin and E.. Noether},
+  year={1943},
+  publisher={Frederick Ungar}
+}
+
 @book{damiano1988course,
   title={A course in linear algebra},
   author={Damiano, David B and Little, John B},

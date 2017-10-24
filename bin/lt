@@ -137,6 +137,7 @@ my $item ;
 my $enum ;
 my $labelbox ;
 my $listing ;
+my $eqstar = 0;
 
 #Getopt::Long::Configure( 'pass_through' ) ;
 GetOptions ( 
@@ -151,6 +152,7 @@ GetOptions (
    'oproblem:s'    => \$oproblem,
    'section:s'     => \$section,
    'citep:s'       => \$citep,
+   'eqstar!'       => \$eqstar,
    'equation:i'    => \$equation,
    'subequations!' => \$subequations,
    'subproblem=s'  => \$subproblem,
@@ -235,6 +237,12 @@ if ( defined $listing )
 {
    print "\\begin{lstlisting}\n" .
          "\\end{lstlisting}\n" ;
+}
+
+if ( $eqstar )
+{
+   print "\\begin{equation*}\n" .
+         "\\end{equation*}\n" ;
 }
 
 generateEquation( 'boxed', $boxed ) ;
