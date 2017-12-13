@@ -215,6 +215,39 @@
   school={University of Toronto}
 }
 
+@book{hestenes1966space,
+  title={Space-time algebra},
+  author={Hestenes, David},
+  volume={1},
+  number={6},
+  year={1966},
+  publisher={Springer}
+}
+
+@book{baylis2004electrodynamics,
+  title={Electrodynamics: a modern geometric approach},
+  author={Baylis, William},
+  volume={17},
+  year={2004},
+  publisher={Springer Science \& Business Media}
+}
+
+@book{jancewicz1988multivectors,
+  title={Multivectors and Clifford algebra in electrodynamics},
+  author={Jancewicz, Bernard},
+  year={1988},
+  publisher={World Scientific}
+}
+
+@inbook{jancewicz1988multivectors:appendixI,
+  title={Multivectors and Clifford algebra in electrodynamics},
+  author={Jancewicz, Bernard},
+  year={1988},
+  publisher={World Scientific},
+  chapter={{Appendix I}}
+}
+
+
 @book{van1943modern,
   title={Modern algebra},
   author={Van Der Waerden, Bartel Leendert and E.. Artin and E.. Noether},
@@ -699,6 +732,21 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
   chapter={{Time Development of the Oscillator}},
   year={2014},
   publisher={Pearson Higher Ed}
+}
+
+@book{ablamowicz2004lectures,
+  title={Lectures on Clifford (geometric) algebras and applications},
+  author={Ablamowicz, Rafal and Sobczyk, Garret},
+  year={2004},
+  publisher={Springer}
+}
+
+@inbook{ablamowicz2004lectures:chapter1,
+  title={Lectures on Clifford (geometric) algebras and applications},
+  author={Ablamowicz, Rafal and Sobczyk, Garret},
+  year={2004},
+  chapter={{Introduction to Clifford Algebras}},
+  publisher={Springer}
 }
 
 @inbook{balanis1989advanced:reflectionAndTx,
@@ -2225,6 +2273,28 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
   url = {http://www4.wittenberg.edu/maxwell/CoordinateSystemReview.pdf},
   year = "2011",
   note = "[Online; accessed 22-May-2014]",
+}
+
+@article{hestenes1974properdynamics,
+  title={Proper dynamics of a rigid point particle},
+  author={Hestenes, David},
+  journal={Journal of Mathematical Physics},
+  volume={15},
+  number={10},
+  pages={1778--1786},
+  year={1974},
+  publisher={AIP}
+}
+
+@article{hestenes1974propermechanics,
+  title={Proper particle mechanics},
+  author={Hestenes, David},
+  journal={Journal of Mathematical Physics},
+  volume={15},
+  number={10},
+  pages={1768--1777},
+  year={1974},
+  publisher={AIP}
 }
 
 @article{browne2009grassmann,
