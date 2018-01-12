@@ -111,6 +111,16 @@
 %%
 %%
 
+@article{chappell2014geometric,
+  title={Geometric Algebra for Electrical and Electronic Engineers},
+  author={Chappell, James M and Drake, Samuel P and Seidel, Cameron L and Gunn, Lachlan J and Abbott, Derek},
+  journal={Proceedings of the IEEE},
+  volume={102},
+  number={9},
+  year={2014},
+  publisher={Citeseer}
+}
+
 @article{aznabayev2015energy,
   title={Energy levels of a helium atom},
   author={Aznabayev, DT and Bekbaev, AK and Ishmukhamedov, IS and Korobov, VI},
