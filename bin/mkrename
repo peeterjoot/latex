@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for i in $@ ; do 
+   echo "../latex/bin/lgrep $i | tee o ; . ./o"
+   echo "perl -p -i ../latex/bin/latexRegex.pl $i"
+   echo ""
+done
