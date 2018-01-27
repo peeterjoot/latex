@@ -684,15 +684,23 @@ i & 0 \\
 
 \newcommand{\expectation}[1]{\left\langle{#1}\right\rangle}
 
-\newcommand{\rgrad}[0]{{\stackrel{ \rightarrow }{\grad}}}
-\newcommand{\lgrad}[0]{{\stackrel{ \leftarrow }{\grad}}}
-\newcommand{\lrgrad}[0]{{\stackrel{ \leftrightarrow }{\grad}}}
-\newcommand{\rpartial}[0]{{\stackrel{ \rightarrow }{\partial}}}
-\newcommand{\lpartial}[0]{{\stackrel{ \leftarrow }{\partial}}}
-\newcommand{\lrpartial}[0]{{\stackrel{ \leftrightarrow }{\partial}}}
-\newcommand{\rspacegrad}[0]{{\stackrel{ \rightarrow }{\spacegrad}}}
-\newcommand{\lspacegrad}[0]{{\stackrel{ \leftarrow }{\spacegrad}}}
-\newcommand{\lrspacegrad}[0]{{\stackrel{ \leftrightarrow }{\spacegrad}}}
+\newcommand{\lroverarrow}[1]{\stackrel{ \leftrightarrow }{#1}}
+\newcommand{\roverarrow}[1]{\stackrel{ \rightarrow }{#1}}
+\newcommand{\loverarrow}[1]{\stackrel{ \leftarrow }{#1}}
+
+\newcommand{\rgrad}[0]{\roverarrow{\grad}}
+\newcommand{\lgrad}[0]{\loverarrow{\grad}}
+\newcommand{\lrgrad}[0]{\lroverarrow{\grad}}
+
+\newcommand{\rpartial}[0]{\roverarrow{\partial}}
+\newcommand{\lpartial}[0]{\loverarrow{\partial}}
+\newcommand{\lrpartial}[0]{\lroverarrow{\partial}}
+
+\newcommand{\rspacegrad}[0]{\roverarrow{\spacegrad}}
+\newcommand{\lspacegrad}[0]{\loverarrow{\spacegrad}}
+\newcommand{\lrspacegrad}[0]{\lroverarrow{\spacegrad}}
+
+\newcommand{\lrT}[0]{\lroverarrow{\BT}}
 
 %\newcommand{\norm}[1]{\lVert#1\rVert}
 \newcommand{\questionEquals}[0]{\overset{?}{=}}
