@@ -225,6 +225,14 @@
   school={University of Toronto}
 }
 
+@article{schwinger1998classical,
+  title={Classical Electrodynamics, Perseus},
+  author={Schwinger, J and DeRaad Jr, LL and Milton, KA and Tsai, W-Y},
+  journal={Reading},
+  pages={355},
+  year={1998}
+}
+
 @book{hestenes1966space,
   title={Space-time algebra},
   author={Hestenes, David},

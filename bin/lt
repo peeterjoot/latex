@@ -56,6 +56,10 @@ Print out a maketheorem block
 
 Print out a makedefinition block
 
+=item --lemma
+
+Print out a makelemma block
+
 =item --axiom
 
 Print out a makeaxiom block
@@ -122,6 +126,7 @@ my $aligned ;
 my $example ;
 my $theorem ;
 my $definition ;
+my $lemma ;
 my $axiom ;
 my $problem ;
 my $oproblem ;
@@ -144,6 +149,7 @@ GetOptions (
    'file=s'        => \$filename,
    'example:s'     => \$example,
    'theorem:s'     => \$theorem,
+   'lemma:s'       => \$lemma,
    'definition:s'  => \$definition,
    'axiom:s'       => \$axiom,
    'item'          => \$item,
@@ -187,6 +193,11 @@ if ( defined $theorem )
 if ( defined $definition )
 {
    print "\\makedefinition{$definition}{dfn:$filename:$number}{\n" ;
+}
+
+if ( defined $lemma )
+{
+   print "\\makelemma{$lemma}{lemma:$filename:$number}{\n" ;
 }
 
 if ( defined $axiom )
@@ -289,6 +300,11 @@ if ( defined $example )
 if ( defined $definition )
 {
    print "} % definition\n\n" ;
+}
+
+if ( defined $lemma )
+{
+   print "} % lemma\n\n" ;
 }
 
 if ( defined $axiom )
