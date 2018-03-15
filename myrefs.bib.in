@@ -4,6 +4,14 @@
 %%
 %%
 
+@article{jack2003physical,
+  title={Physical space as a quaternion structure, I: Maxwell equations. A brief Note},
+  author={Jack, Peter Michael},
+  journal={arXiv preprint math-ph/0307038},
+  url = "https://arxiv.org/abs/math-ph/0307038",
+  year={2003}
+}
+
 @article{garraway1999observing,
   title={Observing the spin of a free electron},
   author={Garraway, BM and Stenholm, S},
@@ -25,6 +33,13 @@
   year={2011},
   url = "http://arxiv.org/abs/0809.4526",
   publisher={Springer}
+}
+
+@article{chappell2010simplified,
+  title={A simplified approach to electromagnetism using geometric algebra},
+  author={Chappell, James M and Iqbal, Azhar and Abbott, Derek},
+  journal={arXiv preprint arXiv:1010.4947},
+  year={2010}
 }
 
 @article{markowitz1957elimination,
@@ -114,6 +129,17 @@
 @article{chappell2014geometric,
   title={Geometric Algebra for Electrical and Electronic Engineers},
   author={Chappell, James M and Drake, Samuel P and Seidel, Cameron L and Gunn, Lachlan J and Abbott, Derek},
+  journal={Proceedings of the IEEE},
+  volume={102},
+  number={9},
+  year={2014},
+  publisher={Citeseer}
+}
+
+@inbook{chappell2014geometricAppendixA,
+  title={Geometric Algebra for Electrical and Electronic Engineers},
+  author={Chappell, James M and Drake, Samuel P and Seidel, Cameron L and Gunn, Lachlan J and Abbott, Derek},
+  chapter={{Appendix A}},
   journal={Proceedings of the IEEE},
   volume={102},
   number={9},
@@ -231,6 +257,54 @@
   journal={Reading},
   pages={355},
   year={1998}
+}
+
+@book{einstein2015relativity,
+  title={Relativity: The special and the general theory},
+  author={Einstein, Albert},
+  year={2015},
+  url={http://www.gutenberg.org/ebooks/5001},
+  publisher={Princeton University Press}
+}
+
+@inbook{einstein2015relativityMinkowski,
+  title={Relativity: The special and the general theory},
+  author={Einstein, Albert},
+  chapter={{Minkowski's Four-Dimensional Space}},
+  year={2015},
+  url={http://www.gutenberg.org/ebooks/5001},
+  publisher={Princeton University Press}
+}
+
+@book{maxwell1881treatiseVolumeI,
+  title={A treatise on electricity and magnetism, third edition},
+  author={Maxwell, James Clerk},
+  volume={I},
+  year={1891},
+  publisher={Dover publications}
+}
+
+@book{maxwell1881treatiseVolumeII,
+  title={A treatise on electricity and magnetism},
+  author={Maxwell, James Clerk},
+  volume={II},
+  year={1881},
+  publisher={Merchant Books}
+}
+
+@book{hestenes2012clifford,
+  title={Clifford algebra to geometric calculus: a unified language for mathematics and physics},
+  author={Hestenes, David and Sobczyk, Garret},
+  volume={5},
+  year={2012},
+  publisher={Springer Science \& Business Media}
+}
+
+@book{hestenes1985clifford,
+  title={Clifford Algebra to Geometric Calculus. A Unified Language for Mathematics and Physics},
+  author={Hestenes, David and Sobczyk, Garret and Marsh, James S},
+  year={1985},
+  publisher={AAPT}
 }
 
 @book{hestenes1966space,
