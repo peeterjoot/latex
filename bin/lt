@@ -235,7 +235,7 @@ if ( defined $labelbox )
       $orientation = '' ;
    }
 
-   print "\\mathLabelBox${orientation}{ }{ }\n" ;
+   print "\\mathLabelBox${orientation}{\n}\n{\n}\n" ;
 #   print "\\mathLabelBox{ }{ }\n" ;
 }
 
@@ -252,8 +252,7 @@ if ( defined $listing )
 
 if ( $eqstar )
 {
-   print "\\begin{equation*}\n" .
-         "\\end{equation*}\n" ;
+   print "\\begin{equation*}\n" ;
 }
 
 generateEquation( 'boxed', $boxed ) ;
@@ -275,6 +274,11 @@ if ( !$printedEquation && defined $bmatrix )
 if ( !$printedEquation && defined $vmatrix )
 {
    generatePair( $vmatrix, 'vmatrix' ) ;
+}
+
+if ( $eqstar )
+{
+   print "\\end{equation*}\n" ;
 }
 
 if ( defined $option )
