@@ -21,7 +21,7 @@ GetOptions
 
 if ( $showUsage )
 {
-   die "usage: insertCopyRight [-latex] [-linestart='%'] [-what 'file|book|script|...]' [-desc 'file|...']\n" ;
+   die "usage: printCopyRight [-latex] [-linestart='%'] [-what 'file|book|script|...]' [-desc 'file|...']\n" ;
 }
 
 printCopyRight() ;
