@@ -68,6 +68,8 @@ backref
 {\bfseries\Large}
 {\color{DarkSlateGrey}\filleft \authorname
 \ifthenelse{\isundefined{\studentnumber}}{}{\\ \studentnumber}
+\ifthenelse{\isundefined{\phonenumber}}{}{\\ \phonenumber}
+\ifthenelse{\isundefined{\address}}{}{\\ \address}
 \ifthenelse{\isundefined{\email}}{}{\\ \email}
 \ifthenelse{\isundefined{\dateintitle}}{}{\\ \insertdate}
 %\ifthenelse{\isundefined{\coursename}}{}{\\ \coursename} % put in title instead.
