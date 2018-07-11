@@ -1,0 +1,99 @@
+#!/usr/bin/perl
+
+#-----------------------------------------------------------------------------
+# POD Format Documentation.  Read "perldoc perlpod" for an example.
+# When done, check syntax with "podchecker".
+
+=head1 NAME
+
+labelrename - <one-line-description>
+
+=head1 SYNOPSIS
+
+labelrename [--help] [<options>]
+
+=head1 DESCRIPTION
+
+It looks like somebody used the perl skeleton without filling in the POD
+documentation for their particular script.  Shame on them!!!
+
+Options:
+
+=over 4
+
+=item --foo=bar
+
+Blah.
+
+=back
+
+=head1 SUPPORTED PLATFORMS
+
+ Unix (Linux verified)
+
+=head1 AUTHORS
+
+ Peeter Joot
+
+=cut
+
+#-----------------------------------------------------------------------------
+
+use strict ;
+use warnings ;
+use Getopt::Long ;
+use Pod::Usage ;
+
+# Suppress sourcing of users' .bashrc files in invoked shells
+delete $ENV{'ENV'} ;
+delete $ENV{'BASH_ENV'} ;
+
+# Set STDOUT and STDERR to unbuffered
+select STDERR ; $| = 1 ;
+select STDOUT ; $| = 1 ;
+
+my $myName = '' ;
+
+($myName = $0) =~ s@.*[/\\]@@ ;
+
+#Getopt::Long::Configure( 'pass_through' ) ;
+GetOptions (
+   'help'               => sub { pod2usage(-verbose => 2) ; },
+) or pod2usage(-verbose => 0) ;
+
+open my $rfh, ">label.re" or die;
+open my $cfh, ">label.new" or die;
+
+# Validate/handle options, and everything else...
+open my $fh, "grep '\\label{' *.tex|" or die;
+while (<$fh>)
+{
+   chomp;
+
+   /([^:]+):.*\\label{([^}]+)}/ or die;
+
+   my ($filename, $label) = ($1, $2);
+   $filename =~ s,.*/,,;
+   $filename =~ s/\.tex$//;
+
+   my ($prefix, $lfilename, @rest) = split(/:/, $label);
+
+   if ( $lfilename ne $filename )
+   {
+      #print "$filename: '$label': $prefix,$lfilename,@rest\n" ;
+      print $rfh "s/{$prefix:$lfilename:@rest}/{$prefix:$filename:@rest}/g;\n" ;
+      print $cfh "{$prefix:$filename:@rest}\n" ;
+   }
+}
+close $fh;
+close $rfh;
+close $cfh;
+
+print qq(# look for conflicts and handle manually:
+
+grep -Ff label.new *.tex
+
+# Then:
+
+perl -p -i label.re *.tex
+);

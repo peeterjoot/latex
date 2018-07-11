@@ -12,6 +12,7 @@ lt - generate Latex environment Templates, (for use within vim).
 
 lt [--help] [--example='blah blah']
             [--equation]
+            [--eqstar]
             [--dmath]
             [--aligned]
             [--subequations]
@@ -33,9 +34,19 @@ Just a dmath env:
 
 =item --equation
 
-A equation env with an aligned in it
+A labeled equation env
 
-:,!lt -f % -eq -a
+:,!lt -f % -equ
+
+with an embedded aligned block
+
+:,!lt -f % -equ -a
+
+=item --equstar
+
+A non-labeled equation env
+
+:,!lt -f % -eqs
 
 =item --theorem
 
@@ -44,6 +55,10 @@ Print out a maketheorem block
 =item --definition
 
 Print out a makedefinition block
+
+=item --lemma
+
+Print out a makelemma block
 
 =item --axiom
 
@@ -111,6 +126,7 @@ my $aligned ;
 my $example ;
 my $theorem ;
 my $definition ;
+my $lemma ;
 my $axiom ;
 my $problem ;
 my $oproblem ;
@@ -126,12 +142,14 @@ my $item ;
 my $enum ;
 my $labelbox ;
 my $listing ;
+my $eqstar = 0;
 
 #Getopt::Long::Configure( 'pass_through' ) ;
 GetOptions ( 
    'file=s'        => \$filename,
    'example:s'     => \$example,
    'theorem:s'     => \$theorem,
+   'lemma:s'       => \$lemma,
    'definition:s'  => \$definition,
    'axiom:s'       => \$axiom,
    'item'          => \$item,
@@ -140,6 +158,7 @@ GetOptions (
    'oproblem:s'    => \$oproblem,
    'section:s'     => \$section,
    'citep:s'       => \$citep,
+   'eqstar!'       => \$eqstar,
    'equation:i'    => \$equation,
    'subequations!' => \$subequations,
    'subproblem=s'  => \$subproblem,
@@ -174,6 +193,11 @@ if ( defined $theorem )
 if ( defined $definition )
 {
    print "\\makedefinition{$definition}{dfn:$filename:$number}{\n" ;
+}
+
+if ( defined $lemma )
+{
+   print "\\makelemma{$lemma}{lemma:$filename:$number}{\n" ;
 }
 
 if ( defined $axiom )
@@ -211,7 +235,7 @@ if ( defined $labelbox )
       $orientation = '' ;
    }
 
-   print "\\mathLabelBox${orientation}{ }{ }\n" ;
+   print "\\mathLabelBox${orientation}{\n}\n{\n}\n" ;
 #   print "\\mathLabelBox{ }{ }\n" ;
 }
 
@@ -224,6 +248,11 @@ if ( defined $listing )
 {
    print "\\begin{lstlisting}\n" .
          "\\end{lstlisting}\n" ;
+}
+
+if ( $eqstar )
+{
+   print "\\begin{equation*}\n" ;
 }
 
 generateEquation( 'boxed', $boxed ) ;
@@ -245,6 +274,11 @@ if ( !$printedEquation && defined $bmatrix )
 if ( !$printedEquation && defined $vmatrix )
 {
    generatePair( $vmatrix, 'vmatrix' ) ;
+}
+
+if ( $eqstar )
+{
+   print "\\end{equation*}\n" ;
 }
 
 if ( defined $option )
@@ -270,6 +304,11 @@ if ( defined $example )
 if ( defined $definition )
 {
    print "} % definition\n\n" ;
+}
+
+if ( defined $lemma )
+{
+   print "} % lemma\n\n" ;
 }
 
 if ( defined $axiom )

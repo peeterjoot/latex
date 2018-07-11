@@ -84,6 +84,8 @@ src=#1% same path as in addresource!
 \DeclareMathOperator{\PV}{PV}
 \DeclareMathOperator{\atan2}{atan2}
 \DeclareMathOperator{\Atan}{atan}
+\DeclareMathOperator{\Atanh}{atanh}
+\DeclareMathOperator{\Acosh}{acosh}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\Ei}{Ei}
@@ -278,6 +280,7 @@ src=#1% same path as in addresource!
 % this breaks gabook producing a latex resource exhausted error.
 \newcommand{\rboldpartial}[0]{{\stackrel{ \rightarrow }{\boldpartial}}}
 \newcommand{\lboldpartial}[0]{{\stackrel{ \leftarrow }{\boldpartial}}}
+\newcommand{\lrboldpartial}[0]{{\stackrel{ \leftrightarrow }{\boldpartial}}}
 
 \newcommand{\ddt}[1]{\frac{d{#1}}{dt}}
 \newcommand{\ddtau}[1]{\frac{d{#1}}{d\tau}}
@@ -304,7 +307,11 @@ src=#1% same path as in addresource!
 \newcommand{\PDsq}[2]{\frac{\partial^2 {#2}}{(\partial {#1})^2}}
 
 \newcommand{\Partial}[2]{\frac{\partial {#1}}{\partial {#2}}}
+
+% fixme: would be nice to be more consistent here
+\newcommand{\ProjOp}[2]{\Proj_{#1}\left( {#2} \right)}
 \newcommand{\Rej}[2]{\RejName_{#1}\left( {#2} \right)}
+
 \newcommand{\Rm}[1]{\mathbb{R}^{#1}}
 \newcommand{\Cm}[1]{\mathbb{C}^{#1}}
 \newcommand{\conj}[0]{{*}}
@@ -678,15 +685,23 @@ i & 0 \\
 
 \newcommand{\expectation}[1]{\left\langle{#1}\right\rangle}
 
-\newcommand{\rgrad}[0]{{\stackrel{ \rightarrow }{\grad}}}
-\newcommand{\lgrad}[0]{{\stackrel{ \leftarrow }{\grad}}}
-\newcommand{\lrgrad}[0]{{\stackrel{ \leftrightarrow }{\grad}}}
-\newcommand{\rpartial}[0]{{\stackrel{ \rightarrow }{\partial}}}
-\newcommand{\lpartial}[0]{{\stackrel{ \leftarrow }{\partial}}}
-\newcommand{\lrpartial}[0]{{\stackrel{ \leftrightarrow }{\partial}}}
-\newcommand{\rspacegrad}[0]{{\stackrel{ \rightarrow }{\spacegrad}}}
-\newcommand{\lspacegrad}[0]{{\stackrel{ \leftarrow }{\spacegrad}}}
-\newcommand{\lrspacegrad}[0]{{\stackrel{ \leftrightarrow }{\spacegrad}}}
+\newcommand{\lroverarrow}[1]{\stackrel{ \leftrightarrow }{#1}}
+\newcommand{\roverarrow}[1]{\stackrel{ \rightarrow }{#1}}
+\newcommand{\loverarrow}[1]{\stackrel{ \leftarrow }{#1}}
+
+\newcommand{\rgrad}[0]{\roverarrow{\grad}}
+\newcommand{\lgrad}[0]{\loverarrow{\grad}}
+\newcommand{\lrgrad}[0]{\lroverarrow{\grad}}
+
+\newcommand{\rpartial}[0]{\roverarrow{\partial}}
+\newcommand{\lpartial}[0]{\loverarrow{\partial}}
+\newcommand{\lrpartial}[0]{\lroverarrow{\partial}}
+
+\newcommand{\rspacegrad}[0]{\roverarrow{\spacegrad}}
+\newcommand{\lspacegrad}[0]{\loverarrow{\spacegrad}}
+\newcommand{\lrspacegrad}[0]{\lroverarrow{\spacegrad}}
+
+\newcommand{\lrT}[0]{\lroverarrow{\BT}}
 
 %\newcommand{\norm}[1]{\lVert#1\rVert}
 \newcommand{\questionEquals}[0]{\overset{?}{=}}
@@ -771,6 +786,8 @@ i & 0 \\
 \newcommand{\xcap}[0]{\hat{\Bx}}
 \newcommand{\ycap}[0]{\hat{\By}}
 \newcommand{\zcap}[0]{\hat{\Bz}}
+
+%\newcommand{\bicap}[0]{\hat{\mathbf{\imath}}}
 
 % Had tried \widehat instead of \hat in some but not all cases, since \hat looks pinched and sometimes off center.  Find that
 % widehat looks too wide in others, as others agreed:

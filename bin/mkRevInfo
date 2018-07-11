@@ -12,6 +12,9 @@ my $mytime = 0 ;
 my $define = '' ;
 my $newline = 1 ;
 my $headerName = '' ;
+my $bookmajver = 1 ;
+my $booksubver = '' ;
+my $revcountstart = 0 ;
 my $lastCommit ;
 my $commitDate ;
 my $basever ;
@@ -76,7 +79,23 @@ die "Required parameter --outfile is missing" unless ( defined $filename ) ;
 #   $r = `git rev-list --count $basever` ; chomp $r ;
 #}
 
+if ( defined $ENV{'BOOKSUBVER'} )
+{
+   $booksubver = "$ENV{'BOOKSUBVER'}";
+}
+
+if ( defined $ENV{'BOOKSUBVER'} )
+{
+   $bookmajver = "$ENV{'BOOKMAJVER'}";
+}
+
+if ( defined $ENV{'REVCOUNTSTART'} )
+{
+   $revcountstart = $ENV{'REVCOUNTSTART'};
+}
+
 my $r = `git rev-list --count HEAD` ; chomp $r;
+$r = $r - $revcountstart;
 
 open my $ofh, ">$filename.$$" or die ;
 
@@ -140,12 +159,14 @@ if ( $mytime )
       'Dec' => 'December'
    ) ;
 
-   $output = qq@\\newcommand{\\myTime}{$longMonth{$mon} $year}@ ;
+   $output = qq@\\newcommand{\\myTime}{$longMonth{$mon} $year}\n@ ;
+# this is a hack.  should be elsewhere.
+   $output .= qq@\\newcommand{\\myVersion}{V${bookmajver}.${booksubver}.$r\\xspace}@ ;
 }
 elsif ( $book )
 {
    $output = qq@
-Version 0.$r
+Version \\myVersion
 
 Sources for this notes compilation can be found in the github repository
 

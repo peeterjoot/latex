@@ -1,0 +1,11 @@
+#!/bin/bash
+
+spfile=spellcheckem.txt
+
+for i in $@ ; do 
+   #git add $i
+   echo "../latex/bin/lgrep $i | tee o ; . ./o"
+   echo "perl -p -i ../latex/bin/latexRegex.pl $i"
+   test -e $spfile && ( grep $i $spfile >/dev/null || echo $i >> $spfile)
+   echo ""
+done
