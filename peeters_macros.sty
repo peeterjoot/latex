@@ -276,12 +276,6 @@ src=#1% same path as in addresource!
 \newcommand{\boldpartial}[0]{\boldsymbol{\partial}}
 \newcommand{\grad}[0]{\nabla}
 
-% used in gabook.  with these (and some of the other stackrel's below) converted to overset
-% this breaks gabook producing a latex resource exhausted error.
-\newcommand{\rboldpartial}[0]{{\stackrel{ \rightarrow }{\boldpartial}}}
-\newcommand{\lboldpartial}[0]{{\stackrel{ \leftarrow }{\boldpartial}}}
-\newcommand{\lrboldpartial}[0]{{\stackrel{ \leftrightarrow }{\boldpartial}}}
-
 \newcommand{\ddt}[1]{\frac{d{#1}}{dt}}
 \newcommand{\ddtau}[1]{\frac{d{#1}}{d\tau}}
 \newcommand{\dds}[1]{\frac{d{#1}}{ds}}
@@ -689,17 +683,23 @@ i & 0 \\
 \newcommand{\roverarrow}[1]{\stackrel{ \rightarrow }{#1}}
 \newcommand{\loverarrow}[1]{\stackrel{ \leftarrow }{#1}}
 
-\newcommand{\rgrad}[0]{\roverarrow{\grad}}
 \newcommand{\lgrad}[0]{\loverarrow{\grad}}
+\newcommand{\rgrad}[0]{\roverarrow{\grad}}
 \newcommand{\lrgrad}[0]{\lroverarrow{\grad}}
 
-\newcommand{\rpartial}[0]{\roverarrow{\partial}}
 \newcommand{\lpartial}[0]{\loverarrow{\partial}}
+\newcommand{\rpartial}[0]{\roverarrow{\partial}}
 \newcommand{\lrpartial}[0]{\lroverarrow{\partial}}
 
-\newcommand{\rspacegrad}[0]{\roverarrow{\spacegrad}}
 \newcommand{\lspacegrad}[0]{\loverarrow{\spacegrad}}
+\newcommand{\rspacegrad}[0]{\roverarrow{\spacegrad}}
 \newcommand{\lrspacegrad}[0]{\lroverarrow{\spacegrad}}
+
+% used in gabook.  with these (and some of the other stackrel's below) converted to overset
+% this breaks gabook producing a latex resource exhausted error.
+\newcommand{\lboldpartial}[0]{\loverarrow{\boldpartial}}
+\newcommand{\rboldpartial}[0]{\roverarrow{\boldpartial}}
+\newcommand{\lrboldpartial}[0]{\lroverarrow{\boldpartial}}
 
 \newcommand{\lrT}[0]{\lroverarrow{\BT}}
 

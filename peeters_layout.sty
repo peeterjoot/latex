@@ -192,7 +192,9 @@ ref={#1}
 % titlesec package based modifications, based on the titleformat's found in classicthesis.  I've added color:
 \newcommand{\myClassicThesisOverrides}[0]{%
    \titleformat{\chapter}[display]
-      {\relax}{\mbox{}\oldmarginpar{\vspace*{-3\baselineskip}\color{DarkOliveGreen}\chapterNumber\thechapter}}{0pt}%
+      {\relax}{\mbox{}\oldmarginpar{\hspace*{-5\baselineskip}\vspace*{-5\baselineskip}\color{DarkOliveGreen}\chapterNumber\thechapter}}{0pt}%
+      % this is too far to the right for 6x9 and for gabook*pdf.
+      %{\relax}{\mbox{}\oldmarginpar{\vspace*{-3\baselineskip}\color{DarkOliveGreen}\chapterNumber\thechapter}}{0pt}%
       {\color{Maroon}\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]
    \titleformat{\section}
       {\relax}{\color{DarkOliveGreen}{\textsc{\MakeTextLowercase{\thesection}}}}{1em}{\color{Maroon}\spacedlowsmallcaps}
