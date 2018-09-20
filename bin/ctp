@@ -1,4 +1,4 @@
-n=2
+n=1
 
 #CCCNNNN=PHY2403H
 #courseDesc=qft
@@ -15,12 +15,22 @@ n=2
 #CourseTitle="Electromagnetic Theory"
 #cdirname=ece1228-electromagnetic-theory
 
-courseDesc=convexOptimization
-cdirname=ece1505-convex-optimization
-CCCNNNN=ECE1505H
-CourseTitle="Convex Optimization"
-ProfName="Stark Draper"
-courseText=boyd2004convex
+#courseDesc=convexOptimization
+#cdirname=ece1505-convex-optimization
+#CCCNNNN=ECE1505H
+#CourseTitle="Convex Optimization"
+#ProfName="Stark Draper"
+#courseText=boyd2004convex
+##cdirpath=../$cdirname
+#cdirpath=.
+
+courseDesc=qft
+cdirname=phy2403-quantum-field-theory
+#cdirname=phy2403
+CCCNNNN=PHY2403H
+CourseTitle="Quantum Field Theory"
+ProfName="Erich Poppitz"
+courseText=peskin1995introduction
 #cdirpath=../$cdirname
 cdirpath=.
 
@@ -33,7 +43,8 @@ perl -p -i \
 -e "s/{N}/$n/g;s/CCCNNNN/$CCCNNNN/g;s/courseDesc/$courseDesc/g;s/CourseTitle/$CourseTitle/g;s/cdirname/$cdirname/g;s/CCYY/$y;/" \
 $base.tex
 
-for i in 1 2 3 4 5 6 7 8 9 10 ; do 
+#for i in 1 2 3 4 5 6 7 8 9 10 ; do 
+for i in 1 2 3 4 5 ; do 
    cp ../latex/problemSetNProblemM.tex $cdirpath/${base}Problem$i.tex
    perl -p -i \
 -e "s/{N}/$n/g;s/{M}/$i/g;s/courseDesc/$courseDesc/g;s/CCYY/$y/;" \

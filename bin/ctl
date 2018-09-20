@@ -6,12 +6,19 @@
 #ProfName="M. Mojahedi"
 #courseText=balanis1989advanced
 
-courseDesc=convexOptimization
-cdirname=ece1505
-CCCNNNN=ECE1505H
-CourseTitle="Convex Optimization"
-ProfName="Stark Draper"
-courseText=boyd2004convex
+#courseDesc=convexOptimization
+#cdirname=ece1505
+#CCCNNNN=ECE1505H
+#CourseTitle="Convex Optimization"
+#ProfName="Stark Draper"
+#courseText=boyd2004convex
+
+courseDesc=qft
+cdirname=phy2403
+CCCNNNN=PHY2403H
+CourseTitle="Quantum Field Theory"
+ProfName="Erich Poppitz"
+courseText=peskin1995introduction
 
 ../latex/bin/ct ${courseDesc}Lecture${1:?} lectureN
 
