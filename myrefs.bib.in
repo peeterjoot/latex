@@ -563,6 +563,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
          url = "http://dlmf.nist.gov/",
         note = "Online companion to \citep{Olver:2010:NHMF}"}
 
+@article{DavidMayrhofer,
+  title={Complex Solutions to the Klein-Gordon Equation},
+  author={Mayrhofer, David},
+  url = "https://www.pas.rochester.edu/assets/pdf/undergraduate/complex_solutions_to_the_klein-gordon_equation.pdf",
+  year={2018},
+  note = "[Online; accessed 29-Sept-2018]",
+}
+
 @webpage{hydrogenWavefunctionsMIT,
   title={{Hydrogen Atom}},
   author={Troy Van Voorhis, Robert Field},
@@ -1582,6 +1590,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
     note = "URL:http://math.stackexchange.com/q/447754 (version: 2013-07-20)",
     url = "http://math.stackexchange.com/q/447754"
 }
+
+@misc{wiki:naturalUnits,
+    author = "{Wikipedia contributors}",
+    title = "Natural units --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2018",
+    url = "https://en.wikipedia.org/w/index.php?title=Natural_units&oldid=861949009",
+    note = "[Online; accessed 3-October-2018]"
+  }
 
 @misc{ wiki:abbe,
    author = "Wikipedia",
