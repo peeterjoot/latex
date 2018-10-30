@@ -134,6 +134,7 @@ foreach (@$rLines)
    # FIXME: these ones should be moved to the mathjax macros:
    s/\\overbar${r1}/\\overline{$1}/g ;
    s/\\cal(.)/\\mathcal{$1}/g ;
+   s/\\hata/\\hat{a}/g ;
    s/\\textAndIndex{(.*?)}/$1/g ;
    s/\\implies/\\Rightarrow/g ;
    s/\\conv/\\textrm{conv}/g ;
@@ -145,6 +146,7 @@ foreach (@$rLines)
    s/\\mathif/\\textrm{if}/g ;
    s/\\chaptext/ch./g ;
    s/\\tabtext/tab./g ;
+   s/\\BOne/\\mathbf{1}/g ;
    s/\\S/section/g ;
    s/\\bbR/\\mathbb{R}/g ;
    s/\\Proj\b/\\textrm{Proj}/g ;

@@ -1591,6 +1591,22 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
     url = "http://math.stackexchange.com/q/447754"
 }
 
+@misc{ wiki:RiemannLebesgue,
+    author = "{Wikipedia contributors}",
+    title = "Riemann-Lebesgue lemma --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2018",
+    url = "https://en.wikipedia.org/w/index.php?title=Riemann\%E2\%80\%93Lebesgue_lemma&oldid=856778941",
+    note = "[Online; accessed 29-October-2018]"
+  }
+
+@misc{ wiki:Sokhotski,
+    author = "{Wikipedia contributors}",
+    title = "Sokhotski-Plemelj theorem --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2017",
+    url = "https://en.wikipedia.org/w/index.php?title=Sokhotski\%E2\%80\%93Plemelj_theorem&oldid=817094903",
+    note = "[Online; accessed 28-October-2018]"
+  }
+
 @misc{wiki:naturalUnits,
     author = "{Wikipedia contributors}",
     title = "Natural units --- {Wikipedia}{,} The Free Encyclopedia",

@@ -2,6 +2,7 @@
 % Copyright © 2017 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
+%{
 \input{../latex/blogpost.tex}
 \renewcommand{\basename}{courseDesc{N}}
 \renewcommand{\dirname}{notes/cdirname/}
@@ -14,6 +15,9 @@
 \usepackage{peeters_figures}
 \usepackage{mathtools}
 \usepackage{siunitx}
+\usepackage{macros_cal} % LL
+
+\newcommand{\ultensor}[3]{{{#1}^{#2}}_{#3}}
 
 \beginArtNoToc
 \generatetitle{CCCNNNN CourseTitle.  Lecture {N}: XXX.  Taught by Prof.\ ProfName}
@@ -22,11 +26,17 @@
 
 \paragraph{Disclaimer}
 
-Peeter's lecture notes from class.  These may be incoherent and rough.
+%%Peeter's lecture notes from class.  These may be incoherent and rough.
+%%
+%%These are notes for the UofT course CCCNNNN, CourseTitle, taught by Prof. ProfName, covering \textchapref{{1}} \citep{courseText} content.
 
-These are notes for the UofT course CCCNNNN, CourseTitle, taught by Prof. ProfName, covering \textchapref{{1}} \citep{courseText} content.
+\paragraph{DISCLAIMER: Very rough notes from class, with some additional side notes.}
 
-\paragraph{YYY}
+These are notes for the UofT course CCCNNNN, CourseTitle, taught by Prof. ProfName, fall 2018.
+%, covering \textchapref{{1}} \citep{peskin1995introduction} content.
 
+\section{YYY}
+
+%}
 \EndArticle
 %\EndNoBibArticle
