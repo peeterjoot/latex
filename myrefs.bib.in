@@ -134,6 +134,26 @@
 %%
 %%
 
+@article{hawking1977zeta,
+  title={Zeta function regularization of path integrals in curved spacetime},
+  author={Hawking, Stephen W},
+  journal={Communications in Mathematical Physics},
+  volume={55},
+  number={2},
+  pages={133--148},
+  year={1977},
+  publisher={Springer}
+}
+
+@inproceedings{casimir1948attraction,
+  title={On the attraction between two perfectly conducting plates},
+  author={Casimir, Hendrick BG},
+  booktitle={Proc. Kon. Ned. Akad. Wet.},
+  volume={51},
+  pages={793},
+  year={1948}
+}
+
 @article{chappell2014geometric,
   title={Geometric Algebra for Electrical and Electronic Engineers},
   author={Chappell, James M and Drake, Samuel P and Seidel, Cameron L and Gunn, Lachlan J and Abbott, Derek},
@@ -578,6 +598,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
   year=2013,
   note = "[Online; accessed 03-Dec-2015]",
 }
+
+@webpage{poppitzphy450,
+   author = "Erich Poppitz",
+   title = "Relativistic Electrodynamics",
+   year = "2014",
+   url = "https://www.physics.utoronto.ca/~poppitz/poppitz/PHY450.html",
+   note = "[Online; accessed 5-November-2018]"
+ }
 
 @webpage{seriesResonance,
   title={{Simple Series Resonance}},
