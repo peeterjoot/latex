@@ -1611,13 +1611,13 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
 %%
 %%
 
-@misc{triangleInequalityMathSE,
-    title = "How to prove triangle inequality for $p$-norm?",
-    author = "robjohn (http://math.stackexchange.com/users/13854/robjohn)",
-    howpublished = "Mathematics Stack Exchange",
-    note = "URL:http://math.stackexchange.com/q/447754 (version: 2013-07-20)",
-    url = "http://math.stackexchange.com/q/447754"
-}
+@misc{ wiki:yukawaPotential,
+    author = "{Wikipedia contributors}",
+    title = "Yukawa potential --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2018",
+    url = "https://en.wikipedia.org/w/index.php?title=Yukawa_potential&oldid=850831032",
+    note = "[Online; accessed 12-November-2018]"
+  }
 
 @misc{ wiki:RiemannLebesgue,
     author = "{Wikipedia contributors}",
@@ -2247,6 +2247,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
 %% WEBPAGES
 %%
 %%
+
+@misc{triangleInequalityMathSE,
+    title = "How to prove triangle inequality for $p$-norm?",
+    author = "robjohn (http://math.stackexchange.com/users/13854/robjohn)",
+    howpublished = "Mathematics Stack Exchange",
+    note = "URL:http://math.stackexchange.com/q/447754 (version: 2013-07-20)",
+    url = "http://math.stackexchange.com/q/447754"
+}
 
 @webpage{sakurai2014modernErrata,
   title={Errata: Typographical Errors, Mistakes, and Comments, Modern Quantum Mechanics, 2nd Edition},
