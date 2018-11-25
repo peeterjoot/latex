@@ -9,12 +9,13 @@ my $refTextPost = '' ;
 
 my $defaultSz = '0.3' ;
 my $defaultPath ;
-#$defaultPath = "../../figures/ece1229" ;
-#$defaultPath = "../../figures/phy1520" ;
-#$defaultPath = "../../figures/ece1236" ;
-#$defaultPath = "../../figures/gabook/" ;
-#$defaultPath = "../../figures/ece1228-emt" ;
-$defaultPath = "../../figures/ece1505-convex-optimization" ;
+#$defaultPath = "../figures/ece1229-antenna" ;
+#$defaultPath = "../figures/phy1520-quantum" ;
+#$defaultPath = "../figures/ece1236-microwaves" ;
+#$defaultPath = "../figures/gabook/" ;
+#$defaultPath = "../figures/ece1228-electromagnetic-theory" ;
+#$defaultPath = "../figures/ece1505-convex-optimization" ;
+$defaultPath = "../figures/phy2403-quantum-field-theory" ;
 
 foreach (sort keys %all)
 {
@@ -24,6 +25,9 @@ foreach (sort keys %all)
    {
       $path = "$defaultPath/$path" ;
    }
+
+   #die unless ( $path =~ m,/, );
+   die "incorrect path to figure '$path'" unless ( -e "$path" );
 
 # why
    die "Expect 'Fig' in the filename '$path'\n" unless ( $path =~ /(.*)Fig(.*)\.(.*)/ ) ;
