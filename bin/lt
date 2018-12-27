@@ -129,6 +129,7 @@ my $definition ;
 my $lemma ;
 my $axiom ;
 my $problem ;
+my $digression ;
 my $oproblem ;
 my $section ;
 my $option ;
@@ -149,6 +150,7 @@ GetOptions (
    'file=s'        => \$filename,
    'example:s'     => \$example,
    'theorem:s'     => \$theorem,
+   'digression'    => \$digression,
    'lemma:s'       => \$lemma,
    'definition:s'  => \$definition,
    'axiom:s'       => \$axiom,
@@ -188,6 +190,11 @@ if ( defined $example )
 if ( defined $theorem )
 {
    print "\\maketheorem{$theorem}{thm:$filename:$number}{\n" ;
+}
+
+if ( defined $digression )
+{
+   print "\\makedigression{\n" ;
 }
 
 if ( defined $definition )
@@ -319,6 +326,11 @@ if ( defined $axiom )
 if ( defined $theorem )
 {
    print "} % theorem\n\n" ;
+}
+
+if ( defined $digression )
+{
+   print "} % digression\n\n" ;
 }
 
 if ( defined $subproblem )

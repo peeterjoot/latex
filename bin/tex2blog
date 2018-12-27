@@ -64,6 +64,11 @@ my $pf = 0 ;
 # stackexchange (physics and math)
 my $se = 0 ; 
 
+my $piazza = 0 ; 
+
+# facebook messenger supports \( ... \) !
+my $messenger = 0 ; 
+
 # wikipedia output.
 my $wiki = 0 ; 
 
@@ -144,15 +149,17 @@ GetOptions(
    'wordpress!'   => \$wordpress,
    'pf!'          => \$pf,
    'se!'          => \$se,
+   'piazza!'      => \$piazza,
+   'messenger!'    => \$messenger,
    'wikipedia!'   => \$wiki,
    'html!'        => \$mathmlHtml,
    'file=s'       => \$filebase,
    'help!'        => \$showUsage,
 ) ;
 
-if ( $showUsage or (1 != ( $mathml + $wordpress + $mathmlHtml + $pf + $wiki + $se )) )
+if ( $showUsage or (1 != ( $mathml + $wordpress + $mathmlHtml + $pf + $wiki + $se + $piazza + $messenger )) )
 {
-   die "usage: tex2blog -f filenameWithoutTexSuffix {-pf | -se | -html | -mathml | -wordpress -wiki} [-help]"
+   die "usage: tex2blog -f filenameWithoutTexSuffix {-pf | -se | -piazza | -messenger | -html | -mathml | -wordpress -wiki} [-help]"
 }
 
 if ( $mathmlHtml )
@@ -296,7 +303,7 @@ sub processOneEquation
 
          $eq = "<latexSepLineStart>\\begin{aligned}$eq\\end{aligned} $curEquationLabel$fgString<latexSepLineEnd>" ;
       }
-      elsif ( $se )
+      elsif ( $se or $piazza or $messenger )
       {
          $eq = "<latexSepLineStart>$eq<latexSepLineEnd>" ;
       }
@@ -530,7 +537,23 @@ sub processRest
    my $bProcessingItemize = 0 ;
    my $bProcessingEnumerate = 0 ;
 
-   if ( $se )
+   if ( $piazza )
+   {
+      $latexInlineStart = '$$' ;
+      $latexInlineEnd = '$$' ;
+
+      $latexSepLineStart = '$$' ;
+      $latexSepLineEnd = '$$' ;
+   }
+   elsif ( $messenger )
+   {
+      $latexInlineStart = '\(' ;
+      $latexInlineEnd = '\)' ;
+
+      $latexSepLineStart = '\(' ;
+      $latexSepLineEnd = '\)' ;
+   }
+   elsif ( $se )
    {
       $latexInlineStart = '$' ;
       $latexInlineEnd = '$' ;

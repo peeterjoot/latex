@@ -1611,6 +1611,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
 %%
 %%
 
+@misc{ wiki:Mandelstam,
+    author = "{Wikipedia contributors}",
+    title = "Mandelstam variables --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2018",
+    url = "https://en.wikipedia.org/w/index.php?title=Mandelstam_variables&oldid=823315705",
+    note = "[Online; accessed 26-November-2018]"
+  }
+
 @misc{ wiki:yukawaPotential,
     author = "{Wikipedia contributors}",
     title = "Yukawa potential --- {Wikipedia}{,} The Free Encyclopedia",
@@ -1657,6 +1665,46 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
     howpublished = "Youtube",
     url = "https://www.youtube.com/watch?v=ATCGNBdFTEc",
     note = "[Online; accessed 22-January-2017]"
+}
+
+@misc{tobiasQFTL10FeynmanDiagrams,
+    title = "QFT lecture 10, Feynman diagrams for phi-fourth theory.",
+    author = "Dr. Tobias Osborne",
+    howpublished = "Youtube",
+    url = "https://youtu.be/s7yzFHOBbtw?list=PLDfPUNusx1EpRs-wku83aqYSKfR5fFmfS",
+    note = "[Online; accessed 03-December-2018]"
+}
+
+@misc{tobiasQFTL15Dirac,
+    title = "QFT lecture 15, Dirac equation.",
+    author = "Dr. Tobias Osborne",
+    howpublished = "Youtube",
+    url = "https://youtu.be/J2lV8uNx0LU?list=PLDfPUNusx1EpRs-wku83aqYSKfR5fFmfS",
+    note = "[Online; accessed 18-December-2018]"
+}
+
+@misc{tobiasQFTL16,
+    title = "QFT lecture 16, Quantizing the Dirac field.",
+    author = "Dr. Tobias Osborne",
+    howpublished = "Youtube",
+    url = "https://youtu.be/d9CaukdxMkg?list=PLDfPUNusx1EpRs-wku83aqYSKfR5fFmfS",
+    note = "[Online; accessed 23-December-2018]"
+}
+
+@misc{tobiasQFTL15DiracSquarerootPdotSigma,
+    title = "QFT lecture 15, Dirac equation, boost from stationary frame.",
+    author = "Dr. Tobias Osborne",
+    howpublished = "Youtube",
+    url = "https://youtu.be/J2lV8uNx0LU?list=PLDfPUNusx1EpRs-wku83aqYSKfR5fFmfS&t=4328",
+    note = "[Online; accessed 18-December-2018]"
+}
+
+@misc{tobiasQFTL12Smatrix,
+    title = "QFT lecture 12, The S matrix.",
+    author = "Dr. Tobias Osborne",
+    howpublished = "Youtube",
+    url = "https://youtu.be/9mIG_yQI1Wg?list=PLDfPUNusx1EpRs-wku83aqYSKfR5fFmfS",
+    note = "[Online; accessed 03-December-2018]"
 }
 
 @misc{tisdellHolder,
@@ -2500,6 +2548,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
   url = {http://www.damtp.cam.ac.uk/user/tong/dynamics.htm},
   year = 2012,
   note = "[Online; accessed 22-May-2014]",
+}
+
+@webpage{LukeQFT,
+  author={Dr. Michael Luke},
+  title={{Quantum Field Theory.}},
+  url = {https://www.physics.utoronto.ca/~luke/PHY2403F/References_files/lecturenotes.pdf},
+  year = 2011,
+  note = "[Online; accessed 05-Dec-2018]",
 }
 
 @webpage{TongQFT,

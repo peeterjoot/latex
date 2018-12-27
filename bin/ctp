@@ -1,4 +1,4 @@
-n=4
+n=5
 
 #CCCNNNN=PHY2403H
 #courseDesc=qft
@@ -44,7 +44,7 @@ perl -p -i \
 $base.tex
 
 #for i in 1 2 3 4 5 6 7 8 9 10 ; do 
-for i in 1 2 3 4 ; do 
+for i in 1 2 3 ; do 
    cp ../latex/problemSetNProblemM.tex $cdirpath/${base}Problem$i.tex
    perl -p -i \
 -e "s/{N}/$n/g;s/{M}/$i/g;s/courseDesc/$courseDesc/g;s/CCYY/$y/;" \
