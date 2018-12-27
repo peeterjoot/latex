@@ -1,0 +1,38 @@
+#!/usr/bin/perl -p
+
+# convert a latex .out file to a text 'table of contents'
+
+s/\\BOOKMARK .*\]//;
+s/}% \d+//;
+
+#{section.1.14}{1.14 Multivector wedge product.}{chapter.1
+#{subsection.1.14.1}{1.14.1 Problems.}{section.1.14
+#{section.1.15}{1.15 Projection and rejection.}{chapter.1
+#   {section.1.16}{1.16 Normal f
+s/{([^\.]+)\.([^}]+)}{\2 /\2 /;
+
+#{appendix.D}{Index}{
+#{dummy.4}{Bibliography}{
+#{Copyright.1}{Copyright}{
+#{Document Version.1}{Document Version}{
+#{Dedication.1}{Dedication}{
+#{chapter*.3}{Preface}{
+#{tableofcontents.1}{Contents}{chapter*.3
+#{lof.1}{List of Figures}{chapter*.3
+s/^{appendix..}{//;
+s/^{dummy..}{//;
+s/^{Copyright..}{//;
+s/^{Document Version..}{//;
+s/^{Dedication..}{//;
+s/^{chapter\*..}{//;
+s/^{tableofcontents..}{//;
+s/^{lof..}{//;
+
+# remove the rest:
+# 2.2 Curvilinear coordinates.}{chapter.2
+# 2.2.1 Two parameters.}{section.2.2
+s/}.*//;
+
+# last tweaks:
+s/\\\)/)/;
+s/\\\(/(/;
