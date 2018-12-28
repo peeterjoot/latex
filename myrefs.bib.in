@@ -1667,6 +1667,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
     note = "[Online; accessed 22-January-2017]"
 }
 
+@misc{tobiasQFTL6,
+    title = "QFT lecture 6, Causality.",
+    author = "Dr. Tobias Osborne",
+    howpublished = "Youtube",
+    url = "https://youtu.be/1aujG95k35M?list=PLDfPUNusx1EpRs-wku83aqYSKfR5fFmfS",
+    note = "[Online; accessed 27-December-2018]"
+}
+
 @misc{tobiasQFTL10FeynmanDiagrams,
     title = "QFT lecture 10, Feynman diagrams for phi-fourth theory.",
     author = "Dr. Tobias Osborne",
