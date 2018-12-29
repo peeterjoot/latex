@@ -287,6 +287,13 @@
   year={1998}
 }
 
+@book{itzykson1980quantum,
+  title={Quantum field theory},
+  author={Itzykson, Claude and Zuber, Jean-Bernard},
+  year={1980},
+  publisher={McGraw-Hill}
+}
+
 @book{einstein2015relativity,
   title={Relativity: The special and the general theory},
   author={Einstein, Albert},
