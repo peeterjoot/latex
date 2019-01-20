@@ -94,8 +94,16 @@ if ( defined $ENV{'REVCOUNTSTART'} )
    $revcountstart = $ENV{'REVCOUNTSTART'};
 }
 
-my $r = `git rev-list --count HEAD` ; chomp $r;
-$r = $r - $revcountstart;
+my $r;
+if ( defined $ENV{'REVISIONNUMBER'} )
+{
+   $r = $ENV{'REVISIONNUMBER'};
+}
+else
+{
+   $r = `git rev-list --count HEAD` ; chomp $r;
+   $r = $r - $revcountstart;
+}
 
 open my $ofh, ">$filename.$$" or die ;
 
@@ -174,7 +182,13 @@ Sources for this notes compilation can be found in the github repository
 
 The last commit ($commitDate), associated with this pdf was
 
-$lastCommit@ ;
+$lastCommit
+
+@ ;
+
+   if ( -e "version_bash.tex" ) {
+      $output .= `cat version_bash.tex`;
+   }
 }
 elsif ( $onlyrepo )
 {
