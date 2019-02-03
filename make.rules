@@ -81,12 +81,14 @@ clean ::
 	rm -f $(CLEAN_TARGETS)
 	rm -rf ./.revinfo
 
+ifndef MYCLASSICTHESIS
 #
 # probably want a way to specialize this.  Don't have index markup on everything for example.
 # Do I want a separate appendix section necessarily? (yes, for phy485, maybe not for older stuff).
 #
 $(THISBOOK).tex : ../latex/classicthesis_mine/ClassicThesis.tex
 	cp $< $@
+endif
 
 mathematica.tex : ../METADATA $(HOME)/physicsplay/mathematica/METADATA
 	(cd .. ; ./METADATA -mathematica -latex -$(THISBOOK) $(REDACTED) > $(THISDIR)/mathematica.tex)
