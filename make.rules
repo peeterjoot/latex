@@ -150,6 +150,13 @@ ifneq ($(QPDF),)
 all :: opt/$(THISBOOK).pdf
 endif
 
+dist:
+	cp $(THISBOOK).pdf $(THISBOOK).$(VER).pdf
+
+# a for annotate (releases).
+tag:
+	git tag -a $(THISBOOK).$(VER).pdf
+
 kbordermatrix.sty : 
 	wget http://tug.ctan.org/macros/generic/misc/kbordermatrix.sty
 	#wget http://ctan.bppro.ca/macros/generic/misc/kbordermatrix.sty

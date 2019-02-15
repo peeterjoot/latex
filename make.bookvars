@@ -1,6 +1,8 @@
 # this makefile fragment defines variables that are common to all the makefiles associated with my classic-thesis template
 # based "books"
 
+VER ?= $(shell grep Version .revinfo/gitCommitDateAsMyTime.tex | sed 's/.*{//;s/.xspace.*//;')
+
 include ../latex/make.vars
 
 SOURCE_DIRS += FrontBackmatter
