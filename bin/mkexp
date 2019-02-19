@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo 'peeters`exportForLatex["'$1'", '$1']'
