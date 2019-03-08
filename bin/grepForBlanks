@@ -1,0 +1,84 @@
+#!/usr/bin/perl
+
+#-----------------------------------------------------------------------------
+# POD Format Documentation.  Read "perldoc perlpod" for an example.
+# When done, check syntax with "podchecker".
+
+=head1 NAME
+
+grepForBlanks - <one-line-description>
+
+=head1 SYNOPSIS
+
+grepForBlanks [--help] [<options>]
+
+=head1 DESCRIPTION
+
+It looks like somebody used the perl skeleton without filling in the POD
+documentation for their particular script.  Shame on them!!!
+
+Options:
+
+=over 4
+
+=item --foo=bar
+
+Blah.
+
+=back
+
+=head1 SUPPORTED PLATFORMS
+
+ Unix (Linux verified)
+
+=head1 SUPPORT
+
+ Send email to peeter.joot@lzlabs.com
+
+=head1 AUTHORS
+
+ Peeter Joot
+
+=cut
+
+#-----------------------------------------------------------------------------
+
+use strict ;
+use warnings ;
+use Getopt::Long ;
+use Pod::Usage ;
+
+# Suppress sourcing of users' .bashrc files in invoked shells
+delete $ENV{'ENV'} ;
+delete $ENV{'BASH_ENV'} ;
+
+# Set STDOUT and STDERR to unbuffered
+select STDERR ; $| = 1 ;
+select STDOUT ; $| = 1 ;
+
+my $myName = '' ;
+my $before = 1;
+
+($myName = $0) =~ s@.*[/\\]@@ ;
+
+#Getopt::Long::Configure( 'pass_through' ) ;
+GetOptions (
+   'help'               => sub { pod2usage(-verbose => 2) ; },
+   'before!'            => \$before,
+   'after'              => sub { $before = 0; },
+) or pod2usage(-verbose => 0) ;
+
+my $cmd;
+
+if ( $before )
+{
+   $cmd = qq(grep -B1 -ne 'begin{equation' -e 'begin{dmath' -e 'begin{subeq' -e 'begin{eqnarray' *.tex);
+}
+else
+{
+   $cmd = qq(grep -A1 -ne 'end{equation' -e 'end{dmath' -e 'end{subeq' -e 'end{eqnarray' *.tex);
+}
+
+$cmd .= q(| grep -e '-$' | grep -v '^--$' | sed 's/-/:/;s/-/:x/;');
+
+system( $cmd );
