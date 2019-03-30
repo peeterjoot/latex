@@ -25,7 +25,9 @@ CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis/FrontBackmatter/DirtyTit
 ifndef HAVE_OWN_CONTENTS
 MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/Contents.tex
 endif
+ifndef HAVE_CUSTOM_DEDICATION
 MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/Dedication.tex
+endif
 MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/Titleback.tex
 ifndef HAVE_OWN_TITLEPAGE
 MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/Titlepage.tex
