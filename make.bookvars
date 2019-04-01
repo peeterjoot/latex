@@ -18,7 +18,11 @@ GENERATED_SOURCES += currentBookCopyright.tex
 #
 # straight from the classicthesis template:
 BIBLIOGRAPHY_PATH ?= classicthesis
-CLASSICTHESIS_FRONTBACK_FILES += ../latex/$(BIBLIOGRAPHY_PATH)/FrontBackmatter/Bibliography.tex
+ifeq ($(BIBLIOGRAPHY_PATH),classicthesis)
+CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis/FrontBackmatter/Bibliography.tex
+else
+MY_CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis_mine/FrontBackmatter/Bibliography.tex
+endif
 CLASSICTHESIS_FRONTBACK_FILES += ../latex/classicthesis/FrontBackmatter/DirtyTitlepage.tex
 
 # slightly modified from the classicthesis template:
