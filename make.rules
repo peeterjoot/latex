@@ -86,7 +86,7 @@ ifndef MYCLASSICTHESIS
 # probably want a way to specialize this.  Don't have index markup on everything for example.
 # Do I want a separate appendix section necessarily? (yes, for phy485, maybe not for older stuff).
 #
-$(THISBOOK).tex : ../latex/classicthesis_mine/ClassicThesis.tex
+$(THISBOOK).tex : $(BOOKTEMPLATE)
 	cp $< $@
 endif
 

@@ -10,6 +10,9 @@ SOURCE_DIRS += FrontBackmatter
 
 GENERATED_SOURCES += currentBookCopyright.tex
 
+BOOKTEMPLATE ?= ../latex/classicthesis_mine/ClassicThesis.tex
+#BOOKTEMPLATE := ../latex/classicthesis_mine/ClassicThesis2.tex
+
 #---------------------------------------------------------------
 # dependencies for these don't appear to work.  i.e. 
 # update ../latex/classicthesis_mine/FrontBackmatter/Dedication.tex

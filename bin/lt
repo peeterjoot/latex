@@ -18,6 +18,7 @@ lt [--help] [--example='blah blah']
             [--subequations]
             [--option]
             [--listing]
+            [--proof]
             [--labelbox=up|down|default]
 
 =head1 DESCRIPTION
@@ -144,6 +145,7 @@ my $enum ;
 my $labelbox ;
 my $listing ;
 my $eqstar = 0;
+my $proof;
 
 #Getopt::Long::Configure( 'pass_through' ) ;
 GetOptions ( 
@@ -161,6 +163,7 @@ GetOptions (
    'section:s'     => \$section,
    'citep:s'       => \$citep,
    'eqstar!'       => \$eqstar,
+   'proof!'        => \$proof,
    'equation:i'    => \$equation,
    'subequations!' => \$subequations,
    'subproblem=s'  => \$subproblem,
@@ -251,6 +254,11 @@ if ( defined $subequations )
    print "\\begin{subequations}\n\\label{eqn:$filename:n}\n" ;
 }
 
+if ( defined $proof )
+{
+   print "\\begin{proof}\n" ;
+}
+
 if ( defined $listing )
 {
    print "\\begin{lstlisting}\n" .
@@ -286,6 +294,11 @@ if ( !$printedEquation && defined $vmatrix )
 if ( $eqstar )
 {
    print "\\end{equation*}\n" ;
+}
+
+if ( defined $proof )
+{
+   print "\\end{proof}\n" ;
 }
 
 if ( defined $option )
