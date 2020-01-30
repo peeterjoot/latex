@@ -287,6 +287,20 @@
   year={1998}
 }
 
+@book{widder1989advanced,
+  title={Advanced calculus},
+  author={Widder, David Vernon},
+  year={1989},
+  publisher={Courier Corporation}
+}
+
+@book{blum2006rogue,
+  title={Rogue state: A guide to the world's only superpower},
+  author={Blum, William},
+  year={2006},
+  publisher={Zed Books}
+}
+
 @book{itzykson1980quantum,
   title={Quantum field theory},
   author={Itzykson, Claude and Zuber, Jean-Bernard},
@@ -1680,6 +1694,22 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
     howpublished = "Youtube",
     url = "https://www.youtube.com/watch?v=ATCGNBdFTEc",
     note = "[Online; accessed 22-January-2017]"
+}
+
+@misc{pjtwocylinders,
+    title = "Two cylinders",
+    author = "Peeter Joot",
+    howpublished = "Youtube",
+    url = "https://www.youtube.com/watch?v=OiJTopWx7L8",
+    note = "[Online; accessed 07-July-2019]"
+}
+
+@misc{surfaceTensionNationalCommitteeforFluidMechanics,
+    title = "Surface Tension",
+    author = "National Committee for Fluid Mechanics",
+    howpublished = "Youtube",
+    url = "https://youtu.be/MUlmkSnrAzM",
+    note = "[Online; accessed 07-July-2019]"
 }
 
 @misc{tobiasQFTL6,
