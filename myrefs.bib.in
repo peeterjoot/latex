@@ -604,6 +604,15 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
          url = "http://dlmf.nist.gov/",
         note = "Online companion to \citep{Olver:2010:NHMF}"}
 
+@misc{NIST:DLMF2020,
+         key = "{\relax DLMF}",
+       title = "{\it NIST Digital Library of Mathematical Functions}",
+howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
+         url = "http://dlmf.nist.gov/",
+        note = "F.~W.~J. Olver, A.~B. {Olde Daalhuis}, D.~W. Lozier, B.~I. Schneider,
+                R.~F. Boisvert, C.~W. Clark, B.~R. Miller, B.~V. Saunders,
+                H.~S. Cohl, and M.~A. McClain, eds."}
+
 @article{bernardi2012higgs,
   title={Higgs bosons: theory and searches},
   author={Bernardi, G and Carena, M and Junk, T},
