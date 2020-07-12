@@ -637,6 +637,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   note = "[Online; accessed 03-Dec-2015]",
 }
 
+@webpage{gizmaawindrose,
+  title={{Various Julia plotting examples using PyPlot}},
+  author={gizmaa},
+  url = "https://gist.github.com/gizmaa/7214002",
+  year=2020,
+  note = "[Online; accessed 01-Jun-2020]",
+}
+
 @webpage{poppitzphy450,
    author = "Erich Poppitz",
    title = "Relativistic Electrodynamics",
@@ -1705,6 +1713,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
     note = "[Online; accessed 22-January-2017]"
 }
 
+@misc{youtubeVectorVillian,
+    title = "A quantity represented by an arrow with direction and magnitude.",
+    author = "Vector; Supervillian extrordinare (Despicable Me).",
+    howpublished = "Youtube",
+    url = "https://www.youtube.com/watch?v=bOIe0DIMbI8",
+    note = "[Online; accessed 11-July-2020]"
+}
+
 @misc{pjtwocylinders,
     title = "Two cylinders",
     author = "Peeter Joot",
@@ -2364,6 +2380,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
     howpublished = "Mathematics Stack Exchange",
     note = "URL:http://math.stackexchange.com/q/447754 (version: 2013-07-20)",
     url = "http://math.stackexchange.com/q/447754"
+}
+
+@misc{stackoverflowMathematicaTrigSimplify,
+    title = "Proper way to simplify integral result in Mathematica given integer constraints",
+    author = "rcollyer (https://stackoverflow.com/users/198315/rcollyer)",
+    howpublished = "Stack Overflow",
+    note = "URL:https://stackoverflow.com/a/7754414/189270 (version: 2020-04-13)",
+    url = "https://stackoverflow.com/a/7754414/189270"
 }
 
 @webpage{sakurai2014modernErrata,
