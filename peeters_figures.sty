@@ -3,6 +3,7 @@
 \RequirePackage{caption}
 \RequirePackage{subfig}
 \RequirePackage{stackengine}
+%\RequirePackage{subcaption}
 
 % http://tex.stackexchange.com/a/94063/15 -- used in \imageFigure below.
 \def\md@envname{mdframed}
@@ -75,6 +76,19 @@
    \end{figure}%
 }
 
+%\newcommand{\twoCaptionedFiguresFloat}[5]{%
+%   \begin{figure}[htp]%
+%       \centering%
+%       \subfloat[][]{\includegraphics[#5]{#1}}%
+%       \caption{#6}%
+%       \label{#7}%
+%       \qquad%
+%       \subfloat[][]{\includegraphics[#5]{#2}}%
+%       \caption{#3}%
+%       \label{#4}%
+%   \end{figure}%
+%}
+
 \newcommand{\twoFiguresNonFloat}[5]{%
    \begin{center}%
        \captionsetup{type=figure}%
@@ -85,6 +99,19 @@
        \label{#4}%
    \end{center}%
 }
+
+%\newcommand{\twoCaptionedFiguresNonFloat}[5]{%
+%   \begin{center}%
+%       \captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+%       \stackunder{\includegraphics[#5]{#1}}{(a)}%
+%       \caption{#6}%
+%       \label{#7}%
+%       \qquad%
+%       \stackunder{\includegraphics[#5]{#2}}{(b)}%
+%       \caption{#3}%
+%       \label{#4}%
+%   \end{center}%
+%}
 
 % \imageTwoFigures{path1}{path2}{fancy plots}{fig:blah}{scale=0.3}
 \newcommand{\imageTwoFigures}[5]{%
@@ -98,6 +125,22 @@
     \fi%
   \fi%
 }
+
+% This was an attempt to caption (and refer to) subfigures, as in:
+% https://tex.stackexchange.com/a/181233/15
+%
+% \imageTwoCaptionedFigures{path1}{path2}{fancy plot a}{fig:blaha}{scale=0.3}{fancy plot b}{fig:blahb}
+%\newcommand{\imageTwoCaptionedFigures}[5]{%
+%  \ifinner%
+%    \twoCaptionedFiguresNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
+%  \else%
+%    \ifx\@currenvir\md@envname%
+%       \twoCaptionedFiguresNonFloat{#1}{#2}{#3}{#4}{#5}#6}{#7}%
+%    \else%
+%       \twoCaptionedFiguresFloat{#1}{#2}{#3}{#4}{#5}#6}{#7}%
+%    \fi%
+%  \fi%
+%}
 
 %--------------------------------------------------------------------------------------------------
 
