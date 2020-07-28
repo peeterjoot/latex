@@ -1,3 +1,9 @@
 #!/bin/bash
 
-sed 's/Copyright ©/Copyright (C)/' | latexindent | sed 's/Copyright (C)/Copyright ©/'
+#sed --in-place -e 's/Copyright \xc2\xa9 20/Copyright (C) 20/' $*
+perl -pi -e 's/Copyright.*20(..) Peeter Joot/Copyright (C) 20$1 Peeter Joot/' $*
+
+## /usr/share/texlive/texmf-dist/scripts/latexindent/defaultSettings.yaml
+latexindent -w -y ${HOME}/project/latex/bin/defaultSettings.yaml $*
+
+sed -ie 's/\t/    /g' $*
