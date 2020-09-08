@@ -141,6 +141,13 @@ while (<$fh>)
 close $fh ;
 
 my $url = `git config --get remote.origin.url` ; chomp $url ;
+# git config --get remote.origin.url
+# gives:
+#git@github.com:peeterjoot/GAelectrodynamics.git
+# want:
+#https://github.com/peeterjoot/GAelectrodynamics.git
+$url =~ s,git\@github.com:,https://github.com/,;
+
 #"https://github.com/peeterjoot/physicsplay" ;
 #$url = "http://goo.gl/j2GYL" ;
 my $output = '' ;
