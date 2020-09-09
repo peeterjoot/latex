@@ -102,12 +102,13 @@
   note = "[Online; accessed 22-May-2014]",
 }
 
-@article{baylis-2007,
-  author={W.~E. Baylis and R. Cabrera and D. Keselica},
-  title={{Quantum/Classical Interface: Fermion Spin}},
-  url={http://www.citebase.org/abstract?id=oai:arXiv.org:0710.3144},
-  journal={arxiv.},
-  year={2007}
+@misc{baylis-2007,
+    title={Quantum/Classical Interface: Fermion Spin},
+    author={W. E. Baylis and R. Cabrera and D. Keselica},
+    year={2007},
+    eprint={0710.3144},
+    archivePrefix={arXiv},
+    primaryClass={quant-ph}
 }
 
 @article{de2004understanding,
@@ -2685,8 +2686,9 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 
 @webpage{ShankarPhy200,
   author={Professor Ramamurti Shankar},
-  title={{Fundamentals of Physics.}},
-  url = {http://oyc.yale.edu/physics/fundamentals-of-physics/},
+  title={{Fundamentals of Physics I.}},
+  url = {https://oyc.yale.edu/physics/phys-200},
+  note = "[Online; accessed 08-Sep-2020]",
 }
 
 @webpage{TongClas,
