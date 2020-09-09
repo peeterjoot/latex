@@ -39,7 +39,7 @@
   number={1},
   pages={221--231},
   year={2011},
-  url = "http://arxiv.org/abs/0809.4526",
+  url = "https://arxiv.org/abs/0809.4526",
   publisher={Springer}
 }
 
@@ -97,7 +97,7 @@
   journal={Sitzungsber Preuss Akad Wiss Berlin},
   volume={1916},
   pages={189},
-  url={http://arxiv.org/pdf/physics/9905030v1.pdf},
+  url={https://arxiv.org/pdf/physics/9905030v1.pdf},
   year={1916},
   note = "[Online; accessed 22-May-2014]",
 }
@@ -600,15 +600,15 @@
 @misc{NIST:DLMF,
          key = "{\relax DLMF}",
        title = "{NIST Digital Library of Mathematical Functions}",
-howpublished = "http://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
-         url = "http://dlmf.nist.gov/",
+howpublished = "https://dlmf.nist.gov/, Release 1.0.10 of 2015-08-07",
+         url = "https://dlmf.nist.gov/",
         note = "Online companion to \citep{Olver:2010:NHMF}"}
 
 @misc{NIST:DLMF2020,
          key = "{\relax DLMF}",
        title = "{\it NIST Digital Library of Mathematical Functions}",
-howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
-         url = "http://dlmf.nist.gov/",
+howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
+         url = "https://dlmf.nist.gov/",
         note = "F.~W.~J. Olver, A.~B. {Olde Daalhuis}, D.~W. Lozier, B.~I. Schneider,
                 R.~F. Boisvert, C.~W. Clark, B.~R. Miller, B.~V. Saunders,
                 H.~S. Cohl, and M.~A. McClain, eds."}
@@ -617,7 +617,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   title={Higgs bosons: theory and searches},
   author={Bernardi, G and Carena, M and Junk, T},
   journal={Reviews of Particle Data Group: Hypothetical particles and Concepts},
-  url = "http://pdg.lbl.gov/2012/reviews/rpp2012-rev-higgs-boson.pdf",
+  url = "https://pdg.lbl.gov/2012/reviews/rpp2012-rev-higgs-boson.pdf",
   year={2012}
 }
 
@@ -632,9 +632,17 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{hydrogenWavefunctionsMIT,
   title={{Hydrogen Atom}},
   author={Troy Van Voorhis, Robert Field},
-  url = "http://ocw.mit.edu/courses/chemistry/5-61-physical-chemistry-fall-2013/lecture-notes/MIT5_61F13_Lecture19-20.pdf",
+  url = "https://web.archive.org/web/20151223223535/http://ocw.mit.edu/courses/chemistry/5-61-physical-chemistry-fall-2013/lecture-notes/MIT5_61F13_Lecture19-20.pdf",
   year=2013,
   note = "[Online; accessed 03-Dec-2015]",
+}
+
+@webpage{adiabaticFreeDictionary,
+  title={{American Heritage® Dictionary of the English Language, Fifth Edition. (2011)}},
+  author={American Heritage Dictionary},
+  url = "https://www.thefreedictionary.com/adiabatic",
+  year=2011,
+  note = "[Online; accessed 08-Sep-2020]",
 }
 
 @webpage{jlaragonveraGeometricAlgebra,
@@ -688,7 +696,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{theDeltaFunctionPotential,
   title={{The Delta-Function Potential}},
   author={Douglas E. Fields},
-  url = "http://panda.unm.edu/Courses/Fields/Phys491/Notes/TISEDelta.pdf",
+  url = "http://physics.unm.edu/Courses/Fields/Phys491/Notes/TISEDelta.pdf",
   year=2004,
   note = "[Online; accessed 11-Feb-2015]",
 }
@@ -728,9 +736,9 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{digidbivsdbd,
   title={{Antenna Gain: dBi vs. dBd Decibel Detail}},
   author={digi.com},
-  url = "http://www.digi.com/support/kbase/kbaseresultdetl?id=2146",
-  year=2015,
-  note = "[Online; accessed 15-Jan-2015]",
+  url = "https://www.digi.com/support/knowledge-base/antenna-gain-dbi-vs-dbd-decibel-detail",
+  year=2017,
+  note = "[Online; accessed 08-Sep-2020]",
 }
 
 @webpage{mikeAndPeeterHBpresentation,
@@ -768,7 +776,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{ocw:svd,
   title={{Singular Value Decomposition}},
   author={Gilbert Strang},
-  url = "http://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-29-singular-value-decomposition/",
+  url = "https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-29-singular-value-decomposition/",
   year=2014,
   note = "[Online; accessed 30-Sept-2014]",
 }
@@ -1643,7 +1651,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @book{schiller:mm,
   title={{Motion Mountain}},
   author={Schiller, C.},
-  url="http://www.motionmountain.net/",
+  url="https://www.motionmountain.net/",
   lastchecked =	 {1 July 2009},
   publisher={Internet},
   year={2009}
@@ -1671,6 +1679,14 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
     year = "2018",
     url = "https://en.wikipedia.org/w/index.php?title=Mandelstam_variables&oldid=823315705",
     note = "[Online; accessed 26-November-2018]"
+  }
+
+@misc{ wiki:LemniscateCurvatureFigure,
+    author = "{Wikipedia contributors}",
+    title = "Lemniscate nebeneinander animated",
+    year = "2012",
+    url = "https://en.wikipedia.org/wiki/File:Lemniscate_nebeneinander_animated.gif",
+    note = "[Online; accessed 08-Sep-2020]"
   }
 
 @misc{ wiki:yukawaPotential,
@@ -1845,7 +1861,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Ellipse --- Wikipedia{,} The Free Encyclopedia",
    year = "2015",
-   url = "http://en.wikipedia.org/w/index.php?title=Ellipse&oldid=650116160",
+   url = "https://en.wikipedia.org/w/index.php?title=Ellipse&oldid=650116160",
    note = "[Online; accessed 9-March-2015]"
  }
 
@@ -1853,7 +1869,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Impedance of free space --- Wikipedia{,} The Free Encyclopedia",
    year = "2014",
-   url = "http://en.wikipedia.org/w/index.php?title=Impedance_of_free_space&oldid=605562113",
+   url = "https://en.wikipedia.org/w/index.php?title=Impedance_of_free_space&oldid=605562113",
    note = "[Online; accessed 23-February-2015]"
  }
 
@@ -1861,7 +1877,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Delta potential --- Wikipedia{,} The Free Encyclopedia",
    year = "2014",
-   url = "http://en.wikipedia.org/w/index.php?title=Delta_potential&oldid=639877343",
+   url = "https://en.wikipedia.org/w/index.php?title=Delta_potential&oldid=639877343",
    note = "[Online; accessed 12-February-2015]"
  }
 
@@ -1869,7 +1885,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Magnetic potential --- Wikipedia{,} The Free Encyclopedia",
    year = "2015",
-   url = "http://en.wikipedia.org/w/index.php?title=Magnetic_potential&oldid=642387563",
+   url = "https://en.wikipedia.org/w/index.php?title=Magnetic_potential&oldid=642387563",
    note = "[Online; accessed 5-February-2015]"
 }
 
@@ -1877,7 +1893,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Triple product --- Wikipedia{,} The Free Encyclopedia",
    year = "2014",
-   url = "http://en.wikipedia.org/w/index.php?title=Triple_product&oldid=632571868",
+   url = "https://en.wikipedia.org/w/index.php?title=Triple_product&oldid=632571868",
    note = "[Online; accessed 21-December-2014]"
 }
 
@@ -1885,7 +1901,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Norton's theorem --- Wikipedia{,} The Free Encyclopedia",
    year = "2014",
-   url = "http://en.wikipedia.org/w/index.php?title=Norton\%27s_theorem&oldid=629143825",
+   url = "https://en.wikipedia.org/w/index.php?title=Norton\%27s_theorem&oldid=629143825",
    note = "[Online; accessed 1-November-2014]"
  }
 
@@ -1893,7 +1909,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Singular value decomposition --- Wikipedia{,} The Free Encyclopedia",
    year = "2014",
-   url = "http://en.wikipedia.org/w/index.php?title=Singular_value_decomposition&oldid=626808859",
+   url = "https://en.wikipedia.org/w/index.php?title=Singular_value_decomposition&oldid=626808859",
    note = "[Online; accessed 2-October-2014]"
  }
 
@@ -1901,7 +1917,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Brillouin zone --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Brillouin_zone&oldid=554772892",
+   url = "https://en.wikipedia.org/w/index.php?title=Brillouin_zone&oldid=554772892",
    note = "[Online; accessed 30-September-2013]"
  }
 
@@ -1909,7 +1925,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Allotropes of boron --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Allotropes_of_boron&oldid=570995646",
+   url = "https://en.wikipedia.org/w/index.php?title=Allotropes_of_boron&oldid=570995646",
    note = "[Online; accessed 26-September-2013]"
  }
 
@@ -1918,7 +1934,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Poisoning of Alexander Litvinenko --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Poisoning_of_Alexander_Litvinenko&oldid=574237492",
+   url = "https://en.wikipedia.org/w/index.php?title=Poisoning_of_Alexander_Litvinenko&oldid=574237492",
    note = "[Online; accessed 24-September-2013]"
  }
 
@@ -1926,7 +1942,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Bravais lattice --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Bravais_lattice&oldid=566779959",
+   url = "https://en.wikipedia.org/w/index.php?title=Bravais_lattice&oldid=566779959",
    note = "[Online; accessed 21-September-2013]"
  }
 
@@ -1934,7 +1950,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Euler-Maclaurin formula --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Euler\%E2\%80\%93Maclaurin_formula&oldid=552061467",
+   url = "https://en.wikipedia.org/w/index.php?title=Euler\%E2\%80\%93Maclaurin_formula&oldid=552061467",
    note = "[Online; accessed 28-May-2013]"
 }
 
@@ -1942,7 +1958,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Bernoulli number --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Bernoulli_number&oldid=556109551",
+   url = "https://en.wikipedia.org/w/index.php?title=Bernoulli_number&oldid=556109551",
    note = "[Online; accessed 28-May-2013]"
 }
 
@@ -1950,7 +1966,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Bernoulli polynomials --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Bernoulli_polynomials&oldid=548729909",
+   url = "https://en.wikipedia.org/w/index.php?title=Bernoulli_polynomials&oldid=548729909",
    note = "[Online; accessed 28-May-2013]"
 }
 
@@ -1958,7 +1974,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Thermal de Broglie wavelength --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Thermal_de_Broglie_wavelength&oldid=537005564",
+   url = "https://en.wikipedia.org/w/index.php?title=Thermal_de_Broglie_wavelength&oldid=537005564",
    note = "[Online; accessed 21-February-2013]"
  }
 
@@ -1966,7 +1982,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Sphere packing --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=Sphere_packing&oldid=535578971",
+   url = "https://en.wikipedia.org/w/index.php?title=Sphere_packing&oldid=535578971",
    note = "[Online; accessed 31-January-2013]"
  }
 
@@ -1974,7 +1990,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "N-sphere --- Wikipedia{,} The Free Encyclopedia",
    year = "2013",
-   url = "http://en.wikipedia.org/w/index.php?title=N-sphere&oldid=534164100",
+   url = "https://en.wikipedia.org/w/index.php?title=N-sphere&oldid=534164100",
    note = "[Online; accessed 26-January-2013]"
  }
 
@@ -1982,7 +1998,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Einstein solid --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Einstein_solid&oldid=530449869",
+   url = "https://en.wikipedia.org/w/index.php?title=Einstein_solid&oldid=530449869",
    note = "[Online; accessed 2-January-2013]"
  }
 
@@ -1990,7 +2006,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Optical cavity --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Optical_cavity&oldid=505038610",
+   url = "https://en.wikipedia.org/w/index.php?title=Optical_cavity&oldid=505038610",
    note = "[Online; accessed 6-December-2012]"
  }
 
@@ -1998,7 +2014,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Planck's law --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Planck\%27s_law&oldid=519029140",
+   url = "https://en.wikipedia.org/w/index.php?title=Planck\%27s_law&oldid=519029140",
    note = "[Online; accessed 23-October-2012]"
  }
 
@@ -2008,7 +2024,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "J. Pahikkala",
    title = "Fresnel formulas --- PlanetMath",
    year = "2012",
-   url = "http://planetmath.org/fresnelformulas",
+   url = "https://planetmath.org/fresnelformulas",
    note = "[Online; accessed 22-May-2014]",
  }
 
@@ -2016,7 +2032,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Curvature --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Curvature&oldid=488021394",
+   url = "https://en.wikipedia.org/w/index.php?title=Curvature&oldid=488021394",
    note = "[Online; accessed 25-April-2012]"
  }
 
@@ -2024,7 +2040,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Compatibility (mechanics) --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Compatibility_(mechanics)&oldid=463812965",
+   url = "https://en.wikipedia.org/w/index.php?title=Compatibility_(mechanics)&oldid=463812965",
    note = "[Online; accessed 23-April-2012]"
  }
 
@@ -2032,7 +2048,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Infinitesimal strain theory --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Infinitesimal_strain_theory&oldid=478640283",
+   url = "https://en.wikipedia.org/w/index.php?title=Infinitesimal_strain_theory&oldid=478640283",
    note = "[Online; accessed 23-April-2012]"
  }
 
@@ -2040,7 +2056,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Saint-Venant's compatibility condition --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Saint-Venant\%27s_compatibility_condition&oldid=436103127",
+   url = "https://en.wikipedia.org/w/index.php?title=Saint-Venant\%27s_compatibility_condition&oldid=436103127",
    note = "[Online; accessed 23-April-2012]"
  }
 
@@ -2048,7 +2064,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Taylor-Couette flow --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Taylor\%E2\%80\%93Couette_flow&oldid=483281707",
+   url = "https://en.wikipedia.org/w/index.php?title=Taylor\%E2\%80\%93Couette_flow&oldid=483281707",
    note = "[Online; accessed 10-April-2012]"
  }
 
@@ -2056,7 +2072,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Plateau-Rayleigh instability --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Plateau\%E2\%80\%93Rayleigh_instability&oldid=478499841",
+   url = "https://en.wikipedia.org/w/index.php?title=Plateau\%E2\%80\%93Rayleigh_instability&oldid=478499841",
    note = "[Online; accessed 4-April-2012]"
  }
 
@@ -2065,7 +2081,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Kelvin-Helmholtz instability --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Kelvin\%E2\%80\%93Helmholtz_instability&oldid=484301421",
+   url = "https://en.wikipedia.org/w/index.php?title=Kelvin\%E2\%80\%93Helmholtz_instability&oldid=484301421",
    note = "[Online; accessed 4-April-2012]"
  }
 
@@ -2074,7 +2090,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Rayleigh-Taylor instability --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Rayleigh\%E2\%80\%93Taylor_instability&oldid=483569989",
+   url = "https://en.wikipedia.org/w/index.php?title=Rayleigh\%E2\%80\%93Taylor_instability&oldid=483569989",
    note = "[Online; accessed 4-April-2012]"
  }
 
@@ -2083,7 +2099,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Blasius boundary layer --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Blasius_boundary_layer&oldid=480776115",
+   url = "https://en.wikipedia.org/w/index.php?title=Blasius_boundary_layer&oldid=480776115",
    note = "[Online; accessed 28-March-2012]"
  }
 
@@ -2091,7 +2107,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Froude number --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Froude_number&oldid=479498080",
+   url = "https://en.wikipedia.org/w/index.php?title=Froude_number&oldid=479498080",
    note = "[Online; accessed 27-March-2012]"
  }
 
@@ -2099,7 +2115,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Non-Newtonian fluid --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Non-Newtonian_fluid&oldid=479813690",
+   url = "https://en.wikipedia.org/w/index.php?title=Non-Newtonian_fluid&oldid=479813690",
    note = "[Online; accessed 17-March-2012]"
 }
 
@@ -2107,7 +2123,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Newtonian fluid --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Newtonian_fluid&oldid=460346447",
+   url = "https://en.wikipedia.org/w/index.php?title=Newtonian_fluid&oldid=460346447",
    note = "[Online; accessed 17-March-2012]"
 }
 
@@ -2115,7 +2131,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Stokes boundary layer --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Stokes_boundary_layer&oldid=466077125",
+   url = "https://en.wikipedia.org/w/index.php?title=Stokes_boundary_layer&oldid=466077125",
    note = "[Online; accessed 16-March-2012]"
 }
 
@@ -2123,7 +2139,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Rayleigh wave --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Rayleigh_wave&oldid=473693354",
+   url = "https://en.wikipedia.org/w/index.php?title=Rayleigh_wave&oldid=473693354",
    note = "[Online; accessed 4-February-2012]"
 }
 
@@ -2131,7 +2147,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Love wave --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=Love_wave&oldid=474355253",
+   url = "https://en.wikipedia.org/w/index.php?title=Love_wave&oldid=474355253",
    note = "[Online; accessed 4-February-2012]"
  }
 
@@ -2139,7 +2155,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "S-wave --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=S-wave&oldid=468110825",
+   url = "https://en.wikipedia.org/w/index.php?title=S-wave&oldid=468110825",
    note = "[Online; accessed 1-February-2012]"
  }
 
@@ -2147,7 +2163,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "P-wave --- Wikipedia{,} The Free Encyclopedia",
    year = "2012",
-   url = "http://en.wikipedia.org/w/index.php?title=P-wave&oldid=474119033",
+   url = "https://en.wikipedia.org/w/index.php?title=P-wave&oldid=474119033",
    note = "[Online; accessed 1-February-2012]"
  }
 
@@ -2155,7 +2171,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Rheology --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Rheology&oldid=466714610",
+   url = "https://en.wikipedia.org/w/index.php?title=Rheology&oldid=466714610",
    note = "[Online; accessed 11-January-2012]"
  }
 
@@ -2163,7 +2179,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Steradian --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Steradian&oldid=462086182",
+   url = "https://en.wikipedia.org/w/index.php?title=Steradian&oldid=462086182",
    note = "[Online; accessed 4-December-2011]"
  }
 
@@ -2171,7 +2187,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Bessel function --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Bessel_function&oldid=461096228",
+   url = "https://en.wikipedia.org/w/index.php?title=Bessel_function&oldid=461096228",
    note = "[Online; accessed 4-December-2011]"
  }
 
@@ -2179,7 +2195,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Spin.orbit interaction --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Spin\%E2\%80\%93orbit_interaction&oldid=451606718",
+   url = "https://en.wikipedia.org/w/index.php?title=Spin\%E2\%80\%93orbit_interaction&oldid=451606718",
    note = "[Online; accessed 2-November-2011]"
  }
 
@@ -2187,7 +2203,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "WKB approximation --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=WKB_approximation&oldid=453833635",
+   url = "https://en.wikipedia.org/w/index.php?title=WKB_approximation&oldid=453833635",
    note = "[Online; accessed 19-October-2011]"
  }
 
@@ -2195,7 +2211,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Geometric phase --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "//en.wikipedia.org/w/index.php?title=Geometric_phase&oldid=430834614",
+   url = "https://en.wikipedia.org/w/index.php?title=Geometric_phase&oldid=430834614",
    note = "[Online; accessed 9-October-2011]"
  }
 
@@ -2203,7 +2219,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Adiabatic theorem --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "//en.wikipedia.org/w/index.php?title=Adiabatic_theorem&oldid=447547448",
+   url = "https://en.wikipedia.org/w/index.php?title=Adiabatic_theorem&oldid=447547448",
    note = "[Online; accessed 9-October-2011]"
  }
 
@@ -2211,7 +2227,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Parity (physics) --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Parity_(physics)&oldid=443202131",
+   url = "https://en.wikipedia.org/w/index.php?title=Parity_(physics)&oldid=443202131",
    note = "[Online; accessed 16-September-2011]"
  }
 
@@ -2219,7 +2235,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Zeeman effect --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Zeeman_effect&oldid=450367887",
+   url = "https://en.wikipedia.org/w/index.php?title=Zeeman_effect&oldid=450367887",
    note = "[Online; accessed 15-September-2011]"
 }
 
@@ -2227,7 +2243,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Tensor product --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Tensor_product&oldid=418002023",
+   url = "https://en.wikipedia.org/w/index.php?title=Tensor_product&oldid=418002023",
    note = "[Online; accessed 21-June-2011]"
  }
 
@@ -2235,7 +2251,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Lorentz transformation --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Lorentz_transformation&oldid=424507400",
+   url = "https://en.wikipedia.org/w/index.php?title=Lorentz_transformation&oldid=424507400",
    note = "[Online; accessed 20-April-2011]"
 }
 
@@ -2243,7 +2259,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Angle of incidence --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Angle_of_incidence&oldid=421647114",
+   url = "https://en.wikipedia.org/w/index.php?title=Angle_of_incidence&oldid=421647114",
    note = "[Online; accessed 11-April-2011]"
  }
 
@@ -2251,7 +2267,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Faraday's law of induction --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Faraday\%27s_law_of_induction&oldid=416715237",
+   url = "https://en.wikipedia.org/w/index.php?title=Faraday\%27s_law_of_induction&oldid=416715237",
    note = "[Online; accessed 10-March-2011]"
 }
 
@@ -2259,7 +2275,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Electromagnetic tensor --- Wikipedia{,} The Free Encyclopedia",
    year = "2011",
-   url = "http://en.wikipedia.org/w/index.php?title=Electromagnetic_tensor&oldid=414989505",
+   url = "https://en.wikipedia.org/w/index.php?title=Electromagnetic_tensor&oldid=414989505",
    note = "[Online; accessed 27-February-2011]"
  }
 
@@ -2267,7 +2283,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Determinant --- Wikipedia{,} The Free Encyclopedia",
    year = "2010",
-   url = "http://en.wikipedia.org/w/index.php?title=Determinant&oldid=400983667",
+   url = "https://en.wikipedia.org/w/index.php?title=Determinant&oldid=400983667",
    note = "[Online; accessed 10-December-2010]"
 }
 
@@ -2275,7 +2291,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Laguerre polynomials --- Wikipedia{,} The Free Encyclopedia",
    year = "2010",
-   url = "http://en.wikipedia.org/w/index.php?title=Laguerre_polynomials&oldid=386787645",
+   url = "https://en.wikipedia.org/w/index.php?title=Laguerre_polynomials&oldid=386787645",
    note = "[Online; accessed 29-November-2010]"
 }
 
@@ -2283,7 +2299,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Green's function --- Wikipedia{,} The Free Encyclopedia",
    year = "2010",
-   url = "http://en.wikipedia.org/w/index.php?title=Green\%27s_function&oldid=391186019",
+   url = "https://en.wikipedia.org/w/index.php?title=Green\%27s_function&oldid=391186019",
    note = "[Online; accessed 20-November-2010]"
  }
 
@@ -2291,7 +2307,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Unitary matrix --- Wikipedia{,} The Free Encyclopedia",
    year = "2010",
-   url = "http://en.wikipedia.org/w/index.php?title=Unitary_matrix&oldid=355055911",
+   url = "https://en.wikipedia.org/w/index.php?title=Unitary_matrix&oldid=355055911",
    note = "[Online; accessed 28-July-2010]"
  }
 
@@ -2299,7 +2315,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Bra-ket notation --- Wikipedia{,} The Free Encyclopedia",
    year = "2010",
-   url = "http://en.wikipedia.org/w/index.php?title=Bra-ket_notation&oldid=388772534",
+   url = "https://en.wikipedia.org/w/index.php?title=Bra-ket_notation&oldid=388772534",
    note = "[Online; accessed 5-October-2010]"
  }
 
@@ -2307,7 +2323,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Table of spherical harmonics --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Table_of_spherical_harmonics&oldid=306902129",
+   url = "https://en.wikipedia.org/w/index.php?title=Table_of_spherical_harmonics&oldid=306902129",
    note = "[Online; accessed 9-August-2009]"
 }
 
@@ -2315,7 +2331,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Dekker's algorithm --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Dekker\%27s_algorithm&oldid=329540788",
+   url = "https://en.wikipedia.org/w/index.php?title=Dekker\%27s_algorithm&oldid=329540788",
    note = "[Online; accessed 4-December-2009]"
 }
 
@@ -2323,7 +2339,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Electromagnetic tensor --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Electromagnetic_tensor&oldid=299046047",
+   url = "https://en.wikipedia.org/w/index.php?title=Electromagnetic_tensor&oldid=299046047",
    note = "[Online; accessed 28-June-2009]"
  }
 
@@ -2331,7 +2347,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Pauli matrices --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Pauli_matrices&oldid=296796770",
+   url = "https://en.wikipedia.org/w/index.php?title=Pauli_matrices&oldid=296796770",
    note = "[Online; accessed 16-June-2009]"
  }
 
@@ -2339,7 +2355,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Lorentz force --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Lorentz_force&oldid=298631675",
+   url = "https://en.wikipedia.org/w/index.php?title=Lorentz_force&oldid=298631675",
    note = "[Online; accessed 25-June-2009]"
  }
 
@@ -2347,7 +2363,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Klein-Gordon equation --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Klein\%E2\%80\%93Gordon_equation&oldid=288115284",
+   url = "https://en.wikipedia.org/w/index.php?title=Klein\%E2\%80\%93Gordon_equation&oldid=288115284",
    note = "[Online; accessed 5-May-2009]"
  }
 
@@ -2355,7 +2371,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Schrödinger equation (Short heuristic derivation) --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Schr\%C3\%B6dinger_equation&oldid=299325461",
+   url = "https://en.wikipedia.org/w/index.php?title=Schr\%C3\%B6dinger_equation&oldid=299325461",
    note = "[Online; accessed 29-June-2009]"
  }
 
@@ -2363,7 +2379,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Wave vector --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Wave_vector&oldid=299450041",
+   url = "https://en.wikipedia.org/w/index.php?title=Wave_vector&oldid=299450041",
    note = "[Online; accessed 30-June-2009]"
  }
 
@@ -2371,7 +2387,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Wikipedia",
    title = "Relativistic Doppler effect --- Wikipedia{,} The Free Encyclopedia",
    year = "2009",
-   url = "http://en.wikipedia.org/w/index.php?title=Relativistic_Doppler_effect&oldid=298724264",
+   url = "https://en.wikipedia.org/w/index.php?title=Relativistic_Doppler_effect&oldid=298724264",
    note = "[Online; accessed 26-June-2009]"
  }
 
@@ -2384,10 +2400,19 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 
 @misc{triangleInequalityMathSE,
     title = "How to prove triangle inequality for $p$-norm?",
-    author = "robjohn (http://math.stackexchange.com/users/13854/robjohn)",
+    author = "robjohn (https://math.stackexchange.com/users/13854/robjohn)",
     howpublished = "Mathematics Stack Exchange",
-    note = "URL:http://math.stackexchange.com/q/447754 (version: 2013-07-20)",
-    url = "http://math.stackexchange.com/q/447754"
+    note = "URL:https://math.stackexchange.com/q/447754 (version: 2013-07-20)",
+    url = "https://math.stackexchange.com/q/447754"
+}
+
+@misc{velocityOfaMechanicalWave,
+    title = {How do you find the velocity function of a mechanical wave?},
+    author = {user1874},
+    howpublished = {Physics Stack Exchange},
+    note = {URL:https://physics.stackexchange.com/q/5026 (version: 2013-03-12)},
+    eprint = {https://physics.stackexchange.com/q/5026},
+    url = {https://physics.stackexchange.com/q/5026}
 }
 
 @misc{stackoverflowMathematicaTrigSimplify,
@@ -2411,7 +2436,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Dr. MV",
    title = "Evaluating definite integral of exp(i t^2)",
    year = "2015",
-   url = "http://math.stackexchange.com/a/1411084/359",
+   url = "https://math.stackexchange.com/a/1411084/359",
    note = "[Online; accessed 10-September-2015]"
  }
 
@@ -2436,16 +2461,16 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{ kdasgupta:ph409,
    author = "K Das Gupta",
    title = "Condensed Matter Physics (PH 409)",
-   year = "2012",
-   url = "http://www.phy.iitb.ac.in/~kdasgupta/lecture-notes/PH409AUG2011/PH409[Aug2012].pdf",
-   note = "[Online; accessed 22-May-2014]",
+   year = "2013",
+   url = "http://homepages.iitb.ac.in/~kdasgupta/pdf/PH409[Aug2013].pdf",
+   note = "[Online; accessed 08-Sep-2020]",
  }
 
 @webpage{ tung:bravais,
    author = "Raymond Tung",
    title = "Solid State Physics 745, Bravais Lattice",
    year = "2013",
-   url = "http://academic.brooklyn.cuny.edu/physics/tung/GC745S12/vg4-7.pdf",
+   url = "https://web.archive.org/web/20140630014416/http://academic.brooklyn.cuny.edu/physics/tung/GC745S12/vg4-7.pdf",
    note = "[Online; accessed 22-May-2014]",
  }
 
@@ -2453,7 +2478,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "John Baez",
    title = "Entropic forces",
    year = "2012",
-   url = "http://johncarlosbaez.wordpress.com/2012/02/01/entropic-forces/",
+   url = "https://johncarlosbaez.wordpress.com/2012/02/01/entropic-forces/",
    note = "[Online; accessed 22-May-2014]",
  }
 
@@ -2485,7 +2510,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "unknown",
    title = "How does GPS work",
    year = "2011",
-   url = "http://www.nasm.si.edu/gps/work.html",
+   url = "https://web.archive.org/web/20121109015403/http://airandspace.si.edu/gps/work.html",
    note = "[Online; accessed 24-Jan-2011]"
  }
 
@@ -2493,8 +2518,8 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Marshall Brain, Tom Harris",
    title = "How GPS Receivers Work",
    year = "2011",
-   url = "http://electronics.howstuffworks.com/gadgets/travel/gps.htm",
-   note = "[Online; accessed 22-May-2014]",
+   url = "https://electronics.howstuffworks.com/gadgets/travel/gps.htm",
+   note = "[Online; accessed 08-Sep-2020]",
  }
 
 @webpage{ bohrBerkleyPhy221,
@@ -2714,7 +2739,7 @@ howpublished = "http://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{osgoodFourier,
   author={Prof. Brad Osgood. },
   title={{The Fourier Transform and its Applications.}},
-  url = {http://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf},
+  url = {https://see.stanford.edu/materials/lsoftaee261/book-fall-07.pdf},
   year = 2007,
   note = "[Online; accessed 22-May-2014]",
 }

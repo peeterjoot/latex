@@ -147,6 +147,7 @@ my $url = `git config --get remote.origin.url` ; chomp $url ;
 # want:
 #https://github.com/peeterjoot/GAelectrodynamics.git
 $url =~ s,git\@github.com:,https://github.com/,;
+$url =~ s,\.git,,;
 
 #"https://github.com/peeterjoot/physicsplay" ;
 #$url = "http://goo.gl/j2GYL" ;
