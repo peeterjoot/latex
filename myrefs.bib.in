@@ -729,9 +729,9 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{allaboutcircuitsExampleCircuitsAndNetlists,
   title={{Example circuits and netlists}},
   author={Tony R. Kuphaldt},
-  url = "http://www.allaboutcircuits.com/vol_5/chpt_7/8.html",
+  url = "https://www.allaboutcircuits.com/textbook/reference/chpt-7/example-circuits-and-netlists/",
   year=2007,
-  note = "[Online; accessed 7-Jan-2015]",
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @webpage{digidbivsdbd,
@@ -761,9 +761,9 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{peeterjRoundingCpp,
   title={{Simple C++ double representation explorer}},
   author={Peeter Joot},
-  url = "https://github.com/peeterjoot/physicsplay/blob/master/notes/ece1254/samples/rounding.cpp",
+  url = "https://github.com/peeterjoot/ece1254-multiphysics/blob/master/samples/rounding.cpp",
   year=2014,
-  note = "[Online; accessed 29-Sept-2014]",
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @webpage{pivotingSparsity,
