@@ -573,7 +573,8 @@
   author={Lyons, M. and Silha, E. and Hay, B.},
   year={2002},
   publisher={IBM developerworks},
-  url = "http://www.ibm.com/developerworks/eserver/articles/powerpc.html",
+  url = "https://www.ibm.com/developerworks/systems/articles/powerpc.html",
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @misc{lea2005jsr,
@@ -673,9 +674,9 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{seriesResonance,
   title={{Simple Series Resonance}},
   author={EETech Media},
-  url = "http://www.allaboutcircuits.com/textbook/alternating-current/chpt-6/simple-series-resonance/",
+  url = "https://www.allaboutcircuits.com/textbook/alternating-current/chpt-6/simple-series-resonance/",
   year=2016,
-  note = "[Online; accessed 04-Feb-2016]",
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @webpage{qftLectureNotes,
@@ -750,14 +751,6 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   note = "[Online; accessed 5-Jan-2015]",
 }
 
-@webpage{butcherOrder,
-  title={{Order and stability for single and multivalue methods for differential equations}},
-  author={John Butcher},
-  url = "https://www.math.auckland.ac.nz/~butcher/CONFERENCES/SouthAfrica/WITS/wits-slides.pdf",
-  year=2014,
-  note = "[Online; accessed 19-Nov-2014]",
-}
-
 @webpage{peeterjRoundingCpp,
   title={{Simple C++ double representation explorer}},
   author={Peeter Joot},
@@ -793,9 +786,9 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{oxford:dictionary:money,
   title={{Oxford dictionaries, money}},
   author={Oxford dictionaries},
-  url = "http://www.oxforddictionaries.com/definition/english/money",
+  url = "https://www.lexico.com/definition/money",
   year=2014,
-  note = "[Online; accessed 11-July-2014]",
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @webpage{wolframThermalDiffusivity,
@@ -886,7 +879,8 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   title={{lock free papers and notes.}},
   author={Bencina, R.},
   year={2006},
-  url = "http://www.audiomulch.com/~rossb/code/lockfree/",
+  url = "http://www.rossbencina.com/code/lockfree?q=~rossb/code/lockfree",
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @conference{michael2002safe,
@@ -1415,8 +1409,8 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   author={Einstein, A.},
   year={1924},
   publisher={Pi Pr},
-  url="http://publicliterature.org/pdf/relat10.pdf",
-  note = "[Online; accessed 22-May-2014]",
+  url="http://www.f.waseda.jp/sidoli/Einstein_Relativity.pdf",
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @book{french1998iqp,
@@ -2459,14 +2453,6 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    note = "[Online; accessed 22-May-2014]",
  }
 
-@webpage{ kdasgupta:ph409,
-   author = "K Das Gupta",
-   title = "Condensed Matter Physics (PH 409)",
-   year = "2013",
-   url = "http://homepages.iitb.ac.in/~kdasgupta/pdf/PH409[Aug2013].pdf",
-   note = "[Online; accessed 08-Sep-2020]",
- }
-
 @webpage{ tung:bravais,
    author = "Raymond Tung",
    title = "Solid State Physics 745, Bravais Lattice",
@@ -2535,8 +2521,8 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    author = "Intel",
    title = "Intel Architectures Software Developer's Manuals.htm",
    year = "2009",
-   url = "http://www.intel.com/products/processor/manuals/",
-   note = "[Online; accessed 4-December-2009]"
+   url = "https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html",
+   note = "[Online; accessed 14-Sep-2020]",
 }
 
 @webpage{GresnigtRelCl,
@@ -2557,8 +2543,8 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{hyperphysicsSch,
   author={ Carl R. (Rod) Nave},
   title={{Free particle approach to the Schrodinger equation}},
-  url= {http://hyperphysics.phy-astr.gsu.edu/Hbase/quantum/Schr2.html},
-  lastchecked =	 {19 June 2009},
+  url= {http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/Schr2.html},
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @incollection{HestenesFormsGA,
@@ -2645,21 +2631,15 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   author={John Browne},
   chapter={{The Exterior Product}},
   year={2009},
-  url={https://sites.google.com/site/grassmannalgebra/thegrassmannalgebrabook/GrassmannAlgebraBook.pdf},
-  note = "[Online; accessed 22-May-2014]",
-}
-
-@webpage{lutSchwarzChildRadial,
-  author={Lut Mentz},
-  title={{Schwarzschild Radial Motion}},
-  url = {http://www.blatword.co.uk/ss_eom/Schwarzschild-Radial-Motion.html},
+  url={https://grassmannalgebra.com/contents.htm},
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @webpage{mathpagesSchwarzChildRadial,
   author={Kevin Brown},
   title={{Schwarzschild Radial Motion}},
-  url = {http://www.mathpages.com/rr/s6-04/6-04.htm},
-  note = "[Online; accessed 22-May-2014]",
+  url = {https://www.mathpages.com/rr/s6-04/6-04.htm},
+  note = "[Online; accessed 14-Sep-2020]",
 }
 
 @webpage{TongDynamics,
@@ -2733,7 +2713,7 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 @webpage{FitzRelEandM,
   author={ Richard Fitzpatrick },
   title={{ Relativity and electromagetism }},
-  url = {http://farside.ph.utexas.edu/teaching/jk1/relativity.pdf},
+  url = {https://web.archive.org/web/20120524110506if_/http://farside.ph.utexas.edu:80/teaching/jk1/relativity.pdf},
   pages={ 2.13 Solution of the inhomogeneous wave equation },
   note = "[Online; accessed 22-May-2014]",
 }

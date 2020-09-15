@@ -1,0 +1,43 @@
+# replaced with archive.org link.   perhaps better replacement:
+@webpage{FitzRelEandM,
+  author={ Richard Fitzpatrick },
+  title={{ Relativity and electromagetism }},
+  url = {http://farside.ph.utexas.edu/teaching/jk1/relativity.pdf},
+  pages={ 2.13 Solution of the inhomogeneous wave equation },
+  note = "[Online; accessed 22-May-2014]",
+}
+
+# switched to: https://grassmannalgebra.com/contents.htm
+@inbook{grassmanbookExteriorProduct,
+  title={{Grassman algebra book.}},
+  author={John Browne},
+  chapter={{The Exterior Product}},
+  year={2009},
+  url={https://sites.google.com/site/grassmannalgebra/thegrassmannalgebrabook/GrassmannAlgebraBook.pdf},
+  note = "[Online; accessed 22-May-2014]",
+}
+
+@webpage{butcherOrder,
+  title={{Order and stability for single and multivalue methods for differential equations}},
+  author={John Butcher},
+  url = "https://www.math.auckland.ac.nz/~butcher/CONFERENCES/SouthAfrica/WITS/wits-slides.pdf",
+  year=2014,
+  note = "[Online; accessed 19-Nov-2014]",
+}
+
+@webpage{ kdasgupta:ph409,
+   author = "K Das Gupta",
+   title = "Condensed Matter Physics (PH 409)",
+   year = "2013",
+   url = "http://homepages.iitb.ac.in/~kdasgupta/pdf/PH409[Aug2013].pdf",
+   note = "[Online; accessed 08-Sep-2020]",
+ }
+
+@webpage{lutSchwarzChildRadial,
+  author={Lut Mentz},
+  title={{Schwarzschild Radial Motion}},
+  url = {http://www.blatword.co.uk/ss_eom/Schwarzschild-Radial-Motion.html},
+  note = "[Online; accessed 14-Sep-2020]",
+}
+
+
