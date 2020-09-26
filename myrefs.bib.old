@@ -17,13 +17,7 @@
   note = "[Online; accessed 22-May-2014]",
 }
 
-@webpage{butcherOrder,
-  title={{Order and stability for single and multivalue methods for differential equations}},
-  author={John Butcher},
-  url = "https://www.math.auckland.ac.nz/~butcher/CONFERENCES/SouthAfrica/WITS/wits-slides.pdf",
-  year=2014,
-  note = "[Online; accessed 19-Nov-2014]",
-}
+
 
 @webpage{ kdasgupta:ph409,
    author = "K Das Gupta",

@@ -631,6 +631,14 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   note = "[Online; accessed 29-Sept-2018]",
 }
 
+@webpage{butcherOrder,
+  title={{Order and stability for single and multivalue methods for differential equations}},
+  author={John Butcher},
+  url = "https://www.math.auckland.ac.nz/~butcher/CONFERENCES/SouthAfrica/WITS/wits-slides.pdf",
+  year=2014,
+  note = "[Online; accessed 26-Sep-2020]",
+}
+
 @webpage{hydrogenWavefunctionsMIT,
   title={{Hydrogen Atom}},
   author={Troy Van Voorhis, Robert Field},
