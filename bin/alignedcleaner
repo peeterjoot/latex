@@ -1,0 +1,120 @@
+#!/usr/bin/perl
+
+#-----------------------------------------------------------------------------
+# POD Format Documentation.  Read "perldoc perlpod" for an example.
+# When done, check syntax with "podchecker".
+
+=head1 NAME
+
+alignedcleaner - <one-line-description>
+
+=head1 SYNOPSIS
+
+alignedcleaner [--help] [<options>]
+
+=head1 DESCRIPTION
+
+Find begin{aligned}...\end{aligned} that is unnecessary.
+
+Options:
+
+=over 4
+
+=item --filename=foo.tex
+
+Latex filename.
+
+=back
+
+=head1 SUPPORTED PLATFORMS
+
+ Unix (Linux verified)
+
+=head1 SUPPORT
+
+ Send email to peeterjoot@pm.me
+
+=head1 AUTHORS
+
+ Peeter Joot
+
+=cut
+
+#-----------------------------------------------------------------------------
+
+use strict ;
+use warnings ;
+use Getopt::Long ;
+use Pod::Usage ;
+
+# Suppress sourcing of users' .bashrc files in invoked shells
+delete $ENV{'ENV'} ;
+delete $ENV{'BASH_ENV'} ;
+
+# Set STDOUT and STDERR to unbuffered
+select STDERR ; $| = 1 ;
+select STDOUT ; $| = 1 ;
+
+my $myName = '' ;
+my $filename;
+
+($myName = $0) =~ s@.*[/\\]@@ ;
+
+GetOptions (
+   'filename=s'         => \$filename,
+   'help'               => sub { pod2usage(-verbose => 2) ; },
+) or pod2usage(-verbose => 0) ;
+
+die if ( !defined $filename );
+
+# Validate/handle options, and everything else...
+my $allInput = slurpit( $filename ) ;
+
+$allInput =~ s/
+\\begin{
+   (?:aligned)
+   (\**)                         # $1.  Is this a numbered equation or not.  '*' for no.
+}\s*
+(.*?)                            # $2.  The latex text including all whitespace (and the label)
+\\end{
+   (?:aligned)
+   \**                           # the matching * if any.
+}\s*
+/processOneEquation($1, $2)/sgemx ;
+
+open my $out, ">$filename.new" or die "could not open file '$filename.new' for write.\n";
+print $out $allInput;
+close $out;
+
+system( qq(mv -i $filename $filename.bak && mv -i $filename.new $filename) );
+
+exit ;
+
+sub processOneEquation
+{
+   my ($numbered, $latex) = @_;
+
+   # This won't clean all, since it will trigger on embedded matrices, determinants, ...
+   if ( $latex =~ /&/ || $latex =~ /\\\\/ ) {
+      return "\\begin{aligned}\n$latex\\end{aligned}\n";
+   }
+   else {
+      return $latex;
+   }
+}
+
+sub slurpit
+{
+   my ($filename) = @_;
+   my $rawLatex = '' ;
+
+   open my $fh, "<$filename" or die "could not open '$filename'\n" ;
+
+   while (<$fh>)
+   {
+      $rawLatex .= $_ ;
+   }
+   close $fh ;
+
+   return $rawLatex ;
+}
