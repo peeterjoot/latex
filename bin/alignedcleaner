@@ -94,6 +94,11 @@ sub processOneEquation
 {
    my ($numbered, $latex) = @_;
 
+   my @split = split(/&|\\\\/, $latex);
+   if ( scalar(@split) eq 2 ) {
+      $latex =~ s/&|\\\\//;
+   }
+
    # This won't clean all, since it will trigger on embedded matrices, determinants, ...
    if ( $latex =~ /&/ || $latex =~ /\\\\/ ) {
       return "\\begin{aligned}\n$latex\\end{aligned}\n";
