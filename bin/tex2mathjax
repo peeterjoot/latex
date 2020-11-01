@@ -12,7 +12,7 @@
 # - remove mathLabelBoxes -> underbrace
 # - \boxedEquation -> equation \boxed{}
 # - \cref removals.
-# - \makeexample, \maketheorem, \makedefinition
+# - \makeexample
 # - \captionedTable
 # - '\ ' slash space removal.
 # - http://tex.stackexchange.com/questions/178576/how-to-manually-format-ointctrclockwise
@@ -122,11 +122,14 @@ my %refnumbers ;
 
 my $bibString = processBib() ;
 
+my $thmcounter = 1;
+my $dfncounter = 1;
+
 foreach (@$rLines)
 {
    chomp ;
 
-   my $urlbase = 'http://peeterjoot.com/archives/math2018/' ;
+   my $urlbase = 'http://peeterjoot.com/archives/math2020/' ;
    s,\\renewcommand{\\basename}{(.*?)},\\blogpage{$urlbase/$1.pdf}, ;
    s,\\blogpage{(.*)},<a href="$1">[$urlMessage]</a>, ;
    #s,\\blogpage{(.*)},<a href="$1">[$urlMessage]</a> or <a href="$urlbase/ece1236.pdf">[Click here for my notes compilation for this class]</a>, ;
@@ -232,12 +235,34 @@ foreach (@$rLines)
    s,\\end{enumerate},</ol>, ;
    s,\\item,<li>, ;
 
-   s,\\makeoproblem{(.*?)}{(.*?)}{(.*?)},<h2>Question: $1 ($3)</h2>,;
-   s,\\makeproblem{(.*?)}{(.*?)},<h2>Question: $1</h2>,;
+   s,\\makeoproblem{(.*?)}{(.*?)}{(.*?)}{,<h2>Problem: $1 ($3)</h2>,;
+   s,\\makeproblem{(.*?)}{(.*?)}{,<h2>Problem: $1</h2>,;
+   s,} *% *problem,,;
+   s,\\shipoutAnswer,,;
    s,\\makesubproblem{(.*?)}{.*:(.*?)},<h2>($2)</h2>,;
-   s,\\makeanswer{.*?},<h2>Answer</h2>,;
+   s,\\makeanswer{.*?}{,<h2>Answer</h2>,;
+   s,} *% *answer,,;
    s,\\makeexample{(.*?)},<h2>Example: $1</h2>,;
    s,\\makeSubAnswer{(.*?)}{.*:(.*?)},<h2>($2)</h2>,;
+
+   # https://wordpress.com/forums/topic/creating-a-text-box-with-tint-background/
+   if ( s,\\maketheorem{(.*?)}{(.*?)}{,<h2>Theorem 1.$thmcounter: $1</h2><div style="width: 1000px; float: left; background-color: #D1EEEE; margin-left: 20px; padding: 10px;">, )
+   {
+      $thmcounter++;
+   }
+   s,} *% *theorem,</div>,;
+
+   if ( s,\\makedefinition{(.*?)}{(.*?)}{,<h2>Definition 1.$dfncounter: $1</h2><div style="width: 1000px; float: left; background-color: #D1EEEE; margin-left: 20px; padding: 10px;">, )
+   {
+      $dfncounter++;
+   }
+   s,} *\% *definition,</div>,;
+
+   s,\\begin{proof},<h3>Start proof:</h3>,;
+   s,\\end{proof},<h3>End proof.</h3>,;
+   s,\\diag,\\text{diag},;
+   s,bsmallmatrix,bmatrix,;
+   s,\\R{(.)},\\(\\mathbb{R}^$1\\),;
 
    if ( $katex )
    {

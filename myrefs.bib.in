@@ -663,6 +663,14 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   note = "[Online; accessed 07-Sep-2020]",
 }
 
+@webpage{gapauli,
+  title={{Mathematica modules for Geometric Algebra's GA(2,0), GA(3,0), and GA(1,3)}},
+  author={Peeter Joot},
+  url = "https://github.com/peeterjoot/gapauli",
+  year=2017,
+  note = "[Online; accessed 24-Oct-2020]",
+}
+
 @webpage{gizmaawindrose,
   title={{Various Julia plotting examples using PyPlot}},
   author={gizmaa},
@@ -1323,6 +1331,13 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   author={Zee, A.},
   year={2005},
   publisher={Universities Press}
+}
+
+@book{pjootQFT,
+  title={Quantum field theory},
+  author={Peeter Joot.},
+  year={2018},
+  publisher={Kindle Direct Publishing}
 }
 
 @book{hartle2003gravity,
