@@ -223,7 +223,7 @@
 #s/xialpha\b/x_{i_\\alpha}/g ;
 #s/xidotalpha/\\dot{x}_{i_\\alpha}/g ;
 #s/{QM}/{\\mathrm{QM}}/g ;
-s/[Ss]chro\b/Schr\\"{o}dinger/g; # Schrodinger
-s/[Ss]chrodinger/Schr\\"{o}dinger/g; # Schrodinger
-s/\\ee/\\epsilon/g ;
+#s/[Ss]chro\b/Schr\\"{o}dinger/g; # Schrodinger
+#s/[Ss]chrodinger/Schr\\"{o}dinger/g; # Schrodinger
+#s/\\ee/\\epsilon/g ;
 s/ +$//;
