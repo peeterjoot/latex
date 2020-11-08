@@ -22,6 +22,6 @@ PDFLATEXOPTS += -shell-escape
 # very early in the source file.
 PDFLATEXOPTS += --halt-on-error
 
-LATEXMK := max_print_line=1000 latexmk -pdf 
+LATEXMK := max_print_line=1000 latexmk$(EXESUFF) -pdf
 
 LATEXMK += $(foreach opt,$(PDFLATEXOPTS),-latexoption='$(opt)')

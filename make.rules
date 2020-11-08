@@ -1,3 +1,10 @@
+ISWINDOWS := $(shell uname -a | grep microsoft | wc -l)
+ifeq ($(ISWINDOWS),1)
+EXESUFF := .exe
+else
+EXESUFF :=
+endif
+
 LOCAL_COPIED_FILES += $(addprefix figures/,$(LOCAL_FIGURE_FILES))
 LOCAL_COPIED_FILES += $(addprefix listings/,$(LOCAL_LISTING_FILES))
 
@@ -135,7 +142,7 @@ $(COPIED_STY) : %.sty : ../latex/%.sty
 
 # http://tex.stackexchange.com/questions/24831/i-encountered-an-errorunknown-graphics-extension-eps
 %.pdf : %.eps
-	epstopdf $^ --outfile=$@
+	epstopdf$(EXESUFF) $^ --outfile=$@
 
 #%.pdf : %.svg
 #	$(INKSCAPE) $^ --export-pdf=$@
