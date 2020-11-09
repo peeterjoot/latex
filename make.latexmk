@@ -4,6 +4,10 @@ PDFLATEXOPTS += -file-line-error
 # http://tex.stackexchange.com/questions/57253/in-a-multiple-file-latex-document-is-there-a-way-to-tag-each-page-with-the-file#comment120203_57253
 PDFLATEXOPTS += -synctex=1
 
+#ifeq ($(ISWINDOWS),1)
+#PDFLATEXOPTS += -f
+#endif
+
 # for minted package:
 PDFLATEXOPTS += -shell-escape
 
