@@ -288,6 +288,20 @@
   year={1998}
 }
 
+@book{tattersall2005elementary,
+  title={Elementary number theory in nine chapters},
+  author={Tattersall, James J},
+  year={2005},
+  publisher={Cambridge University Press}
+}
+
+@book{strogatz2009calculus,
+  title={The calculus of friendship: What a teacher and a student learned about life while corresponding about math},
+  author={Strogatz, Steven and Joffray, Don},
+  year={2009},
+  publisher={Princeton University Press}
+}
+
 @book{widder1989advanced,
   title={Advanced calculus},
   author={Widder, David Vernon},

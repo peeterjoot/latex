@@ -38,13 +38,13 @@ my $filename ;
 my $showUsage = 0 ;
 
 my $urlMessage ;
-$urlMessage = "Click here for a PDF of this post with nicer formatting" ;
+$urlMessage = "If mathjax doesn't display properly for you, click here for a PDF of this post";
 
 my $r1 = qr/
      (                   # start of capture buffer 1
-     {                   # match an opening brace
+     \{                   # match an opening brace
          (?:               
-             [^{}]++     # one or more non braces, non backtracking
+             [^\{}]++     # one or more non braces, non backtracking
                |                  
              (?1)        # found { or }, so recurse to capture buffer 1
          )*                 
@@ -54,18 +54,18 @@ my $r1 = qr/
 
 my $r2 = qr/
      (                   # start of capture buffer 1
-     {                   # match an opening brace
+     \{                   # match an opening brace
          (?:               
-             [^{}]++     # one or more non braces, non backtracking
+             [^\{}]++     # one or more non braces, non backtracking
                |                  
              (?1)        # found { or }, so recurse to capture buffer 1
          )*                 
      }                   # match a closing brace
      )                   # end of capture buffer 1
      (                   # start of capture buffer 2
-     {                   # match an opening brace
+     \{                   # match an opening brace
          (?:               
-             [^{}]++     # one or more non braces, non backtracking
+             [^\{}]++     # one or more non braces, non backtracking
                |                  
              (?1)        # found { or }, so recurse to capture buffer 2
          )*                 
@@ -75,27 +75,27 @@ my $r2 = qr/
 
 my $r3 = qr/
      (                   # start of capture buffer 1
-     {                   # match an opening brace
+     \{                   # match an opening brace
          (?:               
-             [^{}]++     # one or more non braces, non backtracking
+             [^\{}]++     # one or more non braces, non backtracking
                |                  
              (?1)        # found { or }, so recurse to capture buffer 1
          )*                 
      }                   # match a closing brace
      )                   # end of capture buffer 1
      (                   # start of capture buffer 2
-     {                   # match an opening brace
+     \{                   # match an opening brace
          (?:               
-             [^{}]++     # one or more non braces, non backtracking
+             [^\{}]++     # one or more non braces, non backtracking
                |                  
              (?1)        # found { or }, so recurse to capture buffer 2
          )*                 
      }                   # match a closing brace
      )                   # end of capture buffer 2
      (                   # start of capture buffer 3
-     {                   # match an opening brace
+     \{                   # match an opening brace
          (?:               
-             [^{}]++     # one or more non braces, non backtracking
+             [^\{}]++     # one or more non braces, non backtracking
                |                  
              (?1)        # found { or }, so recurse to capture buffer 3
          )*                 
@@ -130,15 +130,15 @@ foreach (@$rLines)
    chomp ;
 
    my $urlbase = 'http://peeterjoot.com/archives/math2020/' ;
-   s,\\renewcommand{\\basename}{(.*?)},\\blogpage{$urlbase/$1.pdf}, ;
-   s,\\blogpage{(.*)},<a href="$1">[$urlMessage]</a>, ;
+   s,\\renewcommand\{\\basename}\{(.*?)},\\blogpage\{$urlbase/$1.pdf}, ;
+   s,\\blogpage\{(.*)},<a href="$1">[$urlMessage]</a>, ;
    #s,\\blogpage{(.*)},<a href="$1">[$urlMessage]</a> or <a href="$urlbase/ece1236.pdf">[Click here for my notes compilation for this class]</a>, ;
 
    # FIXME: these ones should be moved to the mathjax macros:
    s/\\overbar${r1}/\\overline{$1}/g ;
    s/\\cal(.)/\\mathcal{$1}/g ;
    s/\\hata/\\hat{a}/g ;
-   s/\\textAndIndex{(.*?)}/$1/g ;
+   s/\\textAndIndex\{(.*?)}/$1/g ;
    s/\\implies/\\Rightarrow/g ;
    s/\\conv/\\textrm{conv}/g ;
    s/\\dom/\\textrm{dom}/g ;
@@ -165,15 +165,15 @@ foreach (@$rLines)
    s/\\Real\b/\\textrm{Re}/ ;
    s/\\Imag\b/\\textrm{Im}/ ;
    s/^ *\\renewcommand.*// ;
-   s/^ *\\begin{subequations}.*// ;
-   s/^ *\\end{subequations}.*// ;
+   s/^ *\\begin\{subequations}.*// ;
+   s/^ *\\end\{subequations}.*// ;
    s/^ *\\newcommand.*// ;
    s/^ *\\usepackage.*// ;
    s/^ *\\beginArtNoToc.*// ;
    s/^ *\\EndArticle.*// ;
    s/^ *\\EndNoBibArticle.*// ;
-   s/^ *\\generatetitle{(.*)}/$1/ ;
-   s/^ *\\label{chap:.*// ;
+   s/^ *\\generatetitle\{(.*)}/$1/ ;
+   s/^ *\\label\{chap:.*// ;
 
    s/\\bc(.)/\\boldsymbol{\\mathcal{$1}}/g;
 
@@ -185,30 +185,30 @@ foreach (@$rLines)
 #         print "R: $_\n" ;
 #      }
 #   }
-   s/\\citep{(.*?)}/[$refnumbers{$1}]/g;
+   s/\\citep\{(.*?)}/[$refnumbers{$1}]/g;
 
    s,{ *\\em\s+(.*?)},<em>$1</em>,g;
 
 #\cref{fig:lecture2:lecture2Fig1}
-   s/\\cref{(.*?)Fig(\d+)}/fig. $2/g ;
+   s/\\cref\{(.*?)Fig(\d+)}/fig. $2/g ;
 
 #\imageFigure{../../figures/ece1254/lecture2Fig1}{Sample resistive circuit}{fig:lecture2:lecture2Fig1}{0.3}
-   s/^ *\\imageFigure{(.*?)Fig(\d+)}{(.*?)}.*/${1}Fig$2: fig. $2.  $3/ ;
+   s/^ *\\imageFigure\{(.*?)Fig(\d+)}\{(.*?)}.*/$\{1}Fig$2: fig. $2.  $3/ ;
 
-   s/\bcref{/ref{/g ;
+   s/\bcref\{/ref\{/g ;
    s/\beqnref/ref{/g ;
    s/\bEqnref/ref{/g ;
 
    s,{dmath},{equation}, ;
-   s,\\section{(.*)},<h2>$1</h2>,;
-   s,\\sectionAndIndex{(.*)},<h2>$1</h2>,;
-   s,\\subsection{(.*)},<h3>$1</h3>,;
-   s,\\paragraph{(.*)},<h3>$1</h3>,;
+   s,\\section\{(.*)},<h2>$1</h2>,;
+   s,\\sectionAndIndex\{(.*)},<h2>$1</h2>,;
+   s,\\subsection\{(.*)},<h3>$1</h3>,;
+   s,\\paragraph\{(.*)},<h3>$1</h3>,;
 
    if ( $katex )
    {
-      s/\\begin{equation}/[latex display="true"]/;
-      s/\\end{equation}/[\/latex]/;
+      s/\\begin\{equation}/[latex display="true"]/;
+      s/\\end\{equation}/[\/latex]/;
 
       # why does [\/latex] screw things up in this first replacement?
       unless ( /mbox/ )
@@ -226,43 +226,43 @@ foreach (@$rLines)
    }
 
    # FIXME: convert to mathjax macros:
-   s,\\largestIntGreaterThan{(.*)},\\lfloor$1\\rfloor,;
-   s,\\largestIntLessThan{(.*)},\\lceil$1\\rceil,;
+   s,\\largestIntGreaterThan\{(.*)},\\lfloor$1\\rfloor,;
+   s,\\largestIntLessThan\{(.*)},\\lceil$1\\rceil,;
 
-   s,\\begin{itemize},<ul>, ;
-   s,\\end{itemize},</ul>, ;
-   s,\\begin{enumerate},<ol>, ;
-   s,\\end{enumerate},</ol>, ;
+   s,\\begin\{itemize},<ul>, ;
+   s,\\end\{itemize},</ul>, ;
+   s,\\begin\{enumerate},<ol>, ;
+   s,\\end\{enumerate},</ol>, ;
    s,\\item,<li>, ;
 
-   s,\\makeoproblem{(.*?)}{(.*?)}{(.*?)}{,<h2>Problem: $1 ($3)</h2>,;
-   s,\\makeproblem{(.*?)}{(.*?)}{,<h2>Problem: $1</h2>,;
+   s,\\makeoproblem\{(.*?)}\{(.*?)}\{(.*?)}\{,<h2>Problem: $1 ($3)</h2>,;
+   s,\\makeproblem\{(.*?)}\{(.*?)}\{,<h2>Problem: $1</h2>,;
    s,} *% *problem,,;
    s,\\shipoutAnswer,,;
-   s,\\makesubproblem{(.*?)}{.*:(.*?)},<h2>($2)</h2>,;
-   s,\\makeanswer{.*?}{,<h2>Answer</h2>,;
+   s,\\makesubproblem\{(.*?)}\{.*:(.*?)},<h2>($2)</h2>,;
+   s,\\makeanswer\{.*?}\{,<h2>Answer</h2>,;
    s,} *% *answer,,;
-   s,\\makeexample{(.*?)},<h2>Example: $1</h2>,;
-   s,\\makeSubAnswer{(.*?)}{.*:(.*?)},<h2>($2)</h2>,;
+   s,\\makeexample\{(.*?)},<h2>Example: $1</h2>,;
+   s,\\makeSubAnswer\{(.*?)}\{.*:(.*?)},<h2>($2)</h2>,;
 
    # https://wordpress.com/forums/topic/creating-a-text-box-with-tint-background/
-   if ( s,\\maketheorem{(.*?)}{(.*?)}{,<h2>Theorem 1.$thmcounter: $1</h2><div style="width: 1000px; float: left; background-color: #D1EEEE; margin-left: 20px; padding: 10px;">, )
+   if ( s,\\maketheorem\{(.*?)}\{(.*?)}\{,<h2>Theorem 1.$thmcounter: $1</h2><div style="width: 1000px; float: left; background-color: #D1EEEE; margin-left: 20px; padding: 10px;">, )
    {
       $thmcounter++;
    }
    s,} *% *theorem,</div>,;
 
-   if ( s,\\makedefinition{(.*?)}{(.*?)}{,<h2>Definition 1.$dfncounter: $1</h2><div style="width: 1000px; float: left; background-color: #D1EEEE; margin-left: 20px; padding: 10px;">, )
+   if ( s,\\makedefinition\{(.*?)}\{(.*?)}\{,<h2>Definition 1.$dfncounter: $1</h2><div style="width: 1000px; float: left; background-color: #D1EEEE; margin-left: 20px; padding: 10px;">, )
    {
       $dfncounter++;
    }
    s,} *\% *definition,</div>,;
 
-   s,\\begin{proof},<h3>Start proof:</h3>,;
-   s,\\end{proof},<h3>End proof.</h3>,;
+   s,\\begin\{proof},<h3>Start proof:</h3>,;
+   s,\\end\{proof},<h3>End proof.</h3>,;
    s,\\diag,\\text{diag},;
    s,bsmallmatrix,bmatrix,;
-   s,\\R{(.)},\\(\\mathbb{R}^$1\\),;
+   s,\\R\{(.)},\\(\\mathbb\{R}^$1\\),;
 
    if ( $katex )
    {
@@ -752,7 +752,7 @@ sub processBib
 
 #print "bibdebug: '$_'\n" ;
 
-      s,\\begin{thebibliography}.*,<h1>References</h1>, ;
+      s,\\begin\{thebibliography}.*,<h1>References</h1>, ;
 
 # this doesn't always work.  Need multiline search, as biblines like:
 #
@@ -761,8 +761,8 @@ sub processBib
 #
 # ... are possible.
 
-      s/\\bibitem.*]{/\\bibitem{/ ;
-      if ( s/\\bibitem{(.*?)}// )
+      s/\\bibitem.*]\{/\\bibitem\{/ ;
+      if ( s/\\bibitem\{(.*?)}// )
       {
          $bibOut .= "\n\n" ;
          $refnumbers{$1} = $curNum ;
@@ -777,9 +777,9 @@ sub processBib
                   /\\expandafter/ or
                   0 ) ;
 
-         if ( /\\end{thebibliography}/ )
+         if ( /\\end\{thebibliography}/ )
          {
-            $bibOut =~ s,\\url{(.*?)},<a href="$1">$1</a>,;
+            $bibOut =~ s,\\url\{(.*?)},<a href="$1">$1</a>,;
             $bibOut .= "\n" ;
             last ;
          }
@@ -797,7 +797,7 @@ sub processBib
          #
          #In case it isn't do a first check here before stripping out {}'s
          #
-         s,\\url{(.*?)},<a href="$1">$1</a>,sg;
+         s,\\url\{(.*?)},<a href="$1">$1</a>,sg;
          s/{(.*?)}/$1/g ;
 
          #die "'$_'\n" if /\\url/ ;
