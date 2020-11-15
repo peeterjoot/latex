@@ -226,9 +226,9 @@ foreach (@$rLines)
    }
 
    # FIXME: convert to mathjax macros:
-   s,\\floor\*\{(.*)},\\lfloor$1\\rfloor,;
-   s,\\largestIntGreaterThan\{(.*)},\\lfloor$1\\rfloor,;
-   s,\\largestIntLessThan\{(.*)},\\lceil$1\\rceil,;
+   s,\\floor\*\{(.*?)},\\lfloor$1\\rfloor,;
+   s,\\largestIntGreaterThan\{(.*?)},\\lfloor$1\\rfloor,;
+   s,\\largestIntLessThan\{(.*?)},\\lceil$1\\rceil,;
 
    s,\\begin\{itemize},<ul>, ;
    s,\\end\{itemize},</ul>, ;
