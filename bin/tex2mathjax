@@ -124,6 +124,7 @@ my $bibString = processBib() ;
 
 my $thmcounter = 1;
 my $dfncounter = 1;
+my $lmacounter = 1;
 
 foreach (@$rLines)
 {
@@ -252,6 +253,12 @@ foreach (@$rLines)
       $thmcounter++;
    }
    s,} *% *theorem,</div>,;
+
+   if ( s,\\makelemma\{(.*?)}\{(.*?)}\{,<h2>Lemma 1.$lmacounter: $1</h2><div style="width: 1000px; float: left; background-color: #D1EEEE; margin-left: 20px; padding: 10px;">, )
+   {
+      $lmacounter++;
+   }
+   s,} *% *lemma,</div>,;
 
    if ( s,\\makedefinition\{(.*?)}\{(.*?)}\{,<h2>Definition 1.$dfncounter: $1</h2><div style="width: 1000px; float: left; background-color: #D1EEEE; margin-left: 20px; padding: 10px;">, )
    {
