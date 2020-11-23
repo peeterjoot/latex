@@ -1,3 +1,5 @@
+\RequirePackage{peeters_colorscheme}
+
 %-----------------------------------------------------------------------------------
 
 \RequirePackage{exercise}
@@ -7,8 +9,8 @@
    % remove the centerline that we have in exercise.sty
    % and add some color.  and add chapter numbers.
    %
-   %\renewcommand{\ExerciseHeader}{\leftline{\textbf{\large\color{DarkOliveGreen}{\ExerciseName\ \thechapter.\ExerciseHeaderNB} \color{Maroon}{\ExerciseHeaderTitle}\ExerciseHeaderOrigin\medskip}}}
-   %\renewcommand{\AnswerHeader}{\medskip\leftline{\textbf{\color{Maroon}{Answer for \ExerciseName}\ \color{DarkOliveGreen}{\thechapter.\ExerciseHeaderNB}}\smallskip}}
+   %\renewcommand{\ExerciseHeader}{\leftline{\textbf{\large\cDarkOliveGreen{\ExerciseName\ \thechapter.\ExerciseHeaderNB} \cMaroon{\ExerciseHeaderTitle}\ExerciseHeaderOrigin\medskip}}}
+   %\renewcommand{\AnswerHeader}{\medskip\leftline{\textbf{\cMaroon{Answer for \ExerciseName}\ \cDarkOliveGreen{\thechapter.\ExerciseHeaderNB}}\smallskip}}
    %-----------------------------------------------------------------------------
    % Better: chapter numbers within exersize counters.  Let the chngcntr package do the work (it also works properly across a chapter boundary)
    % http://tex.stackexchange.com/questions/27444/number-exercises-according-to-chapter
@@ -30,15 +32,15 @@
    \renewcounter{Example}[chapter]
    %-----------------------------------------------------------------------------
    % removed \large.  It made the problem header larger than the section headings.
-   %\renewcommand{\ExerciseHeader}{\leftline{\textbf{\large\color{DarkOliveGreen}{\ExerciseName\ \ExerciseHeaderNB} \color{Maroon}{\ExerciseHeaderTitle}\ExerciseHeaderOrigin\medskip}}}
+   %\renewcommand{\ExerciseHeader}{\leftline{\textbf{\large\cDarkOliveGreen{\ExerciseName\ \ExerciseHeaderNB} \cMaroon{\ExerciseHeaderTitle}\ExerciseHeaderOrigin\medskip}}}
 
    % with boldface: 
-   %\renewcommand{\ExerciseHeader}{\leftline{\textbf{\color{DarkOliveGreen}{\ExerciseName\ \ExerciseHeaderNB} \color{Maroon}{\ExerciseHeaderTitle}\ExerciseHeaderOrigin\medskip}}}
-   %\renewcommand{\AnswerHeader}{\medskip\leftline{\textbf{\color{Maroon}{Answer for \ExerciseName}\ \color{DarkOliveGreen}{\ExerciseHeaderNB}}\smallskip}}
+   %\renewcommand{\ExerciseHeader}{\leftline{\textbf{\cDarkOliveGreen{\ExerciseName\ \ExerciseHeaderNB} \cMaroon{\ExerciseHeaderTitle}\ExerciseHeaderOrigin\medskip}}}
+   %\renewcommand{\AnswerHeader}{\medskip\leftline{\textbf{\cMaroon{Answer for \ExerciseName}\ \cDarkOliveGreen{\ExerciseHeaderNB}}\smallskip}}
 
    % no boldface:
-   \renewcommand{\ExerciseHeader}{\leftline{\color{DarkOliveGreen}{\ExerciseName\ \ExerciseHeaderNB} \color{Maroon}{\ExerciseHeaderTitle}\ExerciseHeaderOrigin\medskip}}
-   \renewcommand{\AnswerHeader}{\medskip\leftline{\color{Maroon}{Answer for \ExerciseName}\ \color{DarkOliveGreen}{\ExerciseHeaderNB}\smallskip}}
+   \renewcommand{\ExerciseHeader}{\leftline{\cDarkOliveGreen{\ExerciseName\ \ExerciseHeaderNB} \cMaroon{\ExerciseHeaderTitle}\ExerciseHeaderOrigin\medskip}}
+   \renewcommand{\AnswerHeader}{\medskip\leftline{\cMaroon{Answer for \ExerciseName}\ \cDarkOliveGreen{\ExerciseHeaderNB}\smallskip}}
    %-----------------------------------------------------------------------------
 
 %-----------------------------------------------------------------------------------
@@ -52,13 +54,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Theorem}~\thetheorem};}}
+    {\strut \cDarkOliveGreen{Theorem}~\thetheorem};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Theorem}~\thetheorem:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Theorem}~\thetheorem:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%
@@ -86,13 +88,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Rule}~\theerule};}}
+    {\strut \cDarkOliveGreen{Rule}~\theerule};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Rule}~\theerule:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Rule}~\theerule:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%
@@ -120,13 +122,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Axiom}~\theaxiom};}}
+    {\strut \cDarkOliveGreen{Axiom}~\theaxiom};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Axiom}~\theaxiom:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Axiom}~\theaxiom:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%
@@ -153,13 +155,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Lemma}~\thelemma};}}
+    {\strut \cDarkOliveGreen{Lemma}~\thelemma};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Lemma}~\thelemma:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Lemma}~\thelemma:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%
@@ -186,13 +188,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Definition}~\thedefinition};}}
+    {\strut \cDarkOliveGreen{Definition}~\thedefinition};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Definition}~\thedefinition:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Definition}~\thedefinition:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%
@@ -220,13 +222,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,rounded corners,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Example}~\theexample};}}
+    {\strut \cDarkOliveGreen{Example}~\theexample};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,rounded corners,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Example}~\theexample:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Example}~\theexample:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%
@@ -257,13 +259,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,rounded corners,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Question}~\thequestionBox};}}
+    {\strut \cDarkOliveGreen{Question}~\thequestionBox};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,rounded corners,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Question}~\thequestionBox:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Question}~\thequestionBox:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%
@@ -293,13 +295,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Algorithm}~\thealgorithmbox};}}
+    {\strut \cDarkOliveGreen{Algorithm}~\thealgorithmbox};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Algorithm}~\thealgorithmbox:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Algorithm}~\thealgorithmbox:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%
@@ -330,13 +332,13 @@
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,rounded corners,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Aside}~\theaside};}}
+    {\strut \cDarkOliveGreen{Aside}~\theaside};}}
   }%
   {\mdfsetup{%
     frametitle={%
       \tikz[baseline=(current bounding box.east),outer sep=0pt]
       \node[line width=1pt,anchor=east,rectangle,rounded corners,draw=DarkOliveGreen,fill=white]
-    {\strut \color{DarkOliveGreen}{Aside}~\theaside:~\color{Maroon}{#1}};}}%
+    {\strut \cDarkOliveGreen{Aside}~\theaside:~\cMaroon{#1}};}}%
   }%
   \mdfsetup{innertopmargin=10pt,linecolor=DarkOliveGreen,%
             linewidth=1pt,topline=true,%

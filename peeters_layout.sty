@@ -34,7 +34,8 @@
 
    % also using caption for color captions:
    % http://www.latex-community.org/forum/viewtopic.php?f=45&p=42828
-   \PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
+   %\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
+   \RequirePackage{peeters_colorscheme}
    \RequirePackage{caption}
    \captionsetup{labelfont={color=DarkOliveGreen,bf},textfont={color=Maroon}}
 
@@ -45,7 +46,7 @@
    % http://tex.stackexchange.com/questions/50521/coloured-equation-number-without-changing-colour-of-reference-using-hyperref
    \makeatletter
    \let\mytagform@=\tagform@
-   \def\tagform@#1{\maketag@@@{\color{DarkOliveGreen}(#1)}}
+   \def\tagform@#1{\maketag@@@{\cDarkOliveGreen(#1)}}
    \makeatother
 
 %------------------------------------------------------------------------------------
@@ -93,7 +94,7 @@
    \RequirePackage{breqn}
    % and this one for dmath env equation numbers
    % http://tex.stackexchange.com/questions/57007/colored-equation-numbers-with-breqn-package/57008#57008
-   \renewcommand{\eqnumcolor}{\color{DarkOliveGreen}}
+   \renewcommand{\eqnumcolor}{\cDarkOliveGreen}
 
 %-----------------------------------------------------------------------------------
 % 
@@ -104,17 +105,17 @@
 % sections.  have removed all references).
 % could probably fix this like done in \imageFigure, making the \paragraph{} use ifinner predicate.
 % verify output.  have changed \titleformat for paragraph below instead.
-%\newcommand{\unnumberedSubsection}[1]{{\color{Maroon}{\paragraph{#1}}}}
+%\newcommand{\unnumberedSubsection}[1]{{\cMaroon{\paragraph{#1}}}}
 \newcommand{\unnumberedSubsection}[1]{\paragraph{#1}}
 
 \newcommand{\question}[0]{unnumberedSubsection{Question:}}
 \newcommand{\answer}[0]{unnumberedSubsection{Answer:}}
 
-%\newtheorem{mydefinition}[theorem]{\color{DarkOliveGreen}Definition}
+%\newtheorem{mydefinition}[theorem]{\cDarkOliveGreenDefinition}
 %
 %\newcommand{\makedefinition}[3]{
 %\begin{mydefinition}%
-%\emph{(\color{Maroon}{#1})}%
+%\emph{(\cMaroon{#1})}%
 %\label{#2}%
 %\par%
 %#3%
@@ -129,11 +130,11 @@
 %%name={Example},%
 %%counter={Example}%
 %%]%
-%%\noindent{\color{Maroon}{\rule{\linewidth}{0.5mm}}}
+%%\noindent{\cMaroon{\rule{\linewidth}{0.5mm}}}
 %%\par
 %%#3%
 %%\par\noindent
-%%{\color{Maroon}{\rule{\linewidth}{0.5mm}}}
+%%{\cMaroon{\rule{\linewidth}{0.5mm}}}
 %%\end{Exercise}%
 %%}
 %%%\addcontentsline{toc}{section}{Example \thechapter.\theExample\ #1}
@@ -179,7 +180,7 @@ ref={#1}
 %\paragraph{Solution Part \ref{#2}. #1}
 \newcommand{\makesubanswer}[2]{%
 \par%
-{\color{DarkOliveGreen}{Solution Part \ref{#2}.}}  {\color{Maroon}{\textit{#1}}}%
+{\cDarkOliveGreen{Solution Part \ref{#2}.}}  {\cMaroon{\textit{#1}}}%
 }
 
 \newcommand{\makeSubAnswer}[2]{%
@@ -195,18 +196,18 @@ ref={#1}
 % titlesec package based modifications, based on the titleformat's found in classicthesis.  I've added color:
 \newcommand{\myClassicThesisOverrides}[0]{%
    \titleformat{\chapter}[display]
-      {\relax}{\mbox{}\oldmarginpar{\hspace*{-5\baselineskip}\vspace*{-5\baselineskip}\color{DarkOliveGreen}\chapterNumber\thechapter}}{0pt}%
+      {\relax}{\mbox{}\oldmarginpar{\hspace*{-5\baselineskip}\vspace*{-5\baselineskip}\cDarkOliveGreen\chapterNumber\thechapter}}{0pt}%
       % this is too far to the right for 6x9 and for gabook*pdf.
-      %{\relax}{\mbox{}\oldmarginpar{\vspace*{-3\baselineskip}\color{DarkOliveGreen}\chapterNumber\thechapter}}{0pt}%
-      {\color{Maroon}\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]
+      %{\relax}{\mbox{}\oldmarginpar{\vspace*{-3\baselineskip}\cDarkOliveGreen\chapterNumber\thechapter}}{0pt}%
+      {\cMaroon\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]
    \titleformat{\section}
-      {\relax}{\color{DarkOliveGreen}{\textsc{\MakeTextLowercase{\thesection}}}}{1em}{\color{Maroon}\spacedlowsmallcaps}
+      {\relax}{\cDarkOliveGreen{\textsc{\MakeTextLowercase{\thesection}}}}{1em}{\cMaroon\spacedlowsmallcaps}
    \titleformat{\subsection}
-      {\relax}{\color{DarkOliveGreen}{\textsc{\MakeTextLowercase{\thesubsection}}}}{1em}{\color{Maroon}\normalsize\itshape}
+      {\relax}{\cDarkOliveGreen{\textsc{\MakeTextLowercase{\thesubsection}}}}{1em}{\cMaroon\normalsize\itshape}
    \titleformat{\subsubsection}
-      {\relax}{\color{DarkOliveGreen}{\textsc{\MakeTextLowercase{\thesubsubsection}}}}{1em}{\color{Maroon}\normalsize\itshape}        
+      {\relax}{\cDarkOliveGreen{\textsc{\MakeTextLowercase{\thesubsubsection}}}}{1em}{\cMaroon\normalsize\itshape}        
    \titleformat{\paragraph}[runin]
-      {\relax}{\color{DarkOliveGreen}{\textsc{\MakeTextLowercase{\theparagraph}}}}{1em}{\color{Maroon}\normalsize\itshape}        
+      {\relax}{\cDarkOliveGreen{\textsc{\MakeTextLowercase{\theparagraph}}}}{1em}{\cMaroon\normalsize\itshape}        
 % not required: only used in Colophon.tex
 %     \renewcommand{\finalVersionString}{\emph{Final Version} as of \today\ (\myVersion).}
 }
@@ -215,13 +216,13 @@ ref={#1}
 % note that I've also got \chapter hacked in peeter_prologue_print2.tex so that it's like \title.
 \newcommand{\colorSectionsForArticle}[0]{%
    \titleformat{\section}
-      {\relax}{\color{DarkOliveGreen}{\textsc{\thesection}}}{1em}{\color{Maroon}}
+      {\relax}{\cDarkOliveGreen{\textsc{\thesection}}}{1em}{\cMaroon}
    \titleformat{\subsection}
-      {\relax}{\color{DarkOliveGreen}{\textsc{\thesubsection}}}{1em}{\color{Maroon}\normalsize\itshape}
+      {\relax}{\cDarkOliveGreen{\textsc{\thesubsection}}}{1em}{\cMaroon\normalsize\itshape}
    \titleformat{\subsubsection}
-      {\relax}{\color{DarkOliveGreen}{\textsc{\thesubsubsection}}}{1em}{\color{Maroon}\normalsize\itshape}
+      {\relax}{\cDarkOliveGreen{\textsc{\thesubsubsection}}}{1em}{\cMaroon\normalsize\itshape}
    \titleformat{\paragraph}[runin]
-      {\relax}{\color{DarkOliveGreen}{\textsc{\MakeTextLowercase{\theparagraph}}}}{1em}{\color{Maroon}\normalsize\itshape}        
+      {\relax}{\cDarkOliveGreen{\textsc{\MakeTextLowercase{\theparagraph}}}}{1em}{\cMaroon\normalsize\itshape}        
    \titlespacing*{\chapter}{0pt}{1\baselineskip}{1.2\baselineskip}
    \titlespacing*{\section}{0pt}{1.25\baselineskip}{1\baselineskip} 
    \titlespacing*{\subsection}{0pt}{1.25\baselineskip}{1\baselineskip}
