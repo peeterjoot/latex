@@ -151,8 +151,8 @@ all :: opt/$(THISBOOK).pdf
 endif
 
 dist:
-ifdef SUBFIGDIR
-	cp $(THISBOOK).pdf $(THISBOOK).$(SUBFIGDIR).$(VER).pdf
+ifdef DISTEXTRA
+	cp $(THISBOOK).pdf $(THISBOOK).$(DISTEXTRA).$(VER).pdf
 else
 	cp $(THISBOOK).pdf $(THISBOOK).$(VER).pdf
 endif
