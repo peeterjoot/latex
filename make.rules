@@ -151,7 +151,11 @@ all :: opt/$(THISBOOK).pdf
 endif
 
 dist:
+ifdef SUBFIGDIR
+	cp $(THISBOOK).pdf $(THISBOOK).$(SUBFIGDIR).$(VER).pdf
+else
 	cp $(THISBOOK).pdf $(THISBOOK).$(VER).pdf
+endif
 
 # a for annotate (releases).
 tag:
