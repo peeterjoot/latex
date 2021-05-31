@@ -161,6 +161,9 @@ endif
 tag:
 	git tag -a $(THISBOOK).$(VER).pdf
 
+parameters.sty : ../latex/bin/mkparams
+	../latex/bin/mkparams $(PARAMS) > $@
+
 kbordermatrix.sty : 
 	wget http://tug.ctan.org/macros/generic/misc/kbordermatrix.sty
 	#wget http://ctan.bppro.ca/macros/generic/misc/kbordermatrix.sty
