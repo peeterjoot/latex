@@ -671,20 +671,20 @@ sub processRest
       s/<latexInlineStart>/$latexInlineStart/g ;
       s/<latexInlineEnd>/$latexInlineEnd/g ;
 
-      s/\\chapcite{(.*?)}/[$refnumbers{$1}]/g;
-      s/\\citep{(.*?)}/[$refnumbers{$1}]/g;
-      s/\\cite{(.*?)}/[$refnumbers{$1}]/g;
-      s,\\blogpage{(.*)},<a href="$1">[$urlMessage]</a>$urlMessage2,;
+      s/\\chapcite\{(.*?)}/[$refnumbers{$1}]/g;
+      s/\\citep\{(.*?)}/[$refnumbers{$1}]/g;
+      s/\\cite\{(.*?)}/[$refnumbers{$1}]/g;
+      s,\\blogpage\{(.*)},<a href="$1">[$urlMessage]</a>$urlMessage2,;
 
-      s/\\C{(.*?)}/$latexInlineStart\\mathbb{C}^{$1}$latexInlineEnd/g;
-      s/\\R{(.*?)}/$latexInlineStart\\mathbb{R}^{$1}$latexInlineEnd/g;
+      s/\\C\{(.*?)}/$latexInlineStart\\mathbb{C}^{$1}$latexInlineEnd/g;
+      s/\\R\{(.*?)}/$latexInlineStart\\mathbb{R}^{$1}$latexInlineEnd/g;
 
-      s/\\ref{(eqn:.*?)}/eq. $equations{$1}/g ;
-      s/\\ref{(fig:.*?)}/fig. $equations{$1}/g ;
-      s/\\cref{(fig:.*?)}/fig. $equations{$1}/g ;
-      s/\\eqnref{(eqn:.*?)}/eq. $equations{$1}/g ;
-      s/\\Eqnref{(eqn:.*?)}/Eq. $equations{$1}/g ;
-      s/\\autoref{(eqn:.*?)}/($equations{$1})/g ;
+      s/\\ref\{(eqn:.*?)}/eq. $equations{$1}/g ;
+      s/\\ref\{(fig:.*?)}/fig. $equations{$1}/g ;
+      s/\\cref\{(fig:.*?)}/fig. $equations{$1}/g ;
+      s/\\eqnref\{(eqn:.*?)}/eq. $equations{$1}/g ;
+      s/\\Eqnref\{(eqn:.*?)}/Eq. $equations{$1}/g ;
+      s/\\autoref\{(eqn:.*?)}/($equations{$1})/g ;
 
       die "use eqnref not eqref" if ( /\\eqref/ ) ;
 
