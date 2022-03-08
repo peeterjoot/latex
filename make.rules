@@ -33,12 +33,14 @@ define dopdflatex
 	#touch $<.latexmain
 endef
 
+ifndef NOREVINFO
 all :: .revinfo/lastCommit.tex
 all :: .revinfo/gitCommitDateAsMyTime.tex
 all :: .revinfo/lastCommitBook.tex
 all :: .revinfo/gitCommitDate.tex
 all :: .revinfo/gitCommitString.tex
 all :: .revinfo/gitRepo.tex
+endif
 all :: $(MAIN_TARGETS)
 
 # Not really phony, but made to to avoid error with depending on COMMIT_EDITMSG after fresh clone of a repo.
