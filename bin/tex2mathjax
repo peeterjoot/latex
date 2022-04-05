@@ -38,7 +38,7 @@ my $filename ;
 my $showUsage = 0 ;
 
 my $urlMessage ;
-$urlMessage = "If mathjax doesn't display properly for you, click here for a PDF of this post";
+$urlMessage = "Click here for a PDF version of this post";
 
 my $r1 = qr/
      (                   # start of capture buffer 1
