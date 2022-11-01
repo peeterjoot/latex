@@ -288,6 +288,13 @@
   year={1998}
 }
 
+@book{rovelli2021general,
+  title={General Relativity: The Essentials},
+  author={Rovelli, Carlo},
+  year={2021},
+  publisher={Cambridge University Press}
+}
+
 @book{mcmahon2006relativity,
   title={Relativity demystified},
   author={McMahon, David},
