@@ -6,11 +6,13 @@ use Getopt::Long ;
 
 my $printversion = 1;
 my $subfigdir = 'bw';
+my $lettersize = 0;
 
 GetOptions( 
    'subfigdir=s'    => \$subfigdir,
    'printversion!'  => \$printversion,
-   'help'           => sub { die "usage: mkparams [--printversion] [--subfigdir color]\n" ; },
+   'lettersize!'    => \$lettersize,
+   'help'           => sub { die "usage: mkparams [--printversion] [--subfigdir color] [--lettersize]\n" ; },
 ) ;
 
 my $pv = '';
@@ -20,7 +22,7 @@ if ( $printversion )
 }
 
 my $tt = '';
-if ( 0 )
+if ( $lettersize )
 {
    # see classicthesis-config.tex for reasons that this can't easily be done anymore.
    $tt = "\\toggletrue{use-lettersize}";

@@ -121,7 +121,7 @@ ifneq ($(PDFDEPENDENCIES),)
 endif
 
 cronology.tex : ../METADATA
-	(cd .. ; ./METADATA -$(THISBOOK) > $(THISDIR)/cronology.tex)
+	(cd .. ; ./METADATA -$(THISBOOK) $(METAFLAGS) > $(THISDIR)/cronology.tex)
 
 $(LOCAL_FILES) :
 	cp $(filter %$@, $(ORIG_FILES)) $@
