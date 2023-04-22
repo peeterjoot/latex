@@ -150,7 +150,7 @@ my $meta = ",{
    TITLE => qq($title),
    DATE => '$date',
    REF => '$filebase',
-   URL => 'http://peeterjoot.com/archives/$mathbase/$filebase.pdf',
+   URL => 'https://peeterjoot.com/archives/$mathbase/$filebase.pdf',
    WHAT => qq()
 }" ;
 

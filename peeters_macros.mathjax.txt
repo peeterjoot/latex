@@ -12,7 +12,7 @@ Tried changing the config from default to accessible and back and that didn't he
 
 Then tried disable/enable, which made none of my default.js macros work.  Had to reset the custom cdn service to:
 
-http://peeterjoot.com/wp-content/plugins/mathjax-latex/MathJax/MathJax.js
+https://peeterjoot.com/wp-content/plugins/mathjax-latex/MathJax/MathJax.js
 
 and then the new macros still didn't work.  Finally after browser cache clear it did.  That may have been all that was required.
 
@@ -26,7 +26,7 @@ Installation instructions for the plugin:
    Place the Javascript library in the mathjax-latex directory (/wp-content/plugins/mathjax-latex/MathJax)
    You can configure the plugin to load MathJax from a different URL to the default. See the options page.
 
-my instructions from: http://peeterjoot.com/latex/:
+my instructions from: https://peeterjoot.com/latex/:
 
    cd /opt/bitnami/apps/wordpress/htdocs/wp-content/plugins/mathjax-latex
    wget https://github.com/mathjax/MathJax/zipball/v2.6-latest
