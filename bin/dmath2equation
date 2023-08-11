@@ -23,5 +23,5 @@ sub foo
 {
    my ( $label, $bulk ) = @_ ;
 
-   return "\\begin{equation}$label\n\\begin{aligned}\n$bulk\n\\end{aligned}\n\\end{equation}\n";
+   return "\\begin{equation}$label\n\\begin{aligned}\n$bulk\n\\end{aligned}\n\\end{equation}";
 }
