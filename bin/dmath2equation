@@ -1,5 +1,61 @@
 #!/usr/bin/perl
 
+#-----------------------------------------------------------------------------
+# POD Format Documentation.  Read "perldoc perlpod" for an example.
+# When done, check syntax with "podchecker".
+
+=head1 NAME
+
+dmath2equation - rewrite a \begin{dmath}...\end{dmath} into equation + aligned.
+
+=head1 SYNOPSIS
+
+dmath2equation [--help] [--align] [--[no]-smart]
+
+=head1 DESCRIPTION
+
+=head1 SUPPORTED PLATFORMS
+
+ Unix (Linux verified)
+
+=head1 SUPPORT
+
+ Send email to peeterjoot@pm.me
+
+=head1 AUTHORS
+
+ Peeter Joot
+
+=cut
+
+#-----------------------------------------------------------------------------
+
+use strict ;
+use warnings ;
+use Getopt::Long ;
+use Pod::Usage ;
+
+# Suppress sourcing of users' .bashrc files in invoked shells
+delete $ENV{'ENV'} ;
+delete $ENV{'BASH_ENV'} ;
+
+# Set STDOUT and STDERR to unbuffered
+select STDERR ; $| = 1 ;
+select STDOUT ; $| = 1 ;
+
+my $myName = '' ;
+
+($myName = $0) =~ s@.*[/\\]@@ ;
+my $align = 0;
+my $smart = 1;
+
+GetOptions ( 
+   'align!'             => \$align,
+   'smart!'             => \$smart,
+   'help'               => sub { pod2usage(-verbose => 2) ; },
+) or pod2usage(-verbose => 0) ;
+
+
 my $all = '' ;
 
 while (<>)
@@ -8,9 +64,9 @@ while (<>)
 }
 
 $all =~ s/
-\\begin{dmath}(\\label{.*?})\s*
+\\begin\{dmath}(\\label\{.*?})\s*
 (.*?)\s*
-\\end{dmath}
+\\end\{dmath}
 /
 foo($1, $2)
 /mesxg ;
@@ -23,5 +79,20 @@ sub foo
 {
    my ( $label, $bulk ) = @_ ;
 
-   return "\\begin{equation}$label\n\\begin{aligned}\n$bulk\n\\end{aligned}\n\\end{equation}";
+   my $n = $bulk;
+   my $d = ($n =~ tr/=//);
+   $d++ if ($bulk =~ /\\sim/msxg);
+   #$d++ if ($bulk =~ /\\perpto/msxg); # ?
+   $d++ if ($bulk =~ /\\implies/msxg);
+
+   if ( ($d > 1) or $align ) {
+      if ( $smart ) {
+         $bulk =~ s/=/\\\\ &=/msxg;
+         $bulk =~ s/\\\\\s&=/&=/msx;
+         $bulk =~ s/(\{.)\s*\\\\\s&=/$1 =/msx;
+      }
+      return "\\begin{equation}$label\n\\begin{aligned}\n$bulk\n\\end{aligned}\n\\end{equation}";
+   } else {
+      return "\\begin{equation}$label\n$bulk\n\\end{equation}";
+   }
 }
