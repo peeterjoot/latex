@@ -89,7 +89,7 @@ sub foo
       if ( $smart ) {
          $bulk =~ s/=/\\\\ &=/msxg;
          $bulk =~ s/\\\\\s&=/&=/msx;
-         $bulk =~ s/(\{.)\s*\\\\\s&=/$1 =/msx;
+         $bulk =~ s/(sum_\{\s*\S+)\s*\\\\\s&=/$1 =/msx;
       }
       return "\\begin{equation}$label\n\\begin{aligned}\n$bulk\n\\end{aligned}\n\\end{equation}";
    } else {
