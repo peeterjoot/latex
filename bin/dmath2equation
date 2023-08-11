@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+
+my $all = '' ;
+
+while (<>)
+{
+   $all .= $_ ;
+}
+
+$all =~ s/
+\\begin{dmath}(\\label{.*?})\s*
+(.*?)\s*
+\\end{dmath}
+/
+foo($1, $2)
+/mesxg ;
+
+print $all ;
+
+exit ;
+
+sub foo
+{
+   my ( $label, $bulk ) = @_ ;
+
+   return "\\begin{equation}$label\n\\begin{aligned}\n$bulk\n\\end{aligned}\n\\end{equation}\n";
+}
