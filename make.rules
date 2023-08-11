@@ -163,7 +163,7 @@ endif
 tag:
 	git tag -a $(THISBOOK).$(VER).pdf
 
-parameters.sty : ../latex/bin/mkparams
+parameters.sty :: ../latex/bin/mkparams GNUmakefile
 	../latex/bin/mkparams $(PARAMS) > $@
 
 kbordermatrix.sty : 
