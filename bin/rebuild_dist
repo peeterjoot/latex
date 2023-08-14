@@ -1,0 +1,9 @@
+rm parameters.sty 
+make clean
+PRINT_VERSION=1 make parameters.sty 
+make ; make dist
+
+rm parameters.sty 
+make clean
+make parameters.sty 
+make ; make dist
