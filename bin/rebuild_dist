@@ -1,9 +1,15 @@
-rm parameters.sty 
+# should not be commit'ed
+#git checkout parameters.sty
+rm parameters.sty
 make clean
-PRINT_VERSION=1 make parameters.sty 
+export PRINT_VERSION=1
+#echo "P: $PRINT_VERSION"
+make parameters.sty
 make ; make dist
 
-rm parameters.sty 
+unset PRINT_VERSION
+#echo "P: $PRINT_VERSION"
+rm parameters.sty
 make clean
-make parameters.sty 
+make parameters.sty
 make ; make dist
