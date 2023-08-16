@@ -1,15 +1,19 @@
-# should not be commit'ed
-#git checkout parameters.sty
+if [ 0 -eq 1 ] ; then
 rm parameters.sty
 make clean
 export PRINT_VERSION=1
 #echo "P: $PRINT_VERSION"
 make parameters.sty
 make ; make dist
+# should not be commit'ed
+git checkout parameters.sty
+fi
 
+if [ 1 -eq 1 ] ; then
 unset PRINT_VERSION
 #echo "P: $PRINT_VERSION"
 rm parameters.sty
 make clean
 make parameters.sty
 make ; make dist
+fi

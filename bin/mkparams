@@ -6,19 +6,27 @@ use Getopt::Long ;
 
 my $printversion = 1;
 my $subfigdir = 'bw';
+my $kindle = 0;
 my $lettersize = 0;
 
 GetOptions( 
    'subfigdir=s'    => \$subfigdir,
    'printversion!'  => \$printversion,
    'lettersize!'    => \$lettersize,
-   'help'           => sub { die "usage: mkparams [--printversion] [--subfigdir color] [--lettersize]\n" ; },
+   'kindle!'        => \$kindle,
+   'help'           => sub { die "usage: mkparams [--printversion] [--subfigdir color] [--lettersize] [--kindle]\n" ; },
 ) ;
 
 my $pv = '';
 if ( $printversion )
 {
    $pv = "\\toggletrue{print-version}";
+}
+
+my $kv = '';
+if ( $kindleversion )
+{
+   $kv = "\\toggletrue{kindle-version}";
 }
 
 my $tt = '';
@@ -39,4 +47,7 @@ $pv
 
 \\newtoggle{use-lettersize}% false
 $tt
+
+\\newtoggle{kindle-version}
+$kv
 );
