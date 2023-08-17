@@ -212,60 +212,55 @@
 
 %--------------------------------------------------------------------------------------------------
 
-\newcommand{\psixFiguresThreeLinesFloat}[10]{%
+\newcommand{\sixFiguresThreeLinesFloat}[9]{%
    \begin{figure}[htp]%
        \centering%
-       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#2}}}%
+       \subfloat[][]{\includegraphics[#9]{#1}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#3}}}%
+       \subfloat[][]{\includegraphics[#9]{#2}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#4}}}%
+       \subfloat[][]{\includegraphics[#9]{#3}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#5}}}%
+       \subfloat[][]{\includegraphics[#9]{#4}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#6}}}%
+       \subfloat[][]{\includegraphics[#9]{#5}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#7}}}%
-       \caption{#8}%
-       \label{#9}%
+       \subfloat[][]{\includegraphics[#9]{#6}}%
+       \caption{#7}%
+       \label{#8}%
    \end{figure}%
 }
 
-\newcommand{\psixFiguresThreeLinesNonFloat}[10]{%
+\newcommand{\sixFiguresThreeLinesNonFloat}[9]{%
    \begin{center}%
        \captionsetup{type=figure}%
-       \stackunder{\includegraphics[#10]{\catpaths{#1}{#2}}}{(a)}%
+       \stackunder{\includegraphics[#9]{#1}}{(a)}%
        \qquad%
-       \stackunder{\includegraphics[#10]{\catpaths{#1}{#3}}}{(b)}%
+       \stackunder{\includegraphics[#9]{#2}}{(b)}%
        \par\vspace{5mm}%
-       \stackunder{\includegraphics[#10]{\catpaths{#1}{#4}}}{(c)}%
+       \stackunder{\includegraphics[#9]{#3}}{(c)}%
        \qquad%
-       \stackunder{\includegraphics[#10]{\catpaths{#1}{#5}}}{(d)}%
+       \stackunder{\includegraphics[#9]{#4}}{(d)}%
        \par\vspace{5mm}%
-       \stackunder{\includegraphics[#10]{\catpaths{#1}{#6}}}{(c)}%
+       \stackunder{\includegraphics[#9]{#5}}{(c)}%
        \qquad%
-       \stackunder{\includegraphics[#10]{\catpaths{#1}{#7}}}{(d)}%
-       \caption{#8}%
-       \label{#9}%
+       \stackunder{\includegraphics[#9]{#6}}{(d)}%
+       \caption{#7}%
+       \label{#8}%
    \end{center}%
-}
-
-% \pimageSixFiguresThreeLines{dir}{file1}{file2}{file3}{file4}{file5}{file6}{fancy plots}{fig:blah}{scale=0.3}
-\newcommand{\pimageSixFiguresThreeLines}[10]{%
-  \ifinner%
-    \psixFiguresThreeLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}{#10}%
-  \else%
-    \ifx\@currenvir\md@envname%
-       \psixFiguresThreeLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}{#10}%
-    \else%
-       \psixFiguresThreeLinesFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}{#10}%
-    \fi%
-  \fi%
 }
 
 % \imageSixFiguresThreeLines{path1}{path2}{path3}{path4}{path5}{path6}{fancy plots}{fig:blah}{scale=0.3}
 \newcommand{\imageSixFiguresThreeLines}[9]{%
-  \pimageSixFiguresThreeLines{}{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}%
+  \ifinner%
+    \sixFiguresThreeLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}%
+  \else%
+    \ifx\@currenvir\md@envname%
+       \sixFiguresThreeLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}%
+    \else%
+       \sixFiguresThreeLinesFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}%
+    \fi%
+  \fi%
 }
 
 %--------------------------------------------------------------------------------------------------
