@@ -6,14 +6,14 @@ use Getopt::Long ;
 
 my $printversion = 1;
 my $subfigdir = 'bw';
-my $kindle = 0;
+my $kindleversion = 0;
 my $lettersize = 0;
 
 GetOptions( 
    'subfigdir=s'    => \$subfigdir,
    'printversion!'  => \$printversion,
    'lettersize!'    => \$lettersize,
-   'kindle!'        => \$kindle,
+   'kindle!'        => \$kindleversion,
    'help'           => sub { die "usage: mkparams [--printversion] [--subfigdir color] [--lettersize] [--kindle]\n" ; },
 ) ;
 

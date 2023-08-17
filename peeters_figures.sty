@@ -8,6 +8,10 @@
 % http://tex.stackexchange.com/a/94063/15 -- used in \imageFigure below.
 \def\md@envname{mdframed}
 
+\newcommand{\catpaths}[2]{%
+  \iftoggle{kindle-version}{#2}{#1#2}%
+}
+
 %--------------------------------------------------------------------------------------------------
 % \begin{figure} ... \end{figure} does not work with latex code that uses the exercise package,
 % and results in "LaTeX Error: Not in outer par mode" error.
@@ -31,255 +35,237 @@
 %
 % For the non-float case, the caption package is also required.
 % 
-% \imageFigure{path}{caption}{label}{width}
-\newcommand{\imageFigureNonFloat}[4]{%
+% \pimageFigure{dir}{file}{caption}{label}{width}
+\newcommand{\pimageFigureNonFloat}[5]{%
     \begin{center}%
        \captionsetup{type=figure}%
-       \includegraphics[#4]{#1}%
-       \caption{#2}%
-       \label{#3}%
+       \includegraphics[#5]{\catpaths{#1}{#2}}%
+       \caption{#3}%
+       \label{#4}%
     \end{center}%
 }
 
-\newcommand{\imageFigureFloat}[4]{%
+\newcommand{\pimageFigureFloat}[5]{%
     \begin{figure}[htp]%
        \centering%
-       \includegraphics[#4]{#1}%
-       \caption{#2}%
-       \label{#3}%
+       \includegraphics[#5]{\catpaths{#1}{#2}}%
+       \caption{#3}%
+       \label{#4}%
     \end{figure}%
+}
+
+% \pimageFigure{dir}{file}{caption}{label}{width}
+\newcommand{\pimageFigure}[5]{%
+  \ifinner%
+    \pimageFigureNonFloat{#1}{#2}{#3}{#4}{totalheight=#5\textheight}%
+  \else%
+    \ifx\@currenvir\md@envname%
+       \pimageFigureNonFloat{#1}{#2}{#3}{#4}{totalheight=#5\textheight}%
+    \else%
+       \pimageFigureFloat{#1}{#2}{#3}{#4}{totalheight=#5\textheight}%
+    \fi%
+  \fi%
 }
 
 % \imageFigure{path}{caption}{label}{width}
 \newcommand{\imageFigure}[4]{%
-  \ifinner%
-    \imageFigureNonFloat{#1}{#2}{#3}{totalheight=#4\textheight}%
-  \else%
-    \ifx\@currenvir\md@envname%
-       \imageFigureNonFloat{#1}{#2}{#3}{totalheight=#4\textheight}%
-    \else%
-       \imageFigureFloat{#1}{#2}{#3}{totalheight=#4\textheight}%
-    \fi%
-  \fi%
+  \pimageFigure{}{#1}{#2}{#3}{#4}%
 }
 
 %--------------------------------------------------------------------------------------------------
 
-\newcommand{\twoFiguresFloat}[5]{%
+\newcommand{\ptwoFiguresFloat}[6]{%
    \begin{figure}[htp]%
        \centering%
-       \subfloat[][]{\includegraphics[#5]{#1}}%
+       \subfloat[][]{\includegraphics[#6]{\catpaths{#1}{#2}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#5]{#2}}%
-       \caption{#3}%
-       \label{#4}%
+       \subfloat[][]{\includegraphics[#6]{\catpaths{#1}{#3}}}%
+       \caption{#4}%
+       \label{#5}%
    \end{figure}%
 }
 
-%\newcommand{\twoCaptionedFiguresFloat}[5]{%
-%   \begin{figure}[htp]%
-%       \centering%
-%       \subfloat[][]{\includegraphics[#5]{#1}}%
-%       \caption{#6}%
-%       \label{#7}%
-%       \qquad%
-%       \subfloat[][]{\includegraphics[#5]{#2}}%
-%       \caption{#3}%
-%       \label{#4}%
-%   \end{figure}%
-%}
-
-\newcommand{\twoFiguresNonFloat}[5]{%
+\newcommand{\ptwoFiguresNonFloat}[6]{%
    \begin{center}%
        \captionsetup{type=figure}%
-       \stackunder{\includegraphics[#5]{#1}}{(a)}%
+       \stackunder{\includegraphics[#6]{\catpaths{#1}{#2}}}{(a)}%
        \qquad%
-       \stackunder{\includegraphics[#5]{#2}}{(b)}%
-       \caption{#3}%
-       \label{#4}%
+       \stackunder{\includegraphics[#6]{\catpaths{#1}{#3}}}{(b)}%
+       \caption{#4}%
+       \label{#5}%
    \end{center}%
 }
 
-%\newcommand{\twoCaptionedFiguresNonFloat}[5]{%
-%   \begin{center}%
-%       \captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
-%       \stackunder{\includegraphics[#5]{#1}}{(a)}%
-%       \caption{#6}%
-%       \label{#7}%
-%       \qquad%
-%       \stackunder{\includegraphics[#5]{#2}}{(b)}%
-%       \caption{#3}%
-%       \label{#4}%
-%   \end{center}%
-%}
+% \pimageTwoFigures{dir}{file1}{file2}{fancy plots}{fig:blah}{scale=0.3}
+\newcommand{\pimageTwoFigures}[6]{%
+  \ifinner%
+    \ptwoFiguresNonFloat{#1}{#2}{#3}{#4}{#5}{#6}%
+  \else%
+    \ifx\@currenvir\md@envname%
+       \ptwoFiguresNonFloat{#1}{#2}{#3}{#4}{#5}{#6}%
+    \else%
+       \ptwoFiguresFloat{#1}{#2}{#3}{#4}{#5}{#6}%
+    \fi%
+  \fi%
+}
 
 % \imageTwoFigures{path1}{path2}{fancy plots}{fig:blah}{scale=0.3}
 \newcommand{\imageTwoFigures}[5]{%
-  \ifinner%
-    \twoFiguresNonFloat{#1}{#2}{#3}{#4}{#5}%
-  \else%
-    \ifx\@currenvir\md@envname%
-       \twoFiguresNonFloat{#1}{#2}{#3}{#4}{#5}%
-    \else%
-       \twoFiguresFloat{#1}{#2}{#3}{#4}{#5}%
-    \fi%
-  \fi%
+  \pimageTwoFigures{}{#1}{#2}{#3}{#4}{#5}%
 }
-
-% This was an attempt to caption (and refer to) subfigures, as in:
-% https://tex.stackexchange.com/a/181233/15
-%
-% \imageTwoCaptionedFigures{path1}{path2}{fancy plot a}{fig:blaha}{scale=0.3}{fancy plot b}{fig:blahb}
-%\newcommand{\imageTwoCaptionedFigures}[5]{%
-%  \ifinner%
-%    \twoCaptionedFiguresNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
-%  \else%
-%    \ifx\@currenvir\md@envname%
-%       \twoCaptionedFiguresNonFloat{#1}{#2}{#3}{#4}{#5}#6}{#7}%
-%    \else%
-%       \twoCaptionedFiguresFloat{#1}{#2}{#3}{#4}{#5}#6}{#7}%
-%    \fi%
-%  \fi%
-%}
 
 %--------------------------------------------------------------------------------------------------
 
-\newcommand{\threeFiguresOneLineFloat}[6]{%
+\newcommand{\pthreeFiguresOneLineFloat}[7]{%
    \begin{figure}[htp]%
        \centering%
-       \subfloat[][]{\includegraphics[#6]{#1}}%
+       \subfloat[][]{\includegraphics[#7]{\catpaths{#1}{#2}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#6]{#2}}%
+       \subfloat[][]{\includegraphics[#7]{\catpaths{#1}{#3}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#6]{#3}}%
-       \caption{#4}%
-       \label{#5}%
+       \subfloat[][]{\includegraphics[#7]{\catpaths{#1}{#4}}}%
+       \caption{#5}%
+       \label{#6}%
    \end{figure}%
 }
 
-\newcommand{\threeFiguresOneLineNonFloat}[6]{%
+\newcommand{\pthreeFiguresOneLineNonFloat}[7]{%
    \begin{center}%
        \captionsetup{type=figure}%
-       \stackunder{\includegraphics[#6]{#1}}{(a)}%
+       \stackunder{\includegraphics[#7]{\catpaths{#1}{#2}}}{(a)}%
        \qquad%
-       \stackunder{\includegraphics[#6]{#2}}{(b)}%
+       \stackunder{\includegraphics[#7]{\catpaths{#1}{#3}}}{(b)}%
        \qquad%
-       \stackunder{\includegraphics[#6]{#3}}{(c)}%
-       \caption{#4}%
-       \label{#5}%
+       \stackunder{\includegraphics[#7]{\catpaths{#1}{#4}}}{(c)}%
+       \caption{#5}%
+       \label{#6}%
    \end{center}%
+}
+
+% \pimageThreeFiguresOneLine{dir}{file1}{file2}{file3}{fancy plots}{fig:blah}{scale=0.3}
+\newcommand{\pimageThreeFiguresOneLine}[7]{%
+  \ifinner%
+    \pthreeFiguresOneLineNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
+  \else%
+    \ifx\@currenvir\md@envname%
+       \pthreeFiguresOneLineNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
+    \else%
+       \pthreeFiguresOneLineFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
+    \fi%
+  \fi%
 }
 
 % \imageThreeFiguresOneLine{path1}{path2}{path3}{fancy plots}{fig:blah}{scale=0.3}
 \newcommand{\imageThreeFiguresOneLine}[6]{%
-  \ifinner%
-    \threeFiguresOneLineNonFloat{#1}{#2}{#3}{#4}{#5}{#6}%
-  \else%
-    \ifx\@currenvir\md@envname%
-       \threeFiguresOneLineNonFloat{#1}{#2}{#3}{#4}{#5}{#6}%
-    \else%
-       \threeFiguresOneLineFloat{#1}{#2}{#3}{#4}{#5}{#6}%
-    \fi%
-  \fi%
+  \pimageThreeFiguresOneLine{}{#1}{#2}{#3}{#4}{#5}{#6}%
 }
-
 
 %--------------------------------------------------------------------------------------------------
 
-\newcommand{\fourFiguresTwoLinesFloat}[7]{%
+\newcommand{\pfourFiguresTwoLinesFloat}[8]{%
    \begin{figure}[htp]%
        \centering%
-       \subfloat[][]{\includegraphics[#7]{#1}}%
+       \subfloat[][]{\includegraphics[#8]{\catpaths{#1}{#2}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#7]{#2}}%
+       \subfloat[][]{\includegraphics[#8]{\catpaths{#1}{#3}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#7]{#3}}%
+       \subfloat[][]{\includegraphics[#8]{\catpaths{#1}{#4}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#7]{#4}}%
-       \caption{#5}%
-       \label{#6}%
+       \subfloat[][]{\includegraphics[#8]{\catpaths{#1}{#5}}}%
+       \caption{#6}%
+       \label{#7}%
    \end{figure}%
 }
 
-\newcommand{\fourFiguresTwoLinesNonFloat}[7]{%
+\newcommand{\pfourFiguresTwoLinesNonFloat}[8]{%
    \begin{center}%
        \captionsetup{type=figure}%
-       \stackunder{\includegraphics[#7]{#1}}{(a)}%
+       \stackunder{\includegraphics[#8]{\catpaths{#1}{#2}}}{(a)}%
        \qquad%
-       \stackunder{\includegraphics[#7]{#2}}{(b)}%
+       \stackunder{\includegraphics[#8]{\catpaths{#1}{#3}}}{(b)}%
        \par\vspace{5mm}%
-       \stackunder{\includegraphics[#7]{#3}}{(c)}%
+       \stackunder{\includegraphics[#8]{\catpaths{#1}{#4}}}{(c)}%
        \qquad%
-       \stackunder{\includegraphics[#7]{#4}}{(d)}%
-       \caption{#5}%
-       \label{#6}%
+       \stackunder{\includegraphics[#8]{\catpaths{#1}{#5}}}{(d)}%
+       \caption{#6}%
+       \label{#7}%
    \end{center}%
+}
+
+% \pimageFourFiguresTwoLines{dir}{file1}{file2}{file3}{file4}{fancy plots}{fig:blah}{scale=0.3}
+\newcommand{\pimageFourFiguresTwoLines}[8]{%
+  \ifinner%
+    \pfourFiguresTwoLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}%
+  \else%
+    \ifx\@currenvir\md@envname%
+       \pfourFiguresTwoLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}%
+    \else%
+       \pfourFiguresTwoLinesFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}%
+    \fi%
+  \fi%
 }
 
 % \imageFourFiguresTwoLines{path1}{path2}{path3}{path4}{fancy plots}{fig:blah}{scale=0.3}
 \newcommand{\imageFourFiguresTwoLines}[7]{%
-  \ifinner%
-    \fourFiguresTwoLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
-  \else%
-    \ifx\@currenvir\md@envname%
-       \fourFiguresTwoLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
-    \else%
-       \fourFiguresTwoLinesFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
-    \fi%
-  \fi%
+  \pimageFourFiguresTwoLines{}{#1}{#2}{#3}{#4}{#5}{#6}{#7}%
 }
 
 %--------------------------------------------------------------------------------------------------
 
-\newcommand{\sixFiguresThreeLinesFloat}[9]{%
+\newcommand{\psixFiguresThreeLinesFloat}[10]{%
    \begin{figure}[htp]%
        \centering%
-       \subfloat[][]{\includegraphics[#9]{#1}}%
+       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#2}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#9]{#2}}%
+       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#3}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#9]{#3}}%
+       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#4}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#9]{#4}}%
+       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#5}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#9]{#5}}%
+       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#6}}}%
        \qquad%
-       \subfloat[][]{\includegraphics[#9]{#6}}%
-       \caption{#7}%
-       \label{#8}%
+       \subfloat[][]{\includegraphics[#10]{\catpaths{#1}{#7}}}%
+       \caption{#8}%
+       \label{#9}%
    \end{figure}%
 }
 
-\newcommand{\sixFiguresThreeLinesNonFloat}[9]{%
+\newcommand{\psixFiguresThreeLinesNonFloat}[10]{%
    \begin{center}%
        \captionsetup{type=figure}%
-       \stackunder{\includegraphics[#9]{#1}}{(a)}%
+       \stackunder{\includegraphics[#10]{\catpaths{#1}{#2}}}{(a)}%
        \qquad%
-       \stackunder{\includegraphics[#9]{#2}}{(b)}%
+       \stackunder{\includegraphics[#10]{\catpaths{#1}{#3}}}{(b)}%
        \par\vspace{5mm}%
-       \stackunder{\includegraphics[#9]{#3}}{(c)}%
+       \stackunder{\includegraphics[#10]{\catpaths{#1}{#4}}}{(c)}%
        \qquad%
-       \stackunder{\includegraphics[#9]{#4}}{(d)}%
+       \stackunder{\includegraphics[#10]{\catpaths{#1}{#5}}}{(d)}%
        \par\vspace{5mm}%
-       \stackunder{\includegraphics[#9]{#5}}{(c)}%
+       \stackunder{\includegraphics[#10]{\catpaths{#1}{#6}}}{(c)}%
        \qquad%
-       \stackunder{\includegraphics[#9]{#6}}{(d)}%
-       \caption{#7}%
-       \label{#8}%
+       \stackunder{\includegraphics[#10]{\catpaths{#1}{#7}}}{(d)}%
+       \caption{#8}%
+       \label{#9}%
    \end{center}%
+}
+
+% \pimageSixFiguresThreeLines{dir}{file1}{file2}{file3}{file4}{file5}{file6}{fancy plots}{fig:blah}{scale=0.3}
+\newcommand{\pimageSixFiguresThreeLines}[10]{%
+  \ifinner%
+    \psixFiguresThreeLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}{#10}%
+  \else%
+    \ifx\@currenvir\md@envname%
+       \psixFiguresThreeLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}{#10}%
+    \else%
+       \psixFiguresThreeLinesFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}{#10}%
+    \fi%
+  \fi%
 }
 
 % \imageSixFiguresThreeLines{path1}{path2}{path3}{path4}{path5}{path6}{fancy plots}{fig:blah}{scale=0.3}
 \newcommand{\imageSixFiguresThreeLines}[9]{%
-  \ifinner%
-    \sixFiguresThreeLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}%
-  \else%
-    \ifx\@currenvir\md@envname%
-       \sixFiguresThreeLinesNonFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}%
-    \else%
-       \sixFiguresThreeLinesFloat{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}%
-    \fi%
-  \fi%
+  \pimageSixFiguresThreeLines{}{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}%
 }
 
 %--------------------------------------------------------------------------------------------------
