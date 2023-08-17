@@ -382,12 +382,20 @@ problem \ref{#1}%
 \RequirePackage{empheq}
 
 \newcommand*\mybox[1]{%
-  \fcolorbox{DarkOliveGreen}{Maroon!5}{\hspace{1em}#1\hspace{1em}}}
+  \fcolorbox{DarkOliveGreen}{Maroon!5}{\hspace{1em}#1\hspace{1em}}%
+}
 
 \newcommand{\boxedEquation}[2]{%
+\iftoggle{kindle-version}{%
+\begin{equation}\label{#1}%
+\boxed{#2}%
+\end{equation}%
+}%
+{%
 \begin{empheq}[box=\mybox]{equation}\label{#1}%
 #2%
 \end{empheq}%
+}%
 }
 
 \newcommand{\boxedEquationStarred}[1]{%

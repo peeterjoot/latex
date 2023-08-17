@@ -243,9 +243,16 @@
 %
 % title, label, text
 \newcommand{\makeexample}[3]{%
+\iftoggle{kindle-version}{%
+\subsubsubsection{\textbf{Example~\theexample}: #1}\label{#2}%
+\newline%
+\newline%
+#3%
+}{%
 \begin{example}[#1]\label{#2}%
 #3%
 \end{example}%
+}%
 }
 
 %-----------------------------------------------------------------------------------
