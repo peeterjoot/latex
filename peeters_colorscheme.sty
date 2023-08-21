@@ -1,8 +1,16 @@
 \PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
 
+% What was the original reason for the \nXXX redirection?
+\iftoggle{print-version}{%
+\newcommand{\nDarkOliveGreen}[0]{Black}
+\newcommand{\nMaroon}[0]{Black}
+\newcommand{\nSalmon}[0]{Black}
+}{%
 \newcommand{\nDarkOliveGreen}[0]{DarkOliveGreen}
 \newcommand{\nMaroon}[0]{Maroon}
 \newcommand{\nSalmon}[0]{Salmon}
+}
+%\newcommand{\nBlack}[0]{Black}
 
 \newcommand{\cDarkOliveGreen}[0]{\color{\nDarkOliveGreen}}
 \newcommand{\cMaroon}[0]{\color{\nMaroon}}

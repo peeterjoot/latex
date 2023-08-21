@@ -41,6 +41,20 @@ coltitle=black,center title}}
 % Examples:
 % \begin{tablelabelbox}{caption text}{lable=foo} table data \end{tablelabelbox}
 % \begin{tablelabelbox}{caption text}{lable=foo}{\small} table data \end{tablelabelbox}
+\iftoggle{print-version}{%
+\newtcolorbox[auto counter,number within=chapter]{tablelabelbox}[3][]{%
+%fonttitle=\bfseries,%
+colbacktitle=white,enhanced,%
+arc=0mm,%
+attach boxed title to top left={yshift=-0.75mm,xshift=4mm},%
+#3,%
+title=\textbf{{\cDarkOliveGreen Table\,\thetcbcounter:} {\cMaroon #2}},#1}
+%label=#3 type=table,%
+
+\newtcolorbox[]{tablebox}[1][]{%
+arc=0mm,%
+#1}
+}{%
 \newtcolorbox[auto counter,number within=chapter]{tablelabelbox}[3][]{colback=Maroon!10!white,%
 colframe=DarkOliveGreen,%
 %fonttitle=\bfseries,%
@@ -55,4 +69,4 @@ title=\textbf{{\cDarkOliveGreen Table\,\thetcbcounter:} {\cMaroon #2}},#1}
 colframe=DarkOliveGreen,%
 arc=0mm,%
 #1}
-
+}

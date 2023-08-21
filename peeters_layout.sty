@@ -37,7 +37,11 @@
    %\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
    \RequirePackage{peeters_colorscheme}
    \RequirePackage{caption}
+\iftoggle{print-version}{%
+   \captionsetup{labelfont={bf}}
+}{%
    \captionsetup{labelfont={color=DarkOliveGreen,bf},textfont={color=Maroon}}
+}
 
 %--------------------------------------------------------------------------------------------
 % Color equation numbers:
@@ -381,8 +385,14 @@ problem \ref{#1}%
 % http://tex.stackexchange.com/a/131829/15
 \RequirePackage{empheq}
 
+\iftoggle{print-version}{%
+\newcommand*\mybox[1]{%
+  \fcolorbox{Black}{White}{\hspace{1em}#1\hspace{1em}}%
+}
+}{%
 \newcommand*\mybox[1]{%
   \fcolorbox{DarkOliveGreen}{Maroon!5}{\hspace{1em}#1\hspace{1em}}%
+}
 }
 
 \newcommand{\boxedEquation}[2]{%
