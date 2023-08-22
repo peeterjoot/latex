@@ -8,7 +8,6 @@ make ; make dist
 # should not be commit'ed
 git checkout parameters.sty
 fi
-exit
 if [ 1 -eq 1 ] ; then
 unset PRINT_VERSION
 #echo "P: $PRINT_VERSION"
@@ -16,4 +15,5 @@ rm parameters.sty
 make clean
 make parameters.sty
 make ; make dist
+git checkout parameters.sty
 fi
