@@ -1,19 +1,124 @@
-if [ 1 -eq 1 ] ; then
-rm parameters.sty
-make clean
-export PRINT_VERSION=1
-#echo "P: $PRINT_VERSION"
-make parameters.sty
-make ; make dist
-# should not be commit'ed
-git checkout parameters.sty
-fi
-if [ 1 -eq 1 ] ; then
-unset PRINT_VERSION
-#echo "P: $PRINT_VERSION"
-rm parameters.sty
-make clean
-make parameters.sty
-make ; make dist
-git checkout parameters.sty
-fi
+#!/usr/bin/perl
+
+#-----------------------------------------------------------------------------
+# POD Format Documentation.  Read "perldoc perlpod" for an example.
+# When done, check syntax with "podchecker".
+
+=head1 NAME
+
+rebuild_dist - build both print-version and color-online version of the book in the current directory
+
+=head1 SYNOPSIS
+
+rebuild_dist [--help] [--print|--online] [--[no-]clean] [--dryrun]
+
+=head1 DESCRIPTION
+
+Default is both print and online version.
+
+Options:
+
+=over 4
+
+=item --print
+
+Just the print version.
+
+=item --online
+
+Just the online version.
+
+=back
+
+=head1 SUPPORTED PLATFORMS
+
+ Unix (Linux verified)
+
+=head1 SUPPORT
+
+ Send email to peeter.joot@lzlabs.com
+
+=head1 AUTHORS
+
+ Peeter Joot
+
+=cut
+
+#-----------------------------------------------------------------------------
+
+use strict ;
+use warnings ;
+use Getopt::Long ;
+use Pod::Usage ;
+
+# Suppress sourcing of users' .bashrc files in invoked shells
+delete $ENV{'ENV'} ;
+delete $ENV{'BASH_ENV'} ;
+
+# Set STDOUT and STDERR to unbuffered
+select STDERR ; $| = 1 ;
+select STDOUT ; $| = 1 ;
+
+my $myName = '' ;
+my $print = 1;
+my $online = 1;
+my $clean = 1;
+my $dryrun = 0;
+
+($myName = $0) =~ s@.*[/\\]@@ ;
+
+#Getopt::Long::Configure( 'pass_through' ) ;
+GetOptions (
+   'help'               => sub { pod2usage(-verbose => 2) ; },
+   'print'              => sub { $online = 0; },
+   'online'             => sub { $print = 0; },
+   'clean!'             => \$clean,
+   'dry!'               => \$dryrun,
+) or pod2usage(-verbose => 0) ;
+
+# Validate/handle options, and everything else...
+
+my $cmd = '';
+my $cleanstr = '';
+if ( $clean ) {
+   $cleanstr .= 'make clean';
+}
+
+if ( $print ) {
+   $cmd .= qq(
+      rm parameters.sty
+      $cleanstr
+      export PRINT_VERSION=1
+      make parameters.sty
+      make
+   );
+
+   if ( $online ) {
+      $cmd .= qq(
+         make dist
+         git checkout parameters.sty
+      );
+   }
+}
+
+if ( $online ) {
+   $cmd .= qq(
+      unset PRINT_VERSION
+      rm parameters.sty
+      $cleanstr
+      make parameters.sty
+      make
+   );
+
+   if ( $online ) {
+      $cmd .= qq(
+         make dist
+         git checkout parameters.sty
+      );
+   }
+}
+
+print "####\n$cmd####\n";
+unless ( $dryrun ) {
+   system( $cmd );
+}
