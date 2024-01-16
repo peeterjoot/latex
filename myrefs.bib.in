@@ -1715,6 +1715,16 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
    publisher={Addison-Wesley Publishing Company. Reading, Massachusetts}
 }
 
+@inbook{feynman1963flpII:MaxwellEquations,
+   title={{Feynman lectures on physics, Volume II.[Lectures on physics]}},
+   author={Feynman, R.P. and Leighton, R.B. and Sands, M.L.},
+   chapter={{The Maxwell Equations}},
+   year={1963},
+   url="https://www.feynmanlectures.caltech.edu/II_18.html",
+   lastchecked={Nov 25, 2023},
+   publisher={Addison-Wesley Publishing Company. Reading, Massachusetts}
+}
+
 @book{feynman1961qed,
   title={{Quantum Electrodynamics}},
   author={Feynman, R.P.},
@@ -1747,6 +1757,14 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 %%
 %%
 
+@misc{ enwiki:1182988311,
+    author = "{Wikipedia contributors}",
+    title = "Minor (linear algebra) --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2023",
+    url = "https://en.wikipedia.org/w/index.php?title=Minor_(linear_algebra)&oldid=1182988311",
+    note = "[Online; accessed 16-January-2024]"
+  }
+
 @misc{ wiki:Mandelstam,
     author = "{Wikipedia contributors}",
     title = "Mandelstam variables --- {Wikipedia}{,} The Free Encyclopedia",
@@ -1755,12 +1773,20 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
     note = "[Online; accessed 26-November-2018]"
   }
 
-@misc{vboucharMATH215,
+@misc{vboucharMATH215exterior,
   title={MATH 215: Calculus IV: 4.4 The exterior derivative and vector calculus},
   author={Bouchard, Vincent},
   url = "https://sites.ualberta.ca/~vbouchar/MATH215/section_exterior_vector.html",
   year={2023},
   note = "[Online; accessed 11-November-2023]"
+}
+
+@misc{vboucharMATH215hodge,
+  title={MATH 215: Calculus IV: 4.8 Hodge star},
+  author={Bouchard, Vincent},
+  url = "https://sites.ualberta.ca/~vbouchar/MATH215/section_hodge.html",
+  year={2023},
+  note = "[Online; accessed 13-November-2023]"
 }
 
 @misc{ wiki:LemniscateCurvatureFigure,
