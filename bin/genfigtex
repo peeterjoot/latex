@@ -72,7 +72,7 @@ my $fmov = "${refTextPre}{fig:$basename:$picturepathNoDir}$refTextPost.
 #
 #      print $f ;
 #   }
-   elsif ( $extension eq 'png' or $extension eq 'pdf' or $extension eq 'eps' or $extension eq 'jpg' )
+   elsif ( $extension eq 'png' or $extension eq 'pdf' or $extension eq 'eps' or $extension eq 'jpg' or $extension eq 'jpeg' )
    {
       next if ( exists $all{"$picturepath.pdf_tex"} ) ;
 

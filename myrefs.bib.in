@@ -1757,6 +1757,14 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 %%
 %%
 
+@misc{ enwiki:1223666713,
+    author = "{Wikipedia contributors}",
+    title = "Leibniz integral rule --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2024",
+    howpublished = "\url{https://en.wikipedia.org/w/index.php?title=Leibniz_integral_rule&oldid=1223666713}",
+    note = "[Online; accessed 22-May-2024]"
+  }
+
 @misc{ enwiki:1182988311,
     author = "{Wikipedia contributors}",
     title = "Minor (linear algebra) --- {Wikipedia}{,} The Free Encyclopedia",
