@@ -298,6 +298,13 @@
   year={1998}
 }
 
+@book{kemmer1977vector,
+  title={Vector Analysis: A physicist's guide to the mathematics of fields in three dimensions},
+  author={Kemmer, Nicholas},
+  year={1977},
+  publisher={CUP Archive}
+}
+
 @book{rovelli2021general,
   title={General Relativity: The Essentials},
   author={Rovelli, Carlo},
