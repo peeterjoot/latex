@@ -1,5 +1,5 @@
 
-# use ~/bin/ctt to use ~/physicsplay/notes/template.tex as the default article template.
+# use ../latex/bin/ctt to use ../latex/template.tex as the default article template.
 
 out=${1?}
 template=${2?}

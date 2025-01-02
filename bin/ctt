@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# (ctt='ct ${1?} template ${2}' uses ../latex/template.tex) as the template:
 # 1:out 2:cheetsheet
 # example ctt stokesTheoremGeometricAlgebra [ts]
 #

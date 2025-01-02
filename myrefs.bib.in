@@ -305,6 +305,13 @@
   publisher={CUP Archive}
 }
 
+@book{nelsonphysics12,
+  title={Physics 12, University Preparation.},
+  author={Bruni and Dick and Speijer and Stewart},
+  year={2012},
+  publisher={Nelson}
+}
+
 @book{rovelli2021general,
   title={General Relativity: The Essentials},
   author={Rovelli, Carlo},
@@ -1111,6 +1118,13 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   author={Brown, Ellen Hodgson},
   year={2008},
   publisher={Ellen Brown}
+}
+
+@book{brown1990complex,
+  title={Complex variables and applications},
+  author={Brown, James Ward and Churchill, Ruel V},
+  year={1990},
+  publisher={McGraw-Hill,}
 }
 
 @book{aMacdonaldLAGC,
