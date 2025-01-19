@@ -698,6 +698,14 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   note = "[Online; accessed 26-Sep-2020]",
 }
 
+@webpage{CalcInsightsElliptical,
+  title={{A decent integral problem to try out}},
+  author={CalcInsights},
+  url = "https://x.com/CalcInsights_/status/1880110549146431780",
+  year=2025,
+  note = "[Online; accessed 18-Jan-2025]",
+}
+
 @webpage{hydrogenWavefunctionsMIT,
   title={{Hydrogen Atom}},
   author={Troy Van Voorhis, Robert Field},
