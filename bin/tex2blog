@@ -86,9 +86,9 @@ my $urlMessage2 = '' ;
 
 my $r1 = qr/
      (                   # start of capture buffer 1
-     \{                   # match an opening brace
+     \{                  # match an opening brace
          (?:
-             [^\{}]++     # one or more non braces, non backtracking
+             [^\{}]++    # one or more non braces, non backtracking
                |
              (?1)        # found { or }, so recurse to capture buffer 1
          )*
@@ -98,18 +98,18 @@ my $r1 = qr/
 
 my $r2 = qr/
      (                   # start of capture buffer 1
-     \{                   # match an opening brace
+     \{                  # match an opening brace
          (?:
-             [^\{}]++     # one or more non braces, non backtracking
+             [^\{}]++    # one or more non braces, non backtracking
                |
              (?1)        # found { or }, so recurse to capture buffer 1
          )*
      }                   # match a closing brace
      )                   # end of capture buffer 1
      (                   # start of capture buffer 2
-     \{                   # match an opening brace
+     \{                  # match an opening brace
          (?:
-             [^\{}]++     # one or more non braces, non backtracking
+             [^\{}]++    # one or more non braces, non backtracking
                |
              (?1)        # found { or }, so recurse to capture buffer 2
          )*
@@ -119,27 +119,27 @@ my $r2 = qr/
 
 my $r3 = qr/
      (                   # start of capture buffer 1
-     \{                   # match an opening brace
+     \{                  # match an opening brace
          (?:
-             [^\{}]++     # one or more non braces, non backtracking
+             [^\{}]++    # one or more non braces, non backtracking
                |
              (?1)        # found { or }, so recurse to capture buffer 1
          )*
      }                   # match a closing brace
      )                   # end of capture buffer 1
      (                   # start of capture buffer 2
-     \{                   # match an opening brace
+     \{                  # match an opening brace
          (?:
-             [^\{}]++     # one or more non braces, non backtracking
+             [^\{}]++    # one or more non braces, non backtracking
                |
              (?1)        # found { or }, so recurse to capture buffer 2
          )*
      }                   # match a closing brace
      )                   # end of capture buffer 2
      (                   # start of capture buffer 3
-     \{                   # match an opening brace
+     \{                  # match an opening brace
          (?:
-             [^\{}]++     # one or more non braces, non backtracking
+             [^\{}]++    # one or more non braces, non backtracking
                |
              (?1)        # found { or }, so recurse to capture buffer 3
          )*

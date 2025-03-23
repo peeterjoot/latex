@@ -706,6 +706,14 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   note = "[Online; accessed 18-Jan-2025]",
 }
 
+@webpage{CalcInsightsTrigK,
+  title={{What will be the value of k to satisfy this integral equation}},
+  author={CalcInsights},
+  url = "https://x.com/CalcInsights_/status/1880932308108341443",
+  year=2025,
+  note = "[Online; accessed 19-Jan-2025]",
+}
+
 @webpage{hydrogenWavefunctionsMIT,
   title={{Hydrogen Atom}},
   author={Troy Van Voorhis, Robert Field},
