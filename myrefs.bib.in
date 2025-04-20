@@ -1416,8 +1416,24 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   publisher={Universities Press}
 }
 
+@book{pjootStatMech,
+  title={Statistical Mechanics, Notes and problems from UofT PHY452},
+  author={Peeter Joot},
+  year={2013},
+  publisher={Kindle Direct Publishing},
+  address = {Toronto}
+}
+
+@book{pjootGradQM,
+  title={Graduate Quantum Mechanics, Notes and problems from UofT PHY1520},
+  author={Peeter Joot},
+  year={2015},
+  publisher={Kindle Direct Publishing},
+  address = {Toronto}
+}
+
 @book{pjootQFT,
-  title={Quantum field theory},
+  title={Quantum Field Theory I, Notes and problems from UofT PHY2403},
   author={Peeter Joot},
   year={2018},
   publisher={Kindle Direct Publishing},
@@ -1425,7 +1441,7 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
 }
 
 @book{pjootGAEE,
-  title={Geometric Algebra for Electrical Engineers},
+  title={Geometric Algebra for Electrical Engineers, Multivector Electromagnetism},
   author={Peeter Joot},
   year={2019},
   publisher={Kindle Direct Publishing},
