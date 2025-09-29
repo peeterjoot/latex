@@ -1,0 +1,161 @@
+#!/usr/bin/perl
+
+#-----------------------------------------------------------------------------
+# POD Format Documentation.  Read "perldoc perlpod" for an example.
+# When done, check syntax with "podchecker".
+
+=head1 NAME
+
+sanitizelatex - <one-line-description>
+
+=head1 SYNOPSIS
+
+sanitizelatex [--help] [<options>]
+
+=head1 DESCRIPTION
+
+
+Options:
+
+=over 4
+
+=item --foo=bar
+
+Blah.
+
+=back
+
+=head1 SUPPORTED PLATFORMS
+
+ Unix (Linux verified)
+
+=head1 SUPPORT
+
+ Send email to peeterjoot@pm.me
+
+=head1 AUTHORS
+
+ Peeter Joot
+
+=cut
+
+#-----------------------------------------------------------------------------
+
+use strict ;
+use warnings ;
+use Getopt::Long ;
+use Pod::Usage ;
+
+# Suppress sourcing of users' .bashrc files in invoked shells
+delete $ENV{'ENV'} ;
+delete $ENV{'BASH_ENV'} ;
+
+# Set STDOUT and STDERR to unbuffered
+select STDERR ; $| = 1 ;
+select STDOUT ; $| = 1 ;
+
+my $myName = '' ;
+
+($myName = $0) =~ s@.*[/\\]@@ ;
+
+#Getopt::Long::Configure( 'pass_through' ) ;
+GetOptions (
+    'help'               => sub { pod2usage(-verbose => 2) ; },
+) or pod2usage(-verbose => 0) ;
+
+# Validate/handle options, and everything else...
+
+use strict;
+use warnings;
+
+# Regular expressions for capturing 1, 2, or 3 arguments with nested braces
+my $r1 = qr/
+    (                   # start of capture buffer 1
+    \{                  # match an opening brace
+        (?:
+            [^\{}]++    # one or more non braces, non backtracking
+              |
+            (?1)        # recurse to capture buffer 1
+        )*
+    }                   # match a closing brace
+    )                   # end of capture buffer 1
+/x;
+
+my $r2 = qr/
+    (                   # start of capture buffer 1
+    \{                  # match an opening brace
+        (?:
+            [^\{}]++    # one or more non braces, non backtracking
+              |
+            (?1)        # recurse to capture buffer 1
+        )*
+    }                   # match a closing brace
+    )                   # end of capture buffer 1
+    (                   # start of capture buffer 2
+    \{                  # match an opening brace
+        (?:
+            [^\{}]++    # one or more non braces, non backtracking
+              |
+            (?1)        # recurse to capture buffer 2
+        )*
+    }                   # match a closing brace
+    )                   # end of capture buffer 2
+/x;
+
+my $r3 = qr/
+    (                   # start of capture buffer 1
+    \{                  # match an opening brace
+        (?:
+            [^\{}]++    # one or more non braces, non backtracking
+              |
+            (?1)        # recurse to capture buffer 1
+        )*
+    }                   # match a closing brace
+    )                   # end of capture buffer 1
+    (                   # start of capture buffer 2
+    \{                  # match an opening brace
+        (?:
+            [^\{}]++    # one or more non braces, non backtracking
+              |
+            (?1)        # recurse to capture buffer 2
+        )*
+    }                   # match a closing brace
+    )                   # end of capture buffer 2
+    (                   # start of capture buffer 3
+    \{                  # match an opening brace
+        (?:
+            [^\{}]++    # one or more non braces, non backtracking
+              |
+            (?1)        # recurse to capture buffer 3
+        )*
+    }                   # match a closing brace
+    )                   # end of capture buffer 3
+/x;
+
+# Read input from file or STDIN
+my $input = '';
+if (@ARGV) {
+    open my $fh, '<', $ARGV[0] or die "Cannot open file $ARGV[0]: $!";
+    $input = do { local $/; <$fh> };
+    close $fh;
+} else {
+    $input = do { local $/; <STDIN> };
+}
+
+# Process macros
+my $output = $input;
+
+# Process \evalrange, \evalbar, and \inv first (non-recursive macros)
+$output =~ s/\\evalrange$r3/{\\left.$1\\right\\vert}_{$2}^{$3}/g;
+$output =~ s/\\evalbar$r2/{\\left.$1\\right\\vert}_{$2}/g;
+$output =~ s/\\inv$r1/\\frac{1}{$1}/g;
+
+# Process \lr iteratively to handle nesting
+while ($output =~ /\\lr$r1/) {
+    $output =~ s/\\lr$r1/\\left($1\\right)/g;
+}
+
+# Output the result
+print $output;
+
+# vim: et ts=4 sw=4

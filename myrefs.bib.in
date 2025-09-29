@@ -1440,6 +1440,14 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
   address = {Toronto}
 }
 
+@book{pjootECE1228,
+  title={Electromagnetic Theory},
+  author={Peeter Joot},
+  year={2016},
+  publisher={Kindle Direct Publishing},
+  address = {Toronto}
+}
+
 @book{pjootGAEE,
   title={Geometric Algebra for Electrical Engineers, Multivector Electromagnetism},
   author={Peeter Joot},
@@ -1904,6 +1912,14 @@ howpublished = "https://dlmf.nist.gov/, Release 1.0.26 of 2020-03-15",
     howpublished = "Youtube",
     url = "https://www.youtube.com/watch?v=ATCGNBdFTEc",
     note = "[Online; accessed 22-January-2017]"
+}
+
+@misc{hilterLearnsJackson,
+    title = "Hilter Learns Jackson",
+    author = "Kian Kamgar-Parsi",
+    howpublished = "Youtube",
+    url = "https://youtu.be/mm-4PltMB2A",
+    note = "[Online; accessed 28-September-2025]"
 }
 
 @misc{youtubeVectorVillian,
