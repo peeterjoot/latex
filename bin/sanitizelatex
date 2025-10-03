@@ -68,6 +68,16 @@ GetOptions (
 use strict;
 use warnings;
 
+# Function to strip outer braces from an argument
+sub strip_braces {
+    my ($arg) = @_;
+    # Only strip if the argument starts with { and ends with }
+    if ($arg =~ m/^\{(.*)\}$/s) {
+        return $1;
+    }
+    return $arg; # Return unchanged if no outer braces
+}
+
 # Regular expressions for capturing 1, 2, or 3 arguments with nested braces
 my $r1 = qr/
     (                   # start of capture buffer 1
@@ -145,17 +155,20 @@ if (@ARGV) {
 # Process macros
 my $output = $input;
 
-# Process \evalrange, \evalbar, and \inv first (non-recursive macros)
-$output =~ s/\\evalrange$r3/{\\left.$1\\right\\vert}_{$2}^{$3}/g;
-$output =~ s/\\evalbar$r2/{\\left.$1\\right\\vert}_{$2}/g;
-$output =~ s/\\inv$r1/\\frac{1}{$1}/g;
+# Process \evalrange, \evalbar, and \inv with brace stripping
+$output =~ s/\\evalrange$r3/{\\left.@{[strip_braces($1)]}\\right\\vert}_@{[strip_braces($2)]}^{@{[strip_braces($3)]}}/g;
+$output =~ s/\\evalbar$r2/{\\left.@{[strip_braces($1)]}\\right\\vert}_@{[strip_braces($2)]}/g;
+$output =~ s/\\inv$r1/\\frac{1}{@{[strip_braces($1)]}}/g;
+$output =~ s/\\(.)cap\b/\\hat{\\mathbf{$1}}/g ;
+$output =~ s/\\B(.)\b/\\mathbf{$1}/g;
+$output =~ s/\\spacegrad\b/\\boldsymbol{\\nabla}/g;
+$output =~ s/\\PD${r2}/\\frac{\\partial @{[strip_braces($2)]}}{\\partial @{[strip_braces($1)]}}/g;
+$output =~ s/\\Abs${r1}/\\left\\vert @{[strip_braces($1)]} \\right\\vert/g;
 
-# Process \lr iteratively to handle nesting
+# Process \lr iteratively to handle nesting, with brace stripping
 while ($output =~ /\\lr$r1/) {
-    $output =~ s/\\lr$r1/\\left($1\\right)/g;
+    $output =~ s/\\lr$r1/\\left(@{[strip_braces($1)]}\\right)/g;
 }
 
 # Output the result
 print $output;
-
-# vim: et ts=4 sw=4
