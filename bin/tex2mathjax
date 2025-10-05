@@ -145,6 +145,7 @@ foreach (@$rLines)
    s/\\implies/\\Rightarrow/g ;
    s/\\conv/\\textrm{conv}/g ;
    s/\\dom/\\textrm{dom}/g ;
+   s/\\sgn\b/\\textrm{sgn}/g ;
    s/\\closure/\\textrm{cl}/g ;
    s/\\dist/\\textrm{dist}/g ;
    s/\\epi/\\textrm{epi}/g ;
