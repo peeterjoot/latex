@@ -159,9 +159,11 @@ my $output = $input;
 $output =~ s/\\evalrange$r3/{\\left.@{[strip_braces($1)]}\\right\\vert}_@{[strip_braces($2)]}^{@{[strip_braces($3)]}}/g;
 $output =~ s/\\evalbar$r2/{\\left.@{[strip_braces($1)]}\\right\\vert}_@{[strip_braces($2)]}/g;
 $output =~ s/\\inv$r1/\\frac{1}{@{[strip_braces($1)]}}/g;
+$output =~ s/\\gpgradeone$r1/{\\left\\langle@{[strip_braces($1)]}\\right\\rangle}_{1}/g;
 $output =~ s/\\(.)cap\b/\\hat{\\mathbf{$1}}/g ;
 $output =~ s/\\B(.)\b/\\mathbf{$1}/g;
 $output =~ s/\\spacegrad\b/\\boldsymbol{\\nabla}/g;
+$output =~ s/\\cross\b/\\times/g;
 $output =~ s/\\PD${r2}/\\frac{\\partial @{[strip_braces($2)]}}{\\partial @{[strip_braces($1)]}}/g;
 $output =~ s/\\Abs${r1}/\\left\\vert @{[strip_braces($1)]} \\right\\vert/g;
 
